@@ -1,0 +1,145 @@
+/* ─────────────────────────────────────────────
+   MOKUTAN · nav.css
+   Navegação principal (desktop + mobile)
+   ───────────────────────────────────────────── */
+
+/* ── NAV FIXA ── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  padding: 32px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.5s;
+}
+
+nav.on {
+  padding: 16px 64px;
+  background: rgba(244,236,217,0.94);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ── LOGO ── */
+.nlogo {
+  text-decoration: none;
+}
+.nlogo-en {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+.nlogo-jp {
+  display: block;
+  font-family: var(--font-japanese);
+  font-size: 0.65rem;
+  color: var(--ember);
+  letter-spacing: 0.18em;
+}
+
+/* ── LINKS DESKTOP ── */
+.nlinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 38px;
+}
+.nlinks a {
+  font-family: var(--font-display);
+  font-size: 0.57rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nlinks a:hover {
+  color: var(--ink);
+}
+.nrsv {
+  color: #fff !important;
+  background: var(--ember);
+  padding: 10px 22px;
+  transition: background 0.3s !important;
+}
+.nrsv:hover {
+  background: var(--elite) !important;
+}
+
+/* ── LINK CARDÁPIO (badge destaque) ── */
+.nlinks a.nav-cardapio {
+  color: var(--ember);
+}
+.nlinks a.nav-cardapio:hover {
+  color: var(--elite);
+}
+
+/* ── HAMBURGER ── */
+.hbg {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.hbg span {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--dim);
+}
+
+/* ── MOBILE MENU ── */
+.mmenu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(244,236,217,0.97);
+  z-index: 190;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.mmenu.open {
+  display: flex;
+}
+.mmenu a {
+  font-family: var(--font-body);
+  font-size: 2.8rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--dim);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.mmenu a:hover {
+  color: var(--ember);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav {
+    padding: 20px 28px;
+  }
+  nav.on {
+    padding: 14px 28px;
+  }
+  .nlinks {
+    display: none;
+  }
+  .hbg {
+    display: flex;
+  }
+}
