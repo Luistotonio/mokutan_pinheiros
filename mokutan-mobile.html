@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0e0c09">
+<title>Mokutan · Cardápio</title>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   MOKUTAN · MOBILE SPA
+   ══════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #0e0c09;
+  --surface:  #171410;
+  --card:     #1e1a15;
+  --border:   rgba(160,120,30,0.18);
+  --border-m: rgba(160,120,30,0.32);
+  --bronze:   #c8943a;
+  --ember:    #e8a840;
+  --gold-lt:  #f2c060;
+  --smoke:    #9a9080;
+  --mid:      #c8bca8;
+  --text:     #ede8e0;
+  --nav-h:    56px;
+  --safe-bot: env(safe-area-inset-bottom, 0px);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Shippori Mincho', serif;
+  min-height: 100dvh;
+  padding-bottom: calc(var(--nav-h) + var(--safe-bot));
+  overflow-x: hidden;
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  background: var(--surface);
+  padding: 52px 24px 36px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-m);
+  overflow: hidden;
+}
+.hero::before {
+  content: '木炭';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Shippori Mincho', serif;
+  font-size: 160px;
+  font-weight: 800;
+  color: rgba(200,148,58,0.06);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+.hero-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  letter-spacing: 10px;
+  color: var(--bronze);
+  margin-bottom: 8px;
+  position: relative;
+}
+.hero-rule {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px 0;
+}
+.hero-rule-line { flex: 1; max-width: 60px; height: 0.5px; background: var(--border-m); }
+.hero-rule-diamond { width: 5px; height: 5px; background: var(--bronze); transform: rotate(45deg); flex-shrink: 0; }
+.hero-jp {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: var(--smoke);
+  position: relative;
+}
+.hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--smoke);
+  margin-top: 14px;
+  line-height: 1.5;
+  position: relative;
+}
+
+/* ── BOTTOM NAV ── */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: calc(var(--nav-h) + var(--safe-bot));
+  padding-bottom: var(--safe-bot);
+  background: rgba(14,12,9,0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-m);
+  display: flex;
+  align-items: stretch;
+  z-index: 100;
+}
+.nav-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--smoke);
+  padding: 0 4px;
+  transition: color 0.2s;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav-btn.active, .nav-btn:hover { color: var(--bronze); }
+.nav-btn.active .nav-dot { background: var(--bronze); }
+.nav-icon {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 16px;
+  line-height: 1;
+}
+.nav-label {
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.nav-dot {
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background 0.2s;
+}
+
+/* ── PAGE SECTIONS ── */
+.menu-page { display: none; }
+.menu-page.active { display: block; }
+
+/* ── SECTION HEADER ── */
+.sec-header {
+  padding: 28px 20px 16px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(14,12,9,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 10;
+}
+.sec-title {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 5px;
+  color: var(--bronze);
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.sec-jp {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--smoke);
+}
+
+/* ── SUBSECTION ── */
+.sub-group { margin-bottom: 4px; }
+.sub-label {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 18px 20px 8px;
+}
+.sub-name {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--ember);
+  text-transform: uppercase;
+}
+.sub-jp2 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 10px;
+  color: var(--smoke);
+  letter-spacing: 1.5px;
+}
+
+/* ── ITEM ── */
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+.item:active { background: var(--surface); }
+.item-info { flex: 1; min-width: 0; }
+.item-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 4px;
+  display: block;
+}
+.item-desc {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 11px;
+  color: var(--smoke);
+  line-height: 1.55;
+  display: block;
+}
+.item-obs {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 10.5px;
+  color: var(--ember);
+  display: block;
+  margin-top: 3px;
+}
+.item-price {
+  font-family: 'Cinzel', serif;
+  font-size: 17px;
+  color: var(--bronze);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.price-small { display: none; }
+
+/* ── DRINK ITEM (with glass) ── */
+.drink-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+.drink-item:active { background: var(--surface); }
+.drink-glass {
+  flex-shrink: 0;
+  width: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2px;
+}
+.drink-glass svg { color: var(--bronze); overflow: visible; }
+.drink-info { flex: 1; min-width: 0; }
+
+/* ── BADGE ── */
+.badge {
+  display: inline-block;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 8.5px;
+  letter-spacing: 1px;
+  padding: 2px 6px;
+  border: 0.8px solid var(--bronze);
+  color: var(--bronze);
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-left: 6px;
+  text-transform: uppercase;
+}
+
+/* ── SAKE ITEM ── */
+.sake-item {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.sake-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.sake-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.3;
+  flex: 1;
+}
+.sake-type {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 10px;
+  color: var(--ember);
+  letter-spacing: 1px;
+  display: block;
+  margin-top: 3px;
+}
+.sake-price {
+  font-family: 'Cinzel', serif;
+  font-size: 17px;
+  color: var(--bronze);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.sake-desc {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 11px;
+  color: var(--smoke);
+  line-height: 1.55;
+}
+
+/* ── WINE ITEM ── */
+.wine-region {
+  padding: 12px 20px 4px;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ember);
+  font-weight: 600;
+}
+.wine-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.wine-info { flex: 1; }
+.wine-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  display: block;
+  margin-bottom: 2px;
+}
+.wine-prod {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 10.5px;
+  color: var(--smoke);
+  display: block;
+}
+.wine-price {
+  font-family: 'Cinzel', serif;
+  font-size: 17px;
+  color: var(--bronze);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+/* ── QUOTE BLOCK ── */
+.quote-block {
+  margin: 20px;
+  padding: 20px;
+  border: 0.5px solid var(--border-m);
+  border-radius: 2px;
+  background: var(--surface);
+}
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.7;
+  text-align: center;
+}
+.quote-attr {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--smoke);
+  text-align: center;
+  display: block;
+  margin-top: 14px;
+}
+
+/* ── FOOTER ── */
+.page-foot {
+  padding: 28px 20px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.foot-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  letter-spacing: 6px;
+  color: var(--bronze);
+  margin-bottom: 8px;
+}
+.foot-meta {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 11px;
+  color: var(--smoke);
+  letter-spacing: 2px;
+}
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-brand">MOKUTAN</div>
+  <div class="hero-rule">
+    <div class="hero-rule-line"></div>
+    <div class="hero-rule-diamond"></div>
+    <div class="hero-rule-line"></div>
+  </div>
+  <div class="hero-jp">木炭 · Pinheiros · São Paulo</div>
+  <div class="hero-sub">O sabor que só a brasa pode criar</div>
+</div>
+
+<!-- ══════════════════════════════
+     CARDÁPIO
+══════════════════════════════ -->
+<section class="menu-page active" id="page-cardapio">
+
+  <div class="sec-header">
+    <div class="sec-title">Cardápio</div>
+    <div class="sec-jp">木炭 · Sumibi</div>
+  </div>
+
+  <!-- TSUKEMONO -->
+  <div class="sub-group">
+    <div class="sub-label"><span class="sub-name">Tsukemono</span><span class="sub-jp2">漬物 · Conservas</span></div>
+    <div class="item"><div class="item-info"><span class="item-name">Kinpira Gobo</span></div><div class="item-price"><span class="price-small">R$</span>25</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Kimchi</span></div><div class="item-price"><span class="price-small">R$</span>25</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Beni Shogá</span></div><div class="item-price"><span class="price-small">R$</span>25</div></div>
+  </div>
+
+  <!-- SUMIBI -->
+  <div class="sub-group">
+    <div class="sub-label"><span class="sub-name">Sumibi</span><span class="sub-jp2">炭火 · Na Brasa</span></div>
+    <div class="item"><div class="item-info"><span class="item-name">Yakitori</span><span class="item-desc">Sobrecoxa · alho poró · teriyaki</span></div><div class="item-price"><span class="price-small">R$</span>47</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Edamame Defumado</span><span class="item-desc">Soja japonesa · óleo defumado</span></div><div class="item-price"><span class="price-small">R$</span>52</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Suwiito Korn</span><span class="item-desc">Milho doce · kewpie · parmesão</span></div><div class="item-price"><span class="price-small">R$</span>50</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Bara-Niku</span><span class="item-desc">Bao · costela · sunomono · maionese de shissô</span></div><div class="item-price"><span class="price-small">R$</span>46</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Nassu</span><span class="item-desc">Berinjela · missô · vinagrete cebola roxa</span></div><div class="item-price"><span class="price-small">R$</span>41</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Okura</span><span class="item-desc">Asinha de frango · tobojan · shoyu · gomadare · aonori</span></div><div class="item-price"><span class="price-small">R$</span>35</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Proteína do Dia</span><span class="item-obs">Consulte o garçom para tipo e preço</span></div><div class="item-price">—</div></div>
+  </div>
+
+  <!-- HIRE -->
+  <div class="sub-group">
+    <div class="sub-label"><span class="sub-name">Hire</span><span class="sub-jp2">火麗</span></div>
+    <div class="item"><div class="item-info"><span class="item-name">Onigiri</span><span class="item-desc">Pancetta · shissô · umêboshi · queijo · porco · curry · umeboshi · missô</span></div><div class="item-price"><span class="price-small">R$</span>34</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Ika Nirá</span><span class="item-desc">Lula · broto de alho · sakê · kewpie · tobajan</span></div><div class="item-price"><span class="price-small">R$</span>49</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Kamameshi</span><span class="item-desc">Arroz · legumes · pescado do dia</span></div><div class="item-price" style="font-size:11px; padding-top:4px;">Consulte</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Tiradito</span><span class="item-desc">Pastel gyoza · tartare de atum · maionese wasabi · alga wakamê</span></div><div class="item-price"><span class="price-small">R$</span>60</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Ceviche Mokutan</span><span class="item-desc">Robalo · leite de tigre · cebola roxa · pimenta · milho peruano · dashi</span></div><div class="item-price"><span class="price-small">R$</span>65</div></div>
+  </div>
+
+  <!-- NAMA -->
+  <div class="sub-group">
+    <div class="sub-label"><span class="sub-name">Nama</span><span class="sub-jp2">生 · Cru</span></div>
+    <div class="item"><div class="item-info"><span class="item-name">Harussame</span><span class="item-desc">Macarrão amido de feijão · legumes · tamagoyaki · óleo de gergelim</span></div><div class="item-price"><span class="price-small">R$</span>39</div></div>
+  </div>
+
+  <!-- KANMI -->
+  <div class="sub-group">
+    <div class="sub-label"><span class="sub-name">Kanmi</span><span class="sub-jp2">甘味 · Doces</span></div>
+    <div class="item"><div class="item-info"><span class="item-name">Romeu e Julieta</span><span class="item-desc">Goiabada artesanal · sorvete de queijo · suspiro</span></div><div class="item-price"><span class="price-small">R$</span>32</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Matchá Chiffon</span><span class="item-desc">Bolo de matchá · cachaça · sorvete de mel · três leites</span></div><div class="item-price"><span class="price-small">R$</span>38</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Raisu Pudingu</span><span class="item-desc">Arroz doce · missô · caramelo de shoyu · nozes · sorvete de creme</span></div><div class="item-price"><span class="price-small">R$</span>36</div></div>
+  </div>
+
+  <div class="page-foot">
+    <div class="foot-logo">木炭</div>
+    <div class="foot-meta">Pinheiros · São Paulo · @mokutan_pinheiros</div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════
+     DRINKS
+══════════════════════════════ -->
+<section class="menu-page" id="page-drinks">
+
+  <div class="sec-header">
+    <div class="sec-title">Drinks</div>
+    <div class="sec-jp">飲み物 · Bebidas</div>
+  </div>
+
+  <!-- AUTORAIS -->
+  <div class="sub-group">
+    <div class="sub-label"><span class="sub-name">Drinks Autorais Mokutan</span></div>
+
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="8" rx="13" ry="1.8"/><path d="M 2 8 Q 4 20 15 30"/><path d="M 28 8 Q 26 20 15 30"/><line x1="15" y1="30" x2="15" y2="50"/><line x1="7" y1="55" x2="23" y2="55"/><line x1="7" y1="55" x2="11" y2="50"/><line x1="23" y1="55" x2="19" y2="50"/><line x1="11" y1="50" x2="19" y2="50"/></svg></div>
+      <div class="drink-info"><span class="item-name">Binchotan</span><span class="item-desc">Bourbon whiskey · Laphroaig · alcatrão · caramelo de shoyu · limão</span></div>
+      <div class="item-price"><span class="price-small">R$</span>50</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="5" rx="13" ry="1.6"/><path d="M 2 5 Q 1 14 6 22 Q 10 27 13 29"/><path d="M 28 5 Q 29 14 24 22 Q 20 27 17 29"/><line x1="13" y1="29" x2="17" y2="29"/><line x1="13" y1="29" x2="11" y2="32"/><line x1="17" y1="29" x2="19" y2="32"/><line x1="11" y1="32" x2="13" y2="35"/><line x1="19" y1="32" x2="17" y2="35"/><line x1="13" y1="35" x2="14" y2="52"/><line x1="17" y1="35" x2="16" y2="52"/><line x1="7" y1="57" x2="23" y2="57"/><line x1="7" y1="57" x2="12" y2="52"/><line x1="23" y1="57" x2="18" y2="52"/><line x1="12" y1="52" x2="18" y2="52"/></svg></div>
+      <div class="drink-info"><span class="item-name">Guaba</span><span class="item-desc">Cachaça de goiabada cascão · Umeshu · cordial cítrico</span></div>
+      <div class="item-price"><span class="price-small">R$</span>50</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="8" rx="13" ry="1.8"/><line x1="2" y1="8" x2="15" y2="28"/><line x1="28" y1="8" x2="15" y2="28"/><line x1="15" y1="28" x2="15" y2="34"/><ellipse cx="15" cy="38" rx="2" ry="4"/><line x1="15" y1="42" x2="15" y2="51"/><line x1="7" y1="55" x2="23" y2="55"/><line x1="7" y1="55" x2="12" y2="51"/><line x1="23" y1="55" x2="18" y2="51"/><line x1="12" y1="51" x2="18" y2="51"/></svg></div>
+      <div class="drink-info"><span class="item-name">Honzo Wamyo</span><span class="item-desc">Gin · Awamori · cupuaçu · concentrado de caju · wasabi · limão</span></div>
+      <div class="item-price"><span class="price-small">R$</span>50</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="26" rx="11" ry="1.5"/><line x1="4" y1="26" x2="5" y2="48"/><line x1="26" y1="26" x2="25" y2="48"/><path d="M 5 48 Q 7 52 8 55"/><path d="M 25 48 Q 23 52 22 55"/><ellipse cx="15" cy="53" rx="8" ry="1.2" fill="currentColor"/><rect x="8" y="53" width="14" height="3" stroke-width="0" fill="currentColor"/></svg></div>
+      <div class="drink-info"><span class="item-name">Shun</span><span class="item-desc">Gin de ameixa preta · amora · hibisco · limão</span></div>
+      <div class="item-price"><span class="price-small">R$</span>50</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="8" rx="9" ry="1.4"/><path d="M 6 8 Q 4 24 7 48"/><path d="M 24 8 Q 26 24 23 48"/><rect x="7" y="48" width="16" height="7" fill="currentColor"/><ellipse cx="15" cy="48" rx="8" ry="1.2" fill="currentColor"/></svg></div>
+      <div class="drink-info"><span class="item-name">Tantaka</span><span class="item-desc">Shochu Tantakatan · yuzu · limão · shissô · gaseificação</span></div>
+      <div class="item-price"><span class="price-small">R$</span>50</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="10" rx="13" ry="1.8"/><path d="M 2 10 Q 1 22 6 32 Q 10 38 13 40"/><path d="M 28 10 Q 29 22 24 32 Q 20 38 17 40"/><line x1="13" y1="40" x2="17" y2="40"/><line x1="15" y1="40" x2="15" y2="53"/><line x1="7" y1="57" x2="23" y2="57"/><line x1="7" y1="57" x2="11" y2="53"/><line x1="23" y1="57" x2="19" y2="53"/><line x1="11" y1="53" x2="19" y2="53"/></svg></div>
+      <div class="drink-info"><span class="item-name">Tsuru</span><span class="item-desc">Bourbon whiskey · Umeshu · limão · Aperol · óleo de shissô</span></div>
+      <div class="item-price"><span class="price-small">R$</span>50</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="10" rx="13" ry="1.8"/><path d="M 2 10 Q 1 22 6 32 Q 10 38 13 40"/><path d="M 28 10 Q 29 22 24 32 Q 20 38 17 40"/><line x1="13" y1="40" x2="17" y2="40"/><line x1="15" y1="40" x2="15" y2="53"/><line x1="7" y1="57" x2="23" y2="57"/><line x1="7" y1="57" x2="11" y2="53"/><line x1="23" y1="57" x2="19" y2="53"/><line x1="11" y1="53" x2="19" y2="53"/></svg></div>
+      <div class="drink-info"><span class="item-name">Mizunara</span><span class="item-desc">Hibiki · Licor Drambuie · mel de missô · kinako</span></div>
+      <div class="item-price"><span class="price-small">R$</span>79</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="8" rx="11" ry="1.5"/><line x1="4" y1="8" x2="5" y2="47"/><line x1="26" y1="8" x2="25" y2="47"/><line x1="5" y1="47" x2="7" y2="55"/><line x1="25" y1="47" x2="23" y2="55"/><line x1="7" y1="55" x2="23" y2="55"/></svg></div>
+      <div class="drink-info"><span class="item-name">Kamomi Haiboru</span><span class="item-desc">Makers Mark · cordial de pêssego · camomila · mel · gaseificação</span></div>
+      <div class="item-price"><span class="price-small">R$</span>45</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="24" rx="10" ry="1.5"/><path d="M 5 24 Q -2 36 5 46 Q 9 51 15 52 Q 21 51 25 46 Q 32 36 25 24"/><line x1="8" y1="55" x2="22" y2="55"/><line x1="8" y1="55" x2="12" y2="52"/><line x1="22" y1="55" x2="18" y2="52"/><line x1="12" y1="52" x2="18" y2="52"/></svg></div>
+      <div class="drink-info"><span class="item-name">Sabita</span><span class="item-desc">Maccalan 12 DC · genmaicha · amaro · licor amareto · bitter cacau</span></div>
+      <div class="item-price"><span class="price-small">R$</span>79</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="28" rx="11" ry="1.5"/><line x1="4" y1="28" x2="5" y2="55"/><line x1="26" y1="28" x2="25" y2="55"/><line x1="5" y1="55" x2="25" y2="55"/></svg></div>
+      <div class="drink-info"><span class="item-name">Eisai</span><span class="item-desc">Haku vodka · capim santo · cumaru · água de coco · limão · matcha</span></div>
+      <div class="item-price"><span class="price-small">R$</span>45</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="16" rx="9" ry="1.4"/><path d="M 6 16 Q 3 22 2 30 Q 4 34 13 36"/><path d="M 24 16 Q 27 22 28 30 Q 26 34 17 36"/><line x1="13" y1="36" x2="17" y2="36"/><line x1="15" y1="36" x2="15" y2="51"/><line x1="8" y1="55" x2="22" y2="55"/><line x1="8" y1="55" x2="12" y2="51"/><line x1="22" y1="55" x2="18" y2="51"/><line x1="12" y1="51" x2="18" y2="51"/></svg></div>
+      <div class="drink-info"><span class="item-name">Hana</span><span class="item-desc">Roku Gin · chá de jasmim · lichia · licor flor de sabugueiro · limão · bitter laranja</span></div>
+      <div class="item-price"><span class="price-small">R$</span>48</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="16" rx="9" ry="1.4"/><path d="M 6 16 Q 3 22 2 30 Q 4 34 13 36"/><path d="M 24 16 Q 27 22 28 30 Q 26 34 17 36"/><line x1="13" y1="36" x2="17" y2="36"/><line x1="15" y1="36" x2="15" y2="51"/><line x1="8" y1="55" x2="22" y2="55"/><line x1="8" y1="55" x2="12" y2="51"/><line x1="22" y1="55" x2="18" y2="51"/><line x1="12" y1="51" x2="18" y2="51"/></svg></div>
+      <div class="drink-info"><span class="item-name">Amarena Sour</span><span class="item-desc">Gin · amarena · limão</span></div>
+      <div class="item-price"><span class="price-small">R$</span>40</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="10" rx="13" ry="1.8"/><path d="M 2 10 Q 1 22 6 32 Q 10 38 13 40"/><path d="M 28 10 Q 29 22 24 32 Q 20 38 17 40"/><line x1="13" y1="40" x2="17" y2="40"/><line x1="15" y1="40" x2="15" y2="53"/><line x1="7" y1="57" x2="23" y2="57"/><line x1="7" y1="57" x2="11" y2="53"/><line x1="23" y1="57" x2="19" y2="53"/><line x1="11" y1="53" x2="19" y2="53"/></svg></div>
+      <div class="drink-info"><span class="item-name">Bijou</span><span class="item-desc">Gin · licor de ervas · vermute rosso · bitter laranja</span></div>
+      <div class="item-price"><span class="price-small">R$</span>45</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="24" rx="10" ry="1.5"/><path d="M 5 24 Q -2 36 5 46 Q 9 51 15 52 Q 21 51 25 46 Q 32 36 25 24"/><line x1="8" y1="55" x2="22" y2="55"/><line x1="8" y1="55" x2="12" y2="52"/><line x1="22" y1="55" x2="18" y2="52"/><line x1="12" y1="52" x2="18" y2="52"/></svg></div>
+      <div class="drink-info"><span class="item-name">Hugo Spritz</span><span class="item-desc">Licor flor de sabugueiro · espumante · hortelã · água com gás</span></div>
+      <div class="item-price"><span class="price-small">R$</span>40</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="34" rx="9" ry="1.3"/><line x1="6" y1="34" x2="7.5" y2="55"/><line x1="24" y1="34" x2="22.5" y2="55"/><line x1="7.5" y1="55" x2="22.5" y2="55"/></svg></div>
+      <div class="drink-info"><span class="item-name">Macunaima</span><span class="item-desc">Cachaça · Fernet Branca · limão · açúcar</span></div>
+      <div class="item-price"><span class="price-small">R$</span>40</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="8" rx="11" ry="1.5"/><line x1="4" y1="8" x2="5" y2="44"/><line x1="26" y1="8" x2="25" y2="44"/><path d="M 5 44 Q 8 52 9 55"/><path d="M 25 44 Q 22 52 21 55"/><line x1="9" y1="55" x2="21" y2="55"/></svg></div>
+      <div class="drink-info"><span class="item-name">Paloma</span><span class="item-desc">Tequila · agave · grapefruit · limão · gaseificação</span></div>
+      <div class="item-price"><span class="price-small">R$</span>45</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="16" rx="9" ry="1.4"/><path d="M 6 16 Q 3 22 2 30 Q 4 34 13 36"/><path d="M 24 16 Q 27 22 28 30 Q 26 34 17 36"/><line x1="13" y1="36" x2="17" y2="36"/><line x1="15" y1="36" x2="15" y2="51"/><line x1="8" y1="55" x2="22" y2="55"/><line x1="8" y1="55" x2="12" y2="51"/><line x1="22" y1="55" x2="18" y2="51"/><line x1="12" y1="51" x2="18" y2="51"/></svg></div>
+      <div class="drink-info"><span class="item-name">Paper Plane</span><span class="item-desc">Whiskey bourbon · Aperol · amaro · limão</span></div>
+      <div class="item-price"><span class="price-small">R$</span>40</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="8" rx="13" ry="1.8"/><line x1="2" y1="8" x2="15" y2="28"/><line x1="28" y1="8" x2="15" y2="28"/><line x1="15" y1="28" x2="15" y2="34"/><ellipse cx="15" cy="38" rx="2" ry="4"/><line x1="15" y1="42" x2="15" y2="51"/><line x1="7" y1="55" x2="23" y2="55"/><line x1="7" y1="55" x2="12" y2="51"/><line x1="23" y1="55" x2="18" y2="51"/><line x1="12" y1="51" x2="18" y2="51"/></svg></div>
+      <div class="drink-info"><span class="item-name">Pornstar Martini</span><span class="item-desc">Vodka · baunilha · maracujá · limão · espumante</span></div>
+      <div class="item-price"><span class="price-small">R$</span>45</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="28" rx="11" ry="1.5"/><line x1="4" y1="28" x2="5" y2="50"/><line x1="26" y1="28" x2="25" y2="50"/><line x1="5" y1="50" x2="7" y2="55"/><line x1="25" y1="50" x2="23" y2="55"/><line x1="7" y1="55" x2="23" y2="55"/></svg></div>
+      <div class="drink-info"><span class="item-name">Rusty Nail</span><span class="item-desc">Scotch whisky · Licor Drambuie · bitter</span></div>
+      <div class="item-price"><span class="price-small">R$</span>45</div>
+    </div>
+    <div class="drink-item">
+      <div class="drink-glass"><svg width="18" height="36" viewBox="0 0 30 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="15" cy="10" rx="13" ry="1.8"/><path d="M 2 10 Q 1 22 6 32 Q 10 38 13 40"/><path d="M 28 10 Q 29 22 24 32 Q 20 38 17 40"/><line x1="13" y1="40" x2="17" y2="40"/><line x1="15" y1="40" x2="15" y2="53"/><line x1="7" y1="57" x2="23" y2="57"/><line x1="7" y1="57" x2="11" y2="53"/><line x1="23" y1="57" x2="19" y2="53"/><line x1="11" y1="53" x2="19" y2="53"/></svg></div>
+      <div class="drink-info"><span class="item-name">Side Car</span><span class="item-desc">Brandy Fundador · Cointreau · limão</span></div>
+      <div class="item-price"><span class="price-small">R$</span>45</div>
+    </div>
+  </div>
+
+  <!-- CLÁSSICOS -->
+  <div class="sub-group">
+    <div class="sub-label"><span class="sub-name">Drinks Clássicos</span></div>
+    <div class="item"><div class="item-info"><span class="item-name">Caipirinha</span><span class="item-obs">Consultar sabores disponíveis</span></div><div class="item-price"><span class="price-small">R$</span>30</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Demais Clássicos</span><span class="item-obs">Consulte nosso barman</span></div><div class="item-price"><span class="price-small">R$</span>32</div></div>
+  </div>
+
+  <!-- SOFT DRINKS -->
+  <div class="sub-group">
+    <div class="sub-label"><span class="sub-name">Soft Drinks</span></div>
+    <div class="item"><div class="item-info"><span class="item-name">San Pellegrino</span><span class="item-desc">500 ml · garrafa</span></div><div class="item-price"><span class="price-small">R$</span>32</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Água Prata</span><span class="item-desc">500 ml · garrafa</span></div><div class="item-price"><span class="price-small">R$</span>10</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Sucos Naturais</span><span class="item-desc">300 ml · garrafa</span></div><div class="item-price"><span class="price-small">R$</span>16</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Suco de Tomate</span><span class="item-desc">300 ml</span></div><div class="item-price"><span class="price-small">R$</span>25</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Coca-Cola / Zero</span><span class="item-desc">350 ml · lata</span></div><div class="item-price"><span class="price-small">R$</span>12</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Guaraná / Zero</span><span class="item-desc">350 ml · lata</span></div><div class="item-price"><span class="price-small">R$</span>12</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Tônica / Tônica Zero</span><span class="item-desc">350 ml · lata</span></div><div class="item-price"><span class="price-small">R$</span>12</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Schweppes Citrus</span><span class="item-desc">350 ml · lata</span></div><div class="item-price"><span class="price-small">R$</span>12</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Café Illy</span><span class="item-desc">Xícara</span></div><div class="item-price"><span class="price-small">R$</span>12</div></div>
+  </div>
+
+  <div class="page-foot">
+    <div class="foot-logo">木炭</div>
+    <div class="foot-meta">Pinheiros · São Paulo · @mokutan_pinheiros</div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════
+     SAQUÊS
+══════════════════════════════ -->
+<section class="menu-page" id="page-saques">
+
+  <div class="sec-header">
+    <div class="sec-title">Saquês</div>
+    <div class="sec-jp">日本酒 · Nihonshu</div>
+  </div>
+
+  <div class="sub-group">
+    <div class="sub-label"><span class="sub-name">Taça</span><span class="sub-jp2">杯 · 150 ml</span></div>
+    <div class="sake-item">
+      <div class="sake-top"><div><span class="sake-name">Miyako Homare</span><span class="sake-type">Junmai</span></div><span class="sake-price"><span class="price-small">R$</span>48</span></div>
+      <div class="sake-desc">Leve e delicado, com notas sutis de arroz e leve dulcor. Final limpo e refrescante.</div>
+    </div>
+    <div class="sake-item">
+      <div class="sake-top"><div><span class="sake-name">Banshu Nishiki</span><span class="sake-type">Junmai</span></div><span class="sake-price"><span class="price-small">R$</span>53</span></div>
+      <div class="sake-desc">Elegante e equilibrado, com boa estrutura e leve mineralidade. Fresco e gastronômico.</div>
+    </div>
+
+    <div class="sub-label" style="padding-top:12px;"><span class="sub-name">Garrafa</span><span class="sub-jp2">瓶 · 720 ml</span></div>
+    <div class="sake-item">
+      <div class="sake-top"><div><span class="sake-name">Kami no Izumi</span><span class="sake-type">Junmai</span></div><span class="sake-price"><span class="price-small">R$</span>295</span></div>
+      <div class="sake-desc">Perfil equilibrado, com corpo médio e final limpo.</div>
+    </div>
+    <div class="sake-item">
+      <div class="sake-top"><div><span class="sake-name">Suigei</span><span class="sake-type">Tokubetsu Junmai</span></div><span class="sake-price"><span class="price-small">R$</span>450</span></div>
+      <div class="sake-desc">Estilo seco e vibrante da região de Kochi. Excelente para frutos do mar.</div>
+    </div>
+    <div class="sake-item">
+      <div class="sake-top"><div><span class="sake-name">Gassan Junmai</span><span class="sake-type">Junmai</span></div><span class="sake-price"><span class="price-small">R$</span>490</span></div>
+      <div class="sake-desc">Delicado e elegante, com textura sedosa e aromas suaves de arroz polido.</div>
+    </div>
+    <div class="sake-item">
+      <div class="sake-top"><div><span class="sake-name">Shichida Junmai</span><span class="sake-type">Junmai</span></div><span class="sake-price"><span class="price-small">R$</span>595</span></div>
+      <div class="sake-desc">Gastronômico com corpo presente e profundo umami.</div>
+    </div>
+
+    <div class="sub-label" style="padding-top:12px;"><span class="sub-name">Garrafa Grande</span><span class="sub-jp2">大瓶 · 1,8–2 L</span></div>
+    <div class="sake-item">
+      <div class="sake-top"><div><span class="sake-name">Miyako Homare</span><span class="sake-type">Junmai · 2 L</span></div><span class="sake-price"><span class="price-small">R$</span>480</span></div>
+      <div class="sake-desc">Leve e delicado, com notas sutis de arroz e leve dulcor.</div>
+    </div>
+    <div class="sake-item">
+      <div class="sake-top"><div><span class="sake-name">Banshu Nishiki</span><span class="sake-type">Junmai · 1,8 L</span></div><span class="sake-price"><span class="price-small">R$</span>480</span></div>
+      <div class="sake-desc">Elegante e equilibrado, com boa estrutura e leve mineralidade.</div>
+    </div>
+
+    <div class="sub-label" style="padding-top:12px;"><span class="sub-name">Super Premium</span></div>
+    <div class="sake-item">
+      <div class="sake-top"><div><span class="sake-name">Nanbu Bijin <span class="badge">Seleção da Casa</span></span><span class="sake-type">Tokubetsu Junmai · 720 ml</span></div><span class="sake-price"><span class="price-small">R$</span>630</span></div>
+      <div class="sake-desc">Elegante e aromático, com notas sutis de frutas brancas e final refinado.</div>
+    </div>
+    <div class="sake-item">
+      <div class="sake-top"><div><span class="sake-name">Morishima Junmai Daiginjo Omachi <span class="badge">Seleção da Casa</span></span><span class="sake-type">Junmai Daiginjo · 720 ml</span></div><span class="sake-price"><span class="price-small">R$</span>600</span></div>
+      <div class="sake-desc">Extremamente refinado e aromático, com textura sedosa e final longo e sofisticado.</div>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    <div class="quote-text">Produzido a partir de arroz polido, água pura e koji, o saquê é uma das bebidas mais tradicionais do Japão. Nossa seleção percorre estilos leves e refrescantes até exemplares mais estruturados e aromáticos.</div>
+    <span class="quote-attr">木炭 · MOKUTAN</span>
+  </div>
+
+  <div class="page-foot">
+    <div class="foot-logo">木炭</div>
+    <div class="foot-meta">Pinheiros · São Paulo · @mokutan_pinheiros</div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════
+     VINHOS
+══════════════════════════════ -->
+<section class="menu-page" id="page-vinhos">
+
+  <div class="sec-header">
+    <div class="sec-title">Vinhos</div>
+    <div class="sec-jp">木炭 · Vinhos — Mistral</div>
+  </div>
+
+  <div class="sub-group">
+    <div class="sub-label"><span class="sub-name">Brancos</span><span class="sub-jp2">白ワイン</span></div>
+    <div class="wine-region">África do Sul</div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Robertson Chenin Blanc</span><span class="wine-prod">Robertson Winery · Robertson Valley</span></div><div class="wine-price"><span class="price-small">R$</span>210</div></div>
+    <div class="wine-region">Chile</div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Boya Chardonnay</span><span class="wine-prod">Garcés Silva Family Vineyards · Valle Leyda</span></div><div class="wine-price"><span class="price-small">R$</span>269</div></div>
+    <div class="wine-region">Espanha</div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Infinitus Gewürztraminer</span><span class="wine-prod">Cosecheros y Criadores · Castilla La Mancha</span></div><div class="wine-price"><span class="price-small">R$</span>262</div></div>
+    <div class="wine-region">França</div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Chablis Tête d'Or</span><span class="wine-prod">Domaine Billaud-Simon · Bourgogne</span></div><div class="wine-price"><span class="price-small">R$</span>1.080</div></div>
+    <div class="wine-region">Hungria</div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Tokaji Furmint Mandolás</span><span class="wine-prod">Tokaj Oremus (Vega Sicilia) · Tokaj</span></div><div class="wine-price"><span class="price-small">R$</span>574</div></div>
+    <div class="wine-region">Itália</div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Pinot Grigio Delle Venezie</span><span class="wine-prod">Campagnola · Veneto</span></div><div class="wine-price"><span class="price-small">R$</span>239</div></div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Regaleali Bianco</span><span class="wine-prod">Tasca d'Almerita · Sicilia</span></div><div class="wine-price"><span class="price-small">R$</span>300</div></div>
+    <div class="wine-region">Portugal</div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Luís Pato Maria Gomes</span><span class="wine-prod">Luís Pato · Beira Atlântico</span></div><div class="wine-price"><span class="price-small">R$</span>270</div></div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Natural Mystic</span><span class="wine-prod">Invencível · Vinho Verde</span></div><div class="wine-price"><span class="price-small">R$</span>357</div></div>
+    <div class="wine-region">Uruguai</div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Cisplatino Albariño</span><span class="wine-prod">Pisano · Progreso</span></div><div class="wine-price"><span class="price-small">R$</span>239</div></div>
+  </div>
+
+  <div class="sub-group">
+    <div class="sub-label"><span class="sub-name">Rosés</span><span class="sub-jp2">ロゼ</span></div>
+    <div class="wine-region">Chile</div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Ápice Syrah Rosé</span><span class="wine-prod">Viña Del Triunfo · Valle Central</span></div><div class="wine-price"><span class="price-small">R$</span>234</div></div>
+  </div>
+
+  <div class="sub-group">
+    <div class="sub-label"><span class="sub-name">Tintos</span><span class="sub-jp2">赤ワイン</span></div>
+    <div class="wine-region">Argentina</div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">La Posta Red Blend</span><span class="wine-prod">La Posta (Laura Catena) · Mendoza</span></div><div class="wine-price"><span class="price-small">R$</span>240</div></div>
+    <div class="wine-region">Chile</div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Trofeo Merlot</span><span class="wine-prod">Viña Del Triunfo · Valle Central</span></div><div class="wine-price"><span class="price-small">R$</span>193</div></div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Lapostolle Apalta</span><span class="wine-prod">Lapostolle · Apalta</span></div><div class="wine-price"><span class="price-small">R$</span>462</div></div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Amayna Pinot Noir</span><span class="wine-prod">Garcés Silva Family Vineyards · Valle Leyda</span></div><div class="wine-price"><span class="price-small">R$</span>610</div></div>
+    <div class="wine-region">Itália</div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Braccale</span><span class="wine-prod">Castello di Montepo / Jacopo Biondi Santi · Toscana</span></div><div class="wine-price"><span class="price-small">R$</span>449</div></div>
+  </div>
+
+  <div class="sub-group">
+    <div class="sub-label"><span class="sub-name">Meia Garrafa</span></div>
+    <div class="wine-region">Argentina</div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Alamos Chardonnay</span><span class="wine-prod">Alamos · Mendoza</span></div><div class="wine-price"><span class="price-small">R$</span>133</div></div>
+    <div class="wine-region">Itália</div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Pinot Grigio Delle Venezie</span><span class="wine-prod">Campagnola · Veneto</span></div><div class="wine-price"><span class="price-small">R$</span>160</div></div>
+    <div class="wine-region">Portugal</div>
+    <div class="wine-item"><div class="wine-info"><span class="wine-name">Altano</span><span class="wine-prod">Altano / Symington · Douro</span></div><div class="wine-price"><span class="price-small">R$</span>140</div></div>
+  </div>
+
+  <div class="quote-block">
+    <div class="quote-text">MISTRAL<br><span style="font-size:12px; letter-spacing:2px;">A importadora dos melhores vinhos</span></div>
+  </div>
+
+  <div class="page-foot">
+    <div class="foot-logo">木炭</div>
+    <div class="foot-meta">Pinheiros · São Paulo · @mokutan_pinheiros</div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════
+     BOTTOM NAV
+══════════════════════════════ -->
+<nav class="bottom-nav" role="navigation" aria-label="Seções">
+  <button class="nav-btn active" onclick="showPage('cardapio', this)" aria-label="Cardápio">
+    <span class="nav-icon">食</span>
+    <span class="nav-label">Cardápio</span>
+    <span class="nav-dot"></span>
+  </button>
+  <button class="nav-btn" onclick="showPage('drinks', this)" aria-label="Drinks">
+    <span class="nav-icon">炭</span>
+    <span class="nav-label">Drinks</span>
+    <span class="nav-dot"></span>
+  </button>
+  <button class="nav-btn" onclick="showPage('saques', this)" aria-label="Saquês">
+    <span class="nav-icon">酒</span>
+    <span class="nav-label">Saquês</span>
+    <span class="nav-dot"></span>
+  </button>
+  <button class="nav-btn" onclick="showPage('vinhos', this)" aria-label="Vinhos">
+    <span class="nav-icon">葡</span>
+    <span class="nav-label">Vinhos</span>
+    <span class="nav-dot"></span>
+  </button>
+</nav>
+
+<script>
+function showPage(id, btn) {
+  document.querySelectorAll('.menu-page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+</script>
+
+</body>
+</html>
