@@ -137,11 +137,12 @@ body {
 .body-text {
   font-family: var(--font-body);
   font-size: 1.05rem;
+  font-weight: 500;
   line-height: 1.9;
   color: var(--smoke);
   margin-bottom: 16px;
 }
 .body-text strong {
   color: var(--dim);
-  font-weight: 500;
+  font-weight: 600;
 }
