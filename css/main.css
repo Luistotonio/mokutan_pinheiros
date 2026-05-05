@@ -53,6 +53,7 @@
   margin-bottom: 12px;
   opacity: 0;
   animation: up .9s .5s forwards;
+  text-shadow: 0 0 20px rgba(244,236,217,1), 0 0 40px rgba(244,236,217,0.9);
 }
 .hero-title {
   font-family: var(--font-display);
