@@ -10,18 +10,19 @@ nav {
   left: 0;
   right: 0;
   z-index: 200;
-  padding: 32px 64px;
+  padding: 22px 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: all 0.5s;
+  transition: all 0.4s;
+  background: rgba(244,236,217,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--rule);
 }
 
 nav.on {
-  padding: 16px 64px;
-  background: rgba(244,236,217,0.94);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--rule);
+  padding: 14px 64px;
+  background: rgba(244,236,217,0.97);
 }
 
 /* ── LOGO ── */

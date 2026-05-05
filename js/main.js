@@ -54,7 +54,7 @@
     el.classList.add('on');
   };
 
-  /* ── GALERIA DRAG ── */
+  /* ── GALERIA DRAG + BOTÕES ── */
   const gt = document.getElementById('gt');
   if (gt) {
     let isDragging = false;
@@ -81,7 +81,6 @@
       });
     });
 
-    /* Touch support */
     gt.addEventListener('touchstart', (e) => {
       startX = e.touches[0].pageX - gt.offsetLeft;
       scrollLeft = gt.scrollLeft;
@@ -91,6 +90,14 @@
       const x = e.touches[0].pageX - gt.offsetLeft;
       gt.scrollLeft = scrollLeft - (x - startX) * 1.2;
     }, { passive: true });
+
+    const scrollAmt = 420;
+    document.getElementById('gprev')?.addEventListener('click', () => {
+      gt.scrollBy({ left: -scrollAmt, behavior: 'smooth' });
+    });
+    document.getElementById('gnext')?.addEventListener('click', () => {
+      gt.scrollBy({ left: scrollAmt, behavior: 'smooth' });
+    });
   }
 
   /* ── FORMULÁRIO DE RESERVA ── */
