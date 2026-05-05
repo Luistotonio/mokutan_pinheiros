@@ -103,7 +103,7 @@ body {
   font-family: var(--font-japanese);
   font-size: .65rem;
   letter-spacing: .3em;
-  color: var(--ember);
+  color: var(--bronze);
   text-transform: uppercase;
   margin-bottom: 20px;
 }

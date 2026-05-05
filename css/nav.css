@@ -42,7 +42,7 @@ nav.on {
   display: block;
   font-family: var(--font-japanese);
   font-size: 0.65rem;
-  color: var(--ember);
+  color: var(--bronze);
   letter-spacing: 0.18em;
 }
 
@@ -78,7 +78,7 @@ nav.on {
 
 /* ── LINK CARDÁPIO (badge destaque) ── */
 .nlinks a.nav-cardapio {
-  color: var(--ember);
+  color: var(--bronze);
 }
 .nlinks a.nav-cardapio:hover {
   color: var(--elite);

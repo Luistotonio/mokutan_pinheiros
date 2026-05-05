@@ -884,7 +884,7 @@ footer {
 .fjp {
   font-family: var(--font-japanese);
   font-size: .78rem;
-  color: var(--ember);
+  color: var(--bronze);
   letter-spacing: .15em;
   margin-top: 4px;
   margin-bottom: 16px;
@@ -901,7 +901,7 @@ footer {
   font-family: var(--font-japanese);
   font-size: .6rem;
   letter-spacing: .22em;
-  color: var(--ember);
+  color: var(--bronze);
   margin-bottom: 20px;
 }
 .flinks {
@@ -932,7 +932,7 @@ footer {
   font-size: .6rem;
   letter-spacing: .1em;
   color: var(--smoke);
-  opacity: .55;
+  opacity: .8;
 }
 .fkj {
   font-family: var(--font-japanese);
