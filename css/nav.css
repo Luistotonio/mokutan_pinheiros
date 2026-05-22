@@ -149,14 +149,6 @@ nav.on {
   color: var(--ember);
 }
 
-/* nav alinhado ao frame em telas muito largas */
-@media (min-width: 1441px) {
-  nav {
-    left: calc(50% - 720px);
-    right: calc(50% - 720px);
-  }
-}
-
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
   nav {
