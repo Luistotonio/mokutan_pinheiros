@@ -1073,6 +1073,81 @@ footer {
   color: rgba(122,92,18,.2);
 }
 
+/* ════════════════════════════════════════════════════════════
+   SEÇÕES ESCURAS — mesma energia e confiança do hero
+   Conceito (texto), Bincho, Galeria, Reservas info, Footer
+   ════════════════════════════════════════════════════════════ */
+
+/* ── conceito — coluna de texto ── */
+/* gradiente vai até --char para alinhar com o fundo da coluna */
+.c-img-ov { background: linear-gradient(to right, transparent 55%, var(--char) 100%); }
+.c-txt { background: var(--char); }
+.c-txt::before        { color: rgba(244,236,217,.04); }
+.c-txt .lbl           { color: rgba(140,101,20,.85); }
+.c-txt .heading       { color: rgba(244,236,217,.92); }
+.c-txt .heading-i     { color: rgba(244,236,217,.72); }
+.c-txt .rule          { background: var(--ember); }
+.c-txt .body-text     { color: rgba(244,236,217,.52); }
+.c-txt .body-text strong { color: rgba(244,236,217,.75); }
+.c-txt .pill          { border-color: rgba(244,236,217,.12); color: rgba(244,236,217,.48); }
+.c-txt .pill-jp       { color: var(--ember); }
+
+/* ── bincho — 3 colunas ── */
+/* números grandes (5.5rem) viram marcas d'água dramáticas no escuro */
+.bincho    { background: var(--char); }
+.bdiv      { background: rgba(244,236,217,.07); }
+.bnum      { color: rgba(244,236,217,.1); }
+.btitle    { color: rgba(244,236,217,.85); }
+.btitle-jp { color: var(--ember); }
+.btext     { color: rgba(244,236,217,.48); }
+
+/* ── galeria — fotos sempre destacam no escuro ── */
+.galeria           { background: var(--char); }
+.galeria .lbl      { color: rgba(140,101,20,.85); }
+.galeria .heading  { color: rgba(244,236,217,.92); }
+.galeria .heading-i { color: rgba(244,236,217,.72); }
+.gal-hint          { color: rgba(244,236,217,.32); }
+.galeria .gnav     { border-color: rgba(244,236,217,.16); }
+.galeria .gnav svg { stroke: rgba(244,236,217,.45); }
+.galeria .gnav:hover { background: rgba(244,236,217,.07); border-color: var(--ember); transform: scale(1.1); }
+.galeria .gnav:hover svg { stroke: var(--ember); }
+
+/* ── reservas — coluna de informações ── */
+.res-info           { background: var(--char); border-right-color: rgba(244,236,217,.07); }
+.res-info .lbl      { color: rgba(140,101,20,.85); }
+.res-info .heading  { color: rgba(244,236,217,.92); }
+.res-info .heading-i { color: rgba(244,236,217,.72); }
+.res-info .rule     { background: var(--ember); }
+.res-info .body-text { color: rgba(244,236,217,.52); }
+.ht                 { border-top-color: rgba(244,236,217,.08); }
+.ht-lbl             { color: var(--ember); }
+.htr                { border-bottom-color: rgba(244,236,217,.06); font-family: var(--font-body); }
+.htr .day           { color: rgba(244,236,217,.72); }
+.htr .time          { color: rgba(244,236,217,.42); }
+.htr.cls .time      { opacity: .28; }
+.ctct               { border-top-color: rgba(244,236,217,.08); }
+.cicon              { border-color: rgba(244,236,217,.12); }
+.cval               { color: rgba(244,236,217,.52); }
+.cval a             { color: rgba(244,236,217,.52); }
+.cval a:hover       { color: var(--ember); }
+
+/* ── footer ── */
+footer    { background: var(--char); border-top-color: rgba(244,236,217,.06); }
+.fn       { color: rgba(244,236,217,.85); }
+.fjp      { color: rgba(140,101,20,.65); }
+.fdesc    { color: rgba(244,236,217,.4); }
+.fcol-t   { color: rgba(140,101,20,.65); }
+.flinks a { color: rgba(244,236,217,.42); }
+.flinks a:hover { color: var(--ember); }
+.fbot     { border-top-color: rgba(244,236,217,.06); }
+.fcopy    { color: rgba(244,236,217,.28); opacity: 1; }
+.fkj      { color: rgba(244,236,217,.05); }
+
+/* borda inferior do res-info no mobile (empilhado) */
+@media (max-width: 960px) {
+  .res-info { border-bottom-color: rgba(244,236,217,.08); }
+}
+
 /* ── STICKY BOTTOM BAR (mobile only) ── */
 .mbar {
   display: none;
