@@ -1131,6 +1131,20 @@ footer {
 .cval a             { color: rgba(244,236,217,.52); }
 .cval a:hover       { color: var(--ember); }
 
+/* ── reservas — coluna CTA / form ── */
+/* .reservas herda bg claro; precisamos escurecer o container e o form */
+.reservas           { background: var(--char); }
+.res-form           { background: var(--char); }
+.getin-jp           { opacity: .22; }
+.getin-head         { color: rgba(244,236,217,.88); }
+.getin-txt          { color: rgba(244,236,217,.48); }
+.getin-or span:first-child,
+.getin-or span:last-child { background: rgba(244,236,217,.1); }
+.getin-or span:nth-child(2) { color: rgba(244,236,217,.35); }
+.getin-wa           { color: rgba(244,236,217,.45); }
+.getin-wa:hover     { color: var(--ember); }
+/* btn-f já funciona no escuro (bronze sólido + texto creme) */
+
 /* ── footer ── */
 footer    { background: var(--char); border-top-color: rgba(244,236,217,.06); }
 .fn       { color: rgba(244,236,217,.85); }
