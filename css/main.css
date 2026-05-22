@@ -1157,6 +1157,59 @@ footer    { background: var(--char); border-top-color: rgba(244,236,217,.06); }
 .fcopy    { color: rgba(244,236,217,.28); opacity: 1; }
 .fkj      { color: rgba(244,236,217,.05); }
 
+/* ── cardápio preview ── */
+/* seção de menu: fundo escuro com hierarquia de creme para legibilidade */
+.cardapio            { background: var(--char); }
+.cardapio .lbl       { color: rgba(140,101,20,.85); }
+.cardapio .heading   { color: rgba(244,236,217,.92); }
+.cardapio .heading-i { color: rgba(244,236,217,.72); }
+/* btn-o no header do cardápio */
+.cd-hd .btn-o  { border-color: rgba(244,236,217,.28); color: rgba(244,236,217,.65); }
+.cd-hd .btn-o:hover { border-color: rgba(244,236,217,.7); color: rgba(244,236,217,.95); transform: translateY(-2px); }
+/* tabs */
+.tabs          { border-bottom-color: rgba(244,236,217,.1); }
+.tab           { color: rgba(244,236,217,.38); }
+.tab.on        { color: var(--ember); }
+.tab:hover:not(.on) { color: rgba(244,236,217,.7); }
+.tab-ind       { background: var(--ember); }
+/* itens do grid */
+.mi-jp         { color: var(--ember); }
+.mi-name       { color: rgba(244,236,217,.85); }
+.mi-desc       { color: rgba(244,236,217,.4); }
+.mi-price      { color: rgba(140,101,20,.9); }
+.mi-badge      { color: var(--ember); border-color: var(--ember); }
+.mitem         { border-bottom-color: rgba(244,236,217,.07); }
+.mitem:nth-child(even) { border-left-color: rgba(244,236,217,.07); }
+/* hire note */
+.yaki-note     { background: rgba(244,236,217,.04); border-left-color: var(--ember); }
+.yn-kanji      { color: var(--ember); }
+.yn-text       { color: rgba(244,236,217,.46); }
+/* grade de yakitori */
+.ygrid         { background: rgba(244,236,217,.06); }
+.yitem         { background: var(--char); }
+.yitem:hover   { background: rgba(244,236,217,.05); }
+.yname         { color: rgba(244,236,217,.82); }
+.ypart         { color: rgba(244,236,217,.36); }
+.yprice        { color: rgba(140,101,20,.85); }
+/* grade de saquês */
+.sgrid         { background: rgba(244,236,217,.06); }
+.sitem         { background: var(--char); }
+.sitem:hover   { background: rgba(244,236,217,.05); }
+.sname         { color: rgba(244,236,217,.82); }
+.stype         { color: var(--ember); }
+.sdesc         { color: rgba(244,236,217,.4); }
+.sprices span  { color: rgba(244,236,217,.38); }
+.sprices strong { color: rgba(140,101,20,.85); }
+/* btn-o no rodapé do cardápio */
+.cd-foot .btn-o { border-color: rgba(244,236,217,.28); color: rgba(244,236,217,.65); }
+.cd-foot .btn-o:hover { border-color: rgba(244,236,217,.7); color: rgba(244,236,217,.95); }
+
+/* ── galeria — fundo levemente mais quente, fotos mais vivas ── */
+/* #0e0c09 puro ficou pesado demais; dark warm dá respiração sem perder atmosfera */
+.galeria       { background: #1c1812; }
+.gitem img     { filter: brightness(.94) saturate(.88); }
+.gitem:hover img { filter: brightness(1.04) saturate(1.06); }
+
 /* borda inferior do res-info no mobile (empilhado) */
 @media (max-width: 960px) {
   .res-info { border-bottom-color: rgba(244,236,217,.08); }
