@@ -50,12 +50,24 @@
   document.querySelectorAll('.rv').forEach((el) => revealObserver.observe(el));
 
   /* ── TABS DO CARDÁPIO ── */
+  function moveTabInd(el) {
+    const ind = document.getElementById('tab-ind');
+    if (!ind) return;
+    ind.style.left  = el.offsetLeft + 'px';
+    ind.style.width = el.offsetWidth + 'px';
+  }
+
   window.tab = function (id, el) {
     document.querySelectorAll('.panel').forEach((p) => p.classList.remove('on'));
     document.querySelectorAll('.tab').forEach((t) => t.classList.remove('on'));
     document.getElementById('p-' + id).classList.add('on');
     el.classList.add('on');
+    moveTabInd(el);
   };
+
+  /* posiciona indicador na tab ativa ao carregar */
+  const firstTab = document.querySelector('.tab.on');
+  if (firstTab) moveTabInd(firstTab);
 
   /* ── GALERIA DRAG + BOTÕES ── */
   const gt = document.getElementById('gt');

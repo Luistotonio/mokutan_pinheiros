@@ -66,6 +66,26 @@ nav.on {
 .nlinks a:hover {
   color: var(--ink);
 }
+/* underline deslizante — entra da esquerda, sai pela direita */
+.nlinks a:not(.nrsv) {
+  position: relative;
+}
+.nlinks a:not(.nrsv)::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--ember);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .4s cubic-bezier(0.76,0,0.24,1);
+}
+.nlinks a:not(.nrsv):hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
 .nrsv {
   color: #fff !important;
   background: var(--ember);

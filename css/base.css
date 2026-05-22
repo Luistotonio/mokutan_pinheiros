@@ -21,6 +21,7 @@
   --ink:   #1c1a17;
   --dim:   #3a342e;
   --rule:  rgba(122,92,18,0.2);
+  --char:  #0e0c09;
 
   --font-display:  'Cinzel', serif;
   --font-body:     'Cormorant Garamond', Georgia, serif;
@@ -62,7 +63,7 @@ body {
   letter-spacing: .22em;
   text-transform: uppercase;
   padding: 14px 38px;
-  transition: all .3s;
+  transition: background .25s, color .25s, border-color .25s, transform .4s cubic-bezier(0.34,1.56,0.64,1);
 }
 
 .btn-f {
@@ -71,7 +72,7 @@ body {
 }
 .btn-f:hover {
   background: var(--elite);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .btn-o {
@@ -81,22 +82,34 @@ body {
 .btn-o:hover {
   border-color: var(--bronze);
   color: var(--bronze);
+  transform: translateY(-2px);
 }
 
 /* ── REVEAL ANIMATION ── */
 .rv {
   opacity: 0;
-  transform: translateY(34px);
-  transition: opacity .9s ease, transform .9s ease;
+  transform: translateY(24px);
+  transition: opacity .65s cubic-bezier(0.16,1,0.3,1), transform .65s cubic-bezier(0.16,1,0.3,1);
 }
 .rv.in {
   opacity: 1;
   transform: none;
 }
-.d1 { transition-delay: .12s; }
-.d2 { transition-delay: .24s; }
-.d3 { transition-delay: .36s; }
-.d4 { transition-delay: .48s; }
+/* variante: entra da esquerda — para elementos de conteúdo lateral */
+.rv.rv-x {
+  transform: translateX(-22px);
+}
+.rv.rv-x.in {
+  transform: none;
+}
+.d1 { transition-delay: .10s; }
+.d2 { transition-delay: .20s; }
+.d3 { transition-delay: .32s; }
+.d4 { transition-delay: .44s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rv, .rv.rv-x { transition-duration: 0.01s; }
+}
 
 /* ── LABELS / HEADINGS COMPARTILHADOS ── */
 .lbl {

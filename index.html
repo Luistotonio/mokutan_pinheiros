@@ -75,6 +75,34 @@
   </div>
 </section>
 
+<!-- ════════════════ TICKER ════════════════ -->
+<!-- faixa escura rolando — ponte entre o hero refinado e o conceito urbano -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="t-en">Irasshaimase</span><span class="t-dot">·</span>
+    <span class="t-jp">居酒屋</span><span class="t-dot">·</span>
+    <span class="t-en">Pinheiros, SP</span><span class="t-dot">·</span>
+    <span class="t-jp">木炭</span><span class="t-dot">·</span>
+    <span class="t-en">Brasa &amp; Fogo</span><span class="t-dot">·</span>
+    <span class="t-en">Suntory</span><span class="t-dot">·</span>
+    <span class="t-jp">壁画</span><span class="t-dot">·</span>
+    <span class="t-en">Izakaya</span><span class="t-dot">·</span>
+    <span class="t-jp">炭</span><span class="t-dot">·</span>
+    <span class="t-en">Grupo Huto</span><span class="t-dot">·</span>
+    <!-- duplicado para loop contínuo sem JS -->
+    <span class="t-en">Irasshaimase</span><span class="t-dot">·</span>
+    <span class="t-jp">居酒屋</span><span class="t-dot">·</span>
+    <span class="t-en">Pinheiros, SP</span><span class="t-dot">·</span>
+    <span class="t-jp">木炭</span><span class="t-dot">·</span>
+    <span class="t-en">Brasa &amp; Fogo</span><span class="t-dot">·</span>
+    <span class="t-en">Suntory</span><span class="t-dot">·</span>
+    <span class="t-jp">壁画</span><span class="t-dot">·</span>
+    <span class="t-en">Izakaya</span><span class="t-dot">·</span>
+    <span class="t-jp">炭</span><span class="t-dot">·</span>
+    <span class="t-en">Grupo Huto</span><span class="t-dot">·</span>
+  </div>
+</div>
+
 <!-- ════════════════ CONCEITO ════════════════ -->
 <section class="conceito" id="conceito">
   <div class="c-img rv">
@@ -112,6 +140,7 @@
     <div class="tab" onclick="tab('hire',this)">Hire</div>
     <div class="tab" onclick="tab('drinks',this)">Drinks</div>
     <div class="tab" onclick="tab('saques',this)">Saquês</div>
+    <span class="tab-ind" id="tab-ind"></span>
   </div>
 
   <div class="panel on" id="p-sumibi">
@@ -177,21 +206,49 @@
     </div>
   </div>
   <div class="gtrack" id="gt">
-    <!-- 1: fachada — wide no mobile (16:9) -->
-    <div class="gitem"><img src="img/DSC00494.JPG" alt="Fachada Mokutan Pinheiros" loading="lazy"></div>
-    <!-- 2, 3: pratos -->
-    <div class="gitem"><img src="img/pratos/_S4A2516.jpg" alt="Pratos Mokutan" loading="lazy"></div>
-    <div class="gitem"><img src="img/pratos/_S4A2565.jpg" alt="Grelhados na brasa" loading="lazy"></div>
-    <!-- 4: mural 1 — wide no mobile (16:9) — substituir pelo filename real -->
-    <div class="gitem"><img src="img/murais/mural-01.jpg" alt="Arte Mokutan Pinheiros" loading="lazy"></div>
-    <!-- 5, 6: drinks + espaço -->
-    <div class="gitem"><img src="img/pratos/_S4A2579.jpg" alt="Drinks Mokutan" loading="lazy"></div>
-    <div class="gitem"><img src="img/DSC00490.JPG" alt="Letreiro Mokutan" loading="lazy"></div>
+    <!-- 1: fachada -->
+    <div class="gitem">
+      <img src="img/DSC00494.JPG" alt="Fachada Mokutan Pinheiros" loading="lazy">
+      <div class="gitem-lbl">Espaço · 空間</div>
+    </div>
+    <!-- 2, 3: pratos na brasa -->
+    <div class="gitem">
+      <img src="img/pratos/_S4A2516.jpg" alt="Pratos Mokutan" loading="lazy">
+      <div class="gitem-lbl">Brasa · 炭</div>
+    </div>
+    <div class="gitem">
+      <img src="img/pratos/_S4A2565.jpg" alt="Grelhados na brasa" loading="lazy">
+      <div class="gitem-lbl">Brasa · 炭</div>
+    </div>
+    <!-- 4: mural 1 — wide no mobile (16:9) -->
+    <div class="gitem">
+      <img src="img/murais/mural-01.jpg" alt="Arte Mokutan Pinheiros" loading="lazy">
+      <div class="gitem-lbl">Arte · 壁画</div>
+    </div>
+    <!-- 5: drinks -->
+    <div class="gitem">
+      <img src="img/pratos/_S4A2579.jpg" alt="Drinks Mokutan" loading="lazy">
+      <div class="gitem-lbl">Drinks · 酒</div>
+    </div>
+    <!-- 6: espaço -->
+    <div class="gitem">
+      <img src="img/DSC00490.JPG" alt="Letreiro Mokutan" loading="lazy">
+      <div class="gitem-lbl">Espaço · 空間</div>
+    </div>
     <!-- 7: prato destaque — wide no mobile (16:9) -->
-    <div class="gitem"><img src="img/pratos/_S4A2638.jpg" alt="Pratos Mokutan" loading="lazy"></div>
-    <!-- 8, 9: murais 2 e 3 — substituir pelos filenames reais -->
-    <div class="gitem"><img src="img/murais/mural-02.jpg" alt="Arte Mokutan" loading="lazy"></div>
-    <div class="gitem"><img src="img/murais/mural-03.jpg" alt="Arte Mokutan" loading="lazy"></div>
+    <div class="gitem">
+      <img src="img/pratos/_S4A2638.jpg" alt="Pratos Mokutan" loading="lazy">
+      <div class="gitem-lbl">Brasa · 炭</div>
+    </div>
+    <!-- 8, 9: murais -->
+    <div class="gitem">
+      <img src="img/murais/mural-02.jpg" alt="Arte Mokutan" loading="lazy">
+      <div class="gitem-lbl">Arte · 壁画</div>
+    </div>
+    <div class="gitem">
+      <img src="img/murais/mural-03.jpg" alt="Arte Mokutan" loading="lazy">
+      <div class="gitem-lbl">Arte · 壁画</div>
+    </div>
   </div>
 </section>
 
@@ -199,6 +256,7 @@
 <div class="fogo">
   <div class="fogo-bg"></div>
   <div class="fogo-ov"></div>
+  <div class="fogo-kj" aria-hidden="true">火</div>
   <div class="fogo-c rv">
     <p class="fogo-pre">木炭 · Brasa</p>
     <p class="fogo-txt">O fogo que revela a essência —<br>não disfarça, não esconde.<br>Somente o ingrediente, o calor, e o tempo certo.</p>
