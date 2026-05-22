@@ -3,6 +3,15 @@
    Estilos exclusivos do index.html
    ───────────────────────────────────────────── */
 
+/* ── FRAME — container com max-width e bordas verticais ── */
+.frame {
+  max-width: 1440px;
+  margin: 0 auto;
+  border-left: 1px solid rgba(244,236,217,.09);
+  border-right: 1px solid rgba(244,236,217,.09);
+  position: relative;
+}
+
 /* ── HERO ── */
 .hero {
   position: relative;
