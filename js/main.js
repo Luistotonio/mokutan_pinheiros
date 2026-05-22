@@ -16,7 +16,10 @@
   const hbg = document.getElementById('hbg');
   const mm  = document.getElementById('mm');
 
-  hbg.addEventListener('click', () => mm.classList.toggle('open'));
+  hbg.addEventListener('click', () => {
+    const isOpen = mm.classList.toggle('open');
+    hbg.setAttribute('aria-expanded', isOpen);
+  });
 
   function closeMobileMenu() {
     mm.classList.remove('open');
@@ -109,5 +112,20 @@
       fok.style.display = 'block';
     }
   };
+
+  /* ── MBAR HIDE ON SCROLL DOWN ── */
+  const mbar = document.getElementById('mbar');
+  if (mbar) {
+    let lastY = 0;
+    window.addEventListener('scroll', () => {
+      const curr = window.scrollY;
+      if (curr > lastY && curr > 160) {
+        mbar.classList.add('hidden');
+      } else {
+        mbar.classList.remove('hidden');
+      }
+      lastY = curr <= 0 ? 0 : curr;
+    }, { passive: true });
+  }
 
 })();

@@ -524,12 +524,15 @@
   filter: brightness(1) saturate(1);
   transform: scale(1.03);
 }
-.gitem:nth-child(1) { width: 420px; height: 520px; }
-.gitem:nth-child(2) { width: 310px; height: 520px; }
+.gitem:nth-child(1) { width: 460px; height: 520px; }
+.gitem:nth-child(2) { width: 320px; height: 520px; }
 .gitem:nth-child(3) { width: 500px; height: 520px; }
-.gitem:nth-child(4) { width: 350px; height: 520px; }
-.gitem:nth-child(5) { width: 460px; height: 520px; }
-.gitem:nth-child(6) { width: 330px; height: 520px; }
+.gitem:nth-child(4) { width: 380px; height: 520px; }
+.gitem:nth-child(5) { width: 440px; height: 520px; }
+.gitem:nth-child(6) { width: 360px; height: 520px; }
+.gitem:nth-child(7) { width: 320px; height: 520px; }
+.gitem:nth-child(8) { width: 480px; height: 520px; }
+.gitem:nth-child(9) { width: 400px; height: 520px; }
 
 /* ── QUOTE / FOGO ── */
 .fogo {
@@ -546,8 +549,14 @@
 .fogo-bg {
   position: absolute;
   inset: 0;
-  background: url('../img/pratos/_S4A2565.jpg') center 40%/cover no-repeat fixed;
+  background: url('../img/pratos/_S4A2565.jpg') center 40%/cover no-repeat;
   filter: brightness(.22) saturate(.4);
+}
+/* parallax só em desktop — background-attachment:fixed quebra no iOS Safari */
+@media (hover: hover) and (pointer: fine) {
+  .fogo-bg {
+    background-attachment: fixed;
+  }
 }
 .fogo-ov {
   position: absolute;
@@ -950,6 +959,11 @@ footer {
   color: rgba(122,92,18,.2);
 }
 
+/* ── STICKY BOTTOM BAR (mobile only) ── */
+.mbar {
+  display: none;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
   .hero-body    { padding: 0 28px; }
@@ -971,16 +985,20 @@ footer {
   .ygrid        { grid-template-columns: 1fr 1fr; }
   .sgrid        { grid-template-columns: 1fr; }
 
+  /* galeria — mantém scroll horizontal no tablet */
   .galeria      { padding: 72px 0 72px 28px; }
   .gal-hd       { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .gal-hint     { padding-right: 0; text-align: left; }
-  .gitem        { height: 340px; }
-  .gitem:nth-child(1) { width: 280px; }
-  .gitem:nth-child(2) { width: 210px; }
-  .gitem:nth-child(3) { width: 330px; }
-  .gitem:nth-child(4) { width: 240px; }
+  .gal-nav      { padding-right: 28px; }
+  .gitem        { height: 380px; }
+  .gitem:nth-child(1) { width: 300px; }
+  .gitem:nth-child(2) { width: 220px; }
+  .gitem:nth-child(3) { width: 340px; }
+  .gitem:nth-child(4) { width: 260px; }
   .gitem:nth-child(5) { width: 300px; }
-  .gitem:nth-child(6) { width: 220px; }
+  .gitem:nth-child(6) { width: 240px; }
+  .gitem:nth-child(7) { width: 220px; }
+  .gitem:nth-child(8) { width: 320px; }
+  .gitem:nth-child(9) { width: 280px; }
 
   .fogo         { padding: 60px 28px; }
 
@@ -990,6 +1008,151 @@ footer {
   .getin-cta    { max-width: 100%; }
 
   .ftop         { grid-template-columns: 1fr; gap: 40px; }
-  footer        { padding: 56px 28px 30px; }
+  footer        { padding: 56px 28px calc(30px + 72px + env(safe-area-inset-bottom, 0px)); }
   .fbot         { flex-direction: column; gap: 14px; }
+
+  /* sticky bottom bar */
+  .mbar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 150;
+    background: rgba(250,246,238,0.97);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid var(--rule);
+    padding: 10px 16px env(safe-area-inset-bottom, 10px);
+    gap: 10px;
+    transition: transform 0.3s ease;
+  }
+  .mbar.hidden {
+    transform: translateY(110%);
+  }
+  .mbar-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 12px;
+    font-family: var(--font-display);
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .mbar-btn svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .mbar-menu {
+    border: 1.5px solid rgba(122,92,18,0.4);
+    color: var(--ink);
+  }
+  .mbar-menu:hover { border-color: var(--bronze); color: var(--bronze); }
+  .mbar-rsv {
+    background: var(--bronze);
+    color: var(--bg3);
+  }
+  .mbar-rsv:hover { background: var(--elite); }
+}
+
+/* ── 640px — celulares ── */
+@media (max-width: 640px) {
+
+  /* hero */
+  .hero-title {
+    font-size: clamp(3.2rem, 14vw, 5rem);
+    letter-spacing: 0.1em;
+  }
+  .hero-desc { font-size: 1rem; }
+  .hero-acts {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+  }
+  .hero-acts .btn {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* tabs overflow no celular */
+  .tabs {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+
+  /* galeria — grid 2 colunas */
+  .galeria {
+    padding: 60px 16px;
+    overflow: visible;
+  }
+  .gal-hd { padding-right: 0; margin-bottom: 24px; }
+  .gal-nav { display: none; }
+
+  .gtrack {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    overflow: visible;
+    cursor: default;
+  }
+  .gtrack:active { cursor: default; }
+
+  /* todos portrait */
+  .gitem,
+  .gitem:nth-child(1),
+  .gitem:nth-child(2),
+  .gitem:nth-child(3),
+  .gitem:nth-child(4),
+  .gitem:nth-child(5),
+  .gitem:nth-child(6),
+  .gitem:nth-child(7),
+  .gitem:nth-child(8),
+  .gitem:nth-child(9) {
+    width: auto !important;
+    height: auto !important;
+    aspect-ratio: 4/5;
+  }
+
+  /* itens 1, 4, 7 → landscape full-width
+     1 = fachada (apresenta o espaço)
+     4 = primeiro mural (impacto visual)
+     7 = prato destaque                    */
+  .gitem:nth-child(1),
+  .gitem:nth-child(4),
+  .gitem:nth-child(7) {
+    grid-column: 1 / -1;
+    aspect-ratio: 16/9;
+  }
+
+  .gitem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* fogo */
+  .fogo { height: auto; min-height: 0; padding: 52px 24px; }
+  .fogo-txt { font-size: clamp(1.1rem, 5vw, 1.5rem); }
+
+  /* reservas */
+  .res-info { padding: 56px 20px; }
+  .res-form  { padding: 48px 20px; }
+
+  /* footer */
+  footer { padding: 48px 20px calc(24px + 72px + env(safe-area-inset-bottom, 0px)); }
+  .ftop  { gap: 32px; }
 }
