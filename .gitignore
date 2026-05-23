@@ -32,3 +32,6 @@ npm-debug.log*
 
 # Arquivos excluídos do deploy
 mokutan-mobile.html
+
+# Fotos originais (alta resolução — ficam só localmente, não vão pro deploy)
+img/originais/

@@ -4,6 +4,13 @@
    Tema: papel / luz (contrasta com o dark do index)
    ───────────────────────────────────────────── */
 
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 /* ── VARIÁVEIS DO CARDÁPIO (override do dark theme) ── */
 :root {
   --page-bg:  #f4ecd9;
@@ -38,7 +45,7 @@ body {
   padding: 40px 52px 32px;
 }
 .header-inner {
-  max-width: 900px;
+  max-width: 1360px;
   margin: 0 auto;
   display: flex;
   align-items: flex-end;
@@ -141,10 +148,14 @@ body {
   transition: color 0.15s, background 0.15s;
 }
 .page-nav a:hover,
-.page-nav a:focus {
+.page-nav a:focus,
+.page-nav a.active {
   color: var(--bronze);
   background: var(--badge-bg);
   outline: none;
+}
+.page-nav a.active {
+  border-bottom: 2px solid var(--bronze);
 }
 .page-nav a:focus-visible {
   outline: 2px solid var(--bronze);
@@ -153,7 +164,7 @@ body {
 
 /* ── WRAPPER ── */
 .wrap {
-  max-width: 900px;
+  max-width: 1360px;
   margin: 0 auto;
   padding: 0 32px;
 }
@@ -161,6 +172,7 @@ body {
 /* ── SEÇÕES ── */
 .menu-section {
   margin-top: 56px;
+  scroll-margin-top: 52px;
 }
 .section-head {
   display: flex;
@@ -430,9 +442,23 @@ body {
   margin-top: 14px;
 }
 
+/* ── VARIANTES DE PREÇO ── */
+.item-price-consult {
+  font-size: 0.72rem;
+  color: var(--sub);
+}
+
+/* ── QUOTE MARCA (bloco MISTRAL) ── */
+.quote-brand {
+  font-family: 'Cinzel', serif;
+  font-style: normal;
+  letter-spacing: 4px;
+  font-size: 0.9rem;
+}
+
 /* ── FOOTER CARDÁPIO ── */
 .site-footer {
-  max-width: 900px;
+  max-width: 1360px;
   margin: 56px auto 0;
   padding: 24px 32px;
   border-top: 1px solid var(--rule);

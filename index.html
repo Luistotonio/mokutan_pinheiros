@@ -18,6 +18,9 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230e0c09'/><text x='16' y='24' text-anchor='middle' font-size='22' fill='%239e7220' font-family='serif'>木</text></svg>">
 
+  <!-- Preload crítico: hero LCP -->
+  <link rel="preload" as="image" href="img/DSC00488.JPG" fetchpriority="high">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +55,7 @@
   <a href="#conceito">Conceito</a>
   <a href="cardapio.html">Cardápio</a>
   <a href="#galeria">Galeria</a>
-  <a href="https://reservation.getin.app/865NDakj" target="_blank" rel="noopener">Reservar</a>
+  <a href="https://reservation.getin.app/865NDakj" target="_blank" rel="noopener" class="mmenu-rsv">Reservar</a>
 </div>
 
 <!-- ════════════════ HERO ════════════════ -->
@@ -62,7 +65,7 @@
   <div class="hero-kanji" aria-hidden="true">木炭</div>
   <div class="hero-body">
     <p class="hero-tag">木炭 · Pinheiros, São Paulo</p>
-    <h1 class="hero-title">Mokutan<span class="hero-sub">居酒屋 · Izakaya</span></h1>
+    <h1 class="hero-title">Mokutan<span class="hero-sub"><span class="hs-jp">居酒屋</span><span class="hs-dot">·</span><span class="hs-en">Izakaya</span></span></h1>
     <p class="hero-desc">O sabor que só a brasa pode criar.</p>
     <div class="hero-acts">
       <a href="https://reservation.getin.app/865NDakj" target="_blank" rel="noopener" class="btn btn-f">Fazer Reserva</a>
@@ -76,50 +79,95 @@
 </section>
 
 <!-- ════════════════ TICKER ════════════════ -->
-<!-- faixa escura rolando — ponte entre o hero refinado e o conceito urbano -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
     <span class="t-en">Irasshaimase</span><span class="t-dot">·</span>
-    <span class="t-jp">居酒屋</span><span class="t-dot">·</span>
-    <span class="t-en">Pinheiros, SP</span><span class="t-dot">·</span>
-    <span class="t-jp">木炭</span><span class="t-dot">·</span>
+    <span class="t-jp">いらっしゃいませ</span><span class="t-dot">·</span>
     <span class="t-en">Brasa &amp; Fogo</span><span class="t-dot">·</span>
-    <span class="t-en">Suntory</span><span class="t-dot">·</span>
+    <span class="t-jp">火</span><span class="t-dot">·</span>
+    <span class="t-en">Murais</span><span class="t-dot">·</span>
     <span class="t-jp">壁画</span><span class="t-dot">·</span>
     <span class="t-en">Izakaya</span><span class="t-dot">·</span>
-    <span class="t-jp">炭</span><span class="t-dot">·</span>
+    <span class="t-jp">居酒屋</span><span class="t-dot">·</span>
+    <span class="t-en">Bar &amp; Sakes</span><span class="t-dot">·</span>
+    <span class="t-jp">酒</span><span class="t-dot">·</span>
+    <span class="t-en">Pinheiros, SP</span><span class="t-dot">·</span>
+    <span class="t-jp">木炭</span><span class="t-dot">·</span>
     <span class="t-en">Grupo Huto</span><span class="t-dot">·</span>
-    <!-- duplicado para loop contínuo sem JS -->
+    <span class="t-jp">風土</span><span class="t-dot">·</span>
+    <span class="t-en">Frutos do Mar</span><span class="t-dot">·</span>
+    <span class="t-jp">魚</span><span class="t-dot">·</span>
     <span class="t-en">Irasshaimase</span><span class="t-dot">·</span>
-    <span class="t-jp">居酒屋</span><span class="t-dot">·</span>
-    <span class="t-en">Pinheiros, SP</span><span class="t-dot">·</span>
-    <span class="t-jp">木炭</span><span class="t-dot">·</span>
+    <span class="t-jp">いらっしゃいませ</span><span class="t-dot">·</span>
     <span class="t-en">Brasa &amp; Fogo</span><span class="t-dot">·</span>
-    <span class="t-en">Suntory</span><span class="t-dot">·</span>
+    <span class="t-jp">火</span><span class="t-dot">·</span>
+    <span class="t-en">Murais</span><span class="t-dot">·</span>
     <span class="t-jp">壁画</span><span class="t-dot">·</span>
     <span class="t-en">Izakaya</span><span class="t-dot">·</span>
-    <span class="t-jp">炭</span><span class="t-dot">·</span>
+    <span class="t-jp">居酒屋</span><span class="t-dot">·</span>
+    <span class="t-en">Bar &amp; Sakes</span><span class="t-dot">·</span>
+    <span class="t-jp">酒</span><span class="t-dot">·</span>
+    <span class="t-en">Pinheiros, SP</span><span class="t-dot">·</span>
+    <span class="t-jp">木炭</span><span class="t-dot">·</span>
     <span class="t-en">Grupo Huto</span><span class="t-dot">·</span>
+    <span class="t-jp">風土</span><span class="t-dot">·</span>
+    <span class="t-en">Frutos do Mar</span><span class="t-dot">·</span>
+    <span class="t-jp">魚</span><span class="t-dot">·</span>
+    <span class="t-en">Irasshaimase</span><span class="t-dot">·</span>
+    <span class="t-jp">いらっしゃいませ</span><span class="t-dot">·</span>
+    <span class="t-en">Brasa &amp; Fogo</span><span class="t-dot">·</span>
+    <span class="t-jp">火</span><span class="t-dot">·</span>
+    <span class="t-en">Murais</span><span class="t-dot">·</span>
+    <span class="t-jp">壁画</span><span class="t-dot">·</span>
+    <span class="t-en">Izakaya</span><span class="t-dot">·</span>
+    <span class="t-jp">居酒屋</span><span class="t-dot">·</span>
+    <span class="t-en">Bar &amp; Sakes</span><span class="t-dot">·</span>
+    <span class="t-jp">酒</span><span class="t-dot">·</span>
+    <span class="t-en">Pinheiros, SP</span><span class="t-dot">·</span>
+    <span class="t-jp">木炭</span><span class="t-dot">·</span>
+    <span class="t-en">Grupo Huto</span><span class="t-dot">·</span>
+    <span class="t-jp">風土</span><span class="t-dot">·</span>
+    <span class="t-en">Frutos do Mar</span><span class="t-dot">·</span>
+    <span class="t-jp">魚</span><span class="t-dot">·</span>
+    <span class="t-en">Irasshaimase</span><span class="t-dot">·</span>
+    <span class="t-jp">いらっしゃいませ</span><span class="t-dot">·</span>
+    <span class="t-en">Brasa &amp; Fogo</span><span class="t-dot">·</span>
+    <span class="t-jp">火</span><span class="t-dot">·</span>
+    <span class="t-en">Murais</span><span class="t-dot">·</span>
+    <span class="t-jp">壁画</span><span class="t-dot">·</span>
+    <span class="t-en">Izakaya</span><span class="t-dot">·</span>
+    <span class="t-jp">居酒屋</span><span class="t-dot">·</span>
+    <span class="t-en">Bar &amp; Sakes</span><span class="t-dot">·</span>
+    <span class="t-jp">酒</span><span class="t-dot">·</span>
+    <span class="t-en">Pinheiros, SP</span><span class="t-dot">·</span>
+    <span class="t-jp">木炭</span><span class="t-dot">·</span>
+    <span class="t-en">Grupo Huto</span><span class="t-dot">·</span>
+    <span class="t-jp">風土</span><span class="t-dot">·</span>
+    <span class="t-en">Frutos do Mar</span><span class="t-dot">·</span>
+    <span class="t-jp">魚</span><span class="t-dot">·</span>
   </div>
 </div>
 
 <!-- ════════════════ CONCEITO ════════════════ -->
 <section class="conceito" id="conceito">
-  <div class="c-img rv">
-    <img src="img/DSC00500.JPG" alt="Salão do Mokutan" loading="lazy">
+  <div class="c-img rv" id="c-img-wrap">
+    <!-- placeholder: adicione a foto em img/[nome].jpg e atualize o src via JS abaixo -->
+    <img src="img/DSC00500.JPG" alt="Salão do Mokutan" id="c-img-src" loading="lazy">
     <div class="c-img-ov"></div>
   </div>
   <div class="c-txt">
     <p class="lbl rv">木炭 · Conceito</p>
-    <h2 class="heading rv d1">O Carvão<br><span class="heading-i">que define tudo</span></h2>
-    <div class="rule rv d1"></div>
-    <p class="body-text rv d2">No Japão, o fogo sempre foi mais do que técnica. É tempo, atenção e respeito ao ingrediente. No <strong>Mokutan</strong>, o carvão vegetal é o coração da cozinha.</p>
-    <p class="body-text rv d3">Entre a delicadeza dos preparos crus e a intensidade da grelha, nossa cozinha busca equilíbrio: simplicidade, precisão e produto.</p>
+    <div class="c-swap" id="c-swap">
+      <h2 class="heading rv d1"><span id="c-heading">O Carvão</span><br><span class="heading-i" id="c-heading-i">que define tudo</span></h2>
+      <div class="rule rv d1"></div>
+      <p class="body-text rv d2" id="c-body1">No Japão, o fogo sempre foi mais do que técnica. É tempo, atenção e respeito ao ingrediente. No <strong>Mokutan</strong>, o carvão vegetal é o coração da cozinha.</p>
+      <p class="body-text rv d3" id="c-body2">Entre a delicadeza dos preparos crus e a intensidade da grelha, nossa cozinha busca equilíbrio: simplicidade, precisão e produto.</p>
+    </div>
     <div class="pills rv d3">
-      <div class="pill"><span class="pill-jp">炭</span>Brasa</div>
-      <div class="pill"><span class="pill-jp">開</span>Cozinha Aberta</div>
-      <div class="pill"><span class="pill-jp">酒</span>Carta de Sakes</div>
-      <div class="pill"><span class="pill-jp">魚</span>Frutos do Mar</div>
+      <div class="pill" data-pill="brasa" onclick="setPill('brasa',this)"><span class="pill-jp">炭</span>Brasa</div>
+      <div class="pill" data-pill="cozinha" onclick="setPill('cozinha',this)"><span class="pill-jp">開</span>Cozinha Aberta</div>
+      <div class="pill" data-pill="bar" onclick="setPill('bar',this)"><span class="pill-jp">酒</span>Bar</div>
+      <div class="pill" data-pill="frutos" onclick="setPill('frutos',this)"><span class="pill-jp">魚</span>Frutos do Mar</div>
     </div>
   </div>
 </section>
@@ -138,52 +186,73 @@
   <div class="tabs rv">
     <div class="tab on" onclick="tab('sumibi',this)">Sumibi</div>
     <div class="tab" onclick="tab('hire',this)">Hire</div>
+    <div class="tab" onclick="tab('nama',this)">Nama</div>
+    <div class="tab" onclick="tab('kanmi',this)">Kanmi</div>
     <div class="tab" onclick="tab('drinks',this)">Drinks</div>
     <div class="tab" onclick="tab('saques',this)">Saquês</div>
+    <div class="tab" onclick="tab('vinhos',this)">Vinhos</div>
     <span class="tab-ind" id="tab-ind"></span>
   </div>
 
   <div class="panel on" id="p-sumibi">
     <div class="mgrid">
-      <div class="mitem"><div><span class="mi-jp">鶏</span><div class="mi-name">Yakitori</div><div class="mi-desc">Sobrecoxa · alho poró · teriyaki</div></div><div class="mi-price">R$ 47</div></div>
-      <div class="mitem"><div><span class="mi-jp">豆</span><div class="mi-name">Edamame Defumado</div><div class="mi-desc">Soja japonesa · óleo defumado</div></div><div class="mi-price">R$ 52</div></div>
-      <div class="mitem"><div><span class="mi-jp">豚</span><div class="mi-name">Nikuman Buta</div><div class="mi-desc">Bao · costela · sunomono · maionese de shissô</div></div><div class="mi-price">R$ 58</div></div>
-      <div class="mitem"><div><span class="mi-jp">茄</span><div class="mi-name">Nassu</div><div class="mi-desc">Berinjela · missô · vinagrete cebola roxa</div></div><div class="mi-price">R$ 41</div></div>
-      <div class="mitem"><div><span class="mi-jp">鶏</span><div class="mi-name">Tebasaki</div><div class="mi-desc">Asinha de frango · tobojan · shoyu · gomadare · aonori</div></div><div class="mi-price">R$ 59</div></div>
-      <div class="mitem"><div><span class="mi-jp">炭</span><div class="mi-name">Suwiito Korn</div><div class="mi-desc">Milho doce · kewpie · parmesão</div></div><div class="mi-price">R$ 50</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2555.jpg')"><div><span class="mi-jp">玉</span><div class="mi-name">Suwiito Korn</div><div class="mi-desc">Milho doce · kewpie · parmesão</div></div><div class="mi-price">R$ 50</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2654.jpg')"><div><span class="mi-jp">豚</span><div class="mi-name">Nikuman Buta</div><div class="mi-desc">Bao · costela · sunomono · maionese de shissô</div></div><div class="mi-price">R$ 58</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2567.jpg')"><div><span class="mi-jp">鶏</span><div class="mi-name">Tebasaki</div><div class="mi-desc">Asinha de frango · tobojan · shoyu · gomadare · aonori</div></div><div class="mi-price">R$ 59</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2522.jpg')"><div><span class="mi-jp">茄</span><div class="mi-name">Nassu</div><div class="mi-desc">Berinjela · missô · vinagrete cebola roxa</div></div><div class="mi-price">R$ 41</div></div>
     </div>
   </div>
 
   <div class="panel" id="p-hire">
-    <div class="yaki-note">
-      <div class="yn-kanji">火入</div>
-      <div class="yn-text">Cocção precisa — cada ingrediente tratado no tempo e temperatura exatos para revelar textura e sabor em sua forma mais pura.</div>
-    </div>
     <div class="mgrid">
-      <div class="mitem"><div><span class="mi-jp">海</span><div class="mi-name">Ebi Gyoza</div><div class="mi-desc">Gyoza de camarão · creme de milho · caldo de missô · layu</div></div><div class="mi-price">R$ 60</div></div>
-      <div class="mitem"><div><span class="mi-jp">鴨</span><div class="mi-name">Kamo no Harumaki</div><div class="mi-desc">Rolinho primavera · coxa de pato desfiada · vinho tinto</div></div><div class="mi-price">R$ 50</div></div>
-      <div class="mitem"><div><span class="mi-jp">烏</span><div class="mi-name">Ika Nirá</div><div class="mi-desc">Lula · broto de alho · sakê · kewpie · tobajan</div></div><div class="mi-price">R$ 49</div></div>
-      <div class="mitem"><div><span class="mi-jp">鮪</span><div class="mi-name">Tuna Wakamê</div><div class="mi-desc">Pastel gyoza · tartare de atum · maionese wasabi · alga wakamê</div></div><div class="mi-price">R$ 58</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2535.jpg')"><div><span class="mi-jp">海</span><div class="mi-name">Ebi Gyoza</div><div class="mi-desc">Gyoza de camarão · creme de milho · caldo de missô · layu</div></div><div class="mi-price">R$ 60</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2536.jpg')"><div><span class="mi-jp">鴨</span><div class="mi-name">Kamo no Harumaki</div><div class="mi-desc">Rolinho primavera · coxa de pato desfiada · vinho tinto</div></div><div class="mi-price">R$ 50</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2537.jpg')"><div><span class="mi-jp">烏</span><div class="mi-name">Ika Nirá</div><div class="mi-desc">Lula · broto de alho · sakê · kewpie · tobajan</div></div><div class="mi-price">R$ 49</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2540.jpg')"><div><span class="mi-jp">鮪</span><div class="mi-name">Tuna Wakamê</div><div class="mi-desc">Pastel gyoza · tartare de atum · maionese wasabi · alga wakamê</div></div><div class="mi-price">R$ 58</div></div>
     </div>
   </div>
 
   <div class="panel" id="p-drinks">
     <div class="mgrid">
-      <div class="mitem"><div><span class="mi-jp">炭</span><div class="mi-name">Binchotan</div><div class="mi-desc">Bourbon whiskey · Laphroaig · alcatrão · caramelo de shoyu · limão</div></div><div class="mi-price">R$ 50</div></div>
-      <div class="mitem"><div><span class="mi-jp">梅</span><div class="mi-name">Guaba</div><div class="mi-desc">Cachaça de goiabada cascão · Umeshu · cordial cítrico</div></div><div class="mi-price">R$ 50</div></div>
-      <div class="mitem"><div><span class="mi-jp">李</span><div class="mi-name">Shun</div><div class="mi-desc">Gin de ameixa preta · amora · hibisco · limão</div></div><div class="mi-price">R$ 50</div></div>
-      <div class="mitem"><div><span class="mi-jp">鶴</span><div class="mi-name">Tsuru</div><div class="mi-desc">Bourbon whiskey · Umeshu · limão · Aperol · óleo de shissô</div></div><div class="mi-price">R$ 50</div></div>
-      <div class="mitem"><div><span class="mi-jp">水</span><div class="mi-name">Mizunara</div><div class="mi-desc">Hibiki · Licor Drambuie · mel de missô · kinako</div></div><div class="mi-price">R$ 79</div></div>
-      <div class="mitem"><div><span class="mi-jp">花</span><div class="mi-name">Hana</div><div class="mi-desc">Roku Gin · chá de jasmim · lichia · licor flor de sabugueiro · limão</div></div><div class="mi-price">R$ 48</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2579.jpg')"><div><span class="mi-jp">炭</span><div class="mi-name">Binchotan</div><div class="mi-desc">Bourbon whiskey · Laphroaig · alcatrão · caramelo de shoyu · limão</div></div><div class="mi-price">R$ 50</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2580.jpg')"><div><span class="mi-jp">梅</span><div class="mi-name">Guaba</div><div class="mi-desc">Cachaça de goiabada cascão · Umeshu · cordial cítrico</div></div><div class="mi-price">R$ 50</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2589.jpg')"><div><span class="mi-jp">鶴</span><div class="mi-name">Tsuru</div><div class="mi-desc">Bourbon whiskey · Umeshu · limão · Aperol · óleo de shissô</div></div><div class="mi-price">R$ 50</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2591.jpg')"><div><span class="mi-jp">花</span><div class="mi-name">Hana</div><div class="mi-desc">Roku Gin · chá de jasmim · lichia · licor flor de sabugueiro · limão</div></div><div class="mi-price">R$ 48</div></div>
     </div>
   </div>
 
   <div class="panel" id="p-saques">
     <div class="sgrid">
-      <div class="sitem"><div class="sname">Miyako Homare</div><div class="stype">純米 · Junmai</div><div class="sdesc">Leve e delicado, com notas sutis de arroz e leve dulcor. Final limpo e refrescante.</div><div class="sprices"><span>Taça <strong>R$ 48</strong></span><span>2 L <strong>R$ 480</strong></span></div></div>
-      <div class="sitem"><div class="sname">Banshu Nishiki</div><div class="stype">純米 · Junmai</div><div class="sdesc">Elegante e equilibrado, com boa estrutura e leve mineralidade. Fresco e gastronômico.</div><div class="sprices"><span>Taça <strong>R$ 53</strong></span><span>1,8 L <strong>R$ 480</strong></span></div></div>
-      <div class="sitem"><div class="sname">Shichida Junmai</div><div class="stype">純米 · Junmai</div><div class="sdesc">Gastronômico com corpo presente e profundo umami. Excelente com yakitori.</div><div class="sprices"><span>720 ml <strong>R$ 595</strong></span></div></div>
-      <div class="sitem"><div class="sname">Nanbu Bijin <span class="mi-badge">Seleção da Casa</span></div><div class="stype">特別純米 · Tokubetsu Junmai</div><div class="sdesc">Elegante e aromático, com notas sutis de frutas brancas e final refinado.</div><div class="sprices"><span>720 ml <strong>R$ 630</strong></span></div></div>
+      <div class="sitem" style="background-image:url('img/pratos/_S4A2608.jpg')"><div class="sname">Miyako Homare</div><div class="stype">純米 · Junmai</div><div class="sdesc">Leve e delicado, com notas sutis de arroz e leve dulcor. Final limpo e refrescante.</div><div class="sprices"><span>Taça <strong>R$ 48</strong></span><span>2 L <strong>R$ 480</strong></span></div></div>
+      <div class="sitem" style="background-image:url('img/pratos/_S4A2609.jpg')"><div class="sname">Banshu Nishiki</div><div class="stype">純米 · Junmai</div><div class="sdesc">Elegante e equilibrado, com boa estrutura e leve mineralidade. Fresco e gastronômico.</div><div class="sprices"><span>Taça <strong>R$ 53</strong></span><span>1,8 L <strong>R$ 480</strong></span></div></div>
+      <div class="sitem" style="background-image:url('img/pratos/_S4A2610.jpg')"><div class="sname">Shichida Junmai</div><div class="stype">純米 · Junmai</div><div class="sdesc">Gastronômico com corpo presente e profundo umami. Excelente com yakitori.</div><div class="sprices"><span>720 ml <strong>R$ 595</strong></span></div></div>
+      <div class="sitem" style="background-image:url('img/pratos/_S4A2614.jpg')"><div class="sname">Nanbu Bijin <span class="mi-badge">Seleção da Casa</span></div><div class="stype">特別純米 · Tokubetsu Junmai</div><div class="sdesc">Elegante e aromático, com notas sutis de frutas brancas e final refinado.</div><div class="sprices"><span>720 ml <strong>R$ 630</strong></span></div></div>
+    </div>
+  </div>
+
+  <div class="panel" id="p-nama">
+    <div class="mgrid">
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2554.jpg')"><div><span class="mi-jp">巻</span><div class="mi-name">Futomaki</div><div class="mi-desc">Pepino · tamagoyaki · kanpyo · cenoura</div></div><div class="mi-price">R$ 54</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2557.jpg')"><div><span class="mi-jp">鮪</span><div class="mi-name">Tiradito</div><div class="mi-desc">Fatias de atum · molho jalapeño</div></div><div class="mi-price">R$ 60</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2519.jpg')"><div><span class="mi-jp">魚</span><div class="mi-name">Ceviche Mokutan</div><div class="mi-desc">Robalo · leite de tigre · cebola roxa · pimenta</div></div><div class="mi-price">R$ 65</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2559.jpg')"><div><span class="mi-jp">春</span><div class="mi-name">Harussame</div><div class="mi-desc">Macarrão amido de feijão · tamagoyaki · gergelim</div></div><div class="mi-price">R$ 39</div></div>
+    </div>
+  </div>
+
+  <div class="panel" id="p-kanmi">
+    <div class="mgrid">
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2560.jpg')"><div><span class="mi-jp">甘</span><div class="mi-name">Romeu e Julieta</div><div class="mi-desc">Goiabada artesanal · sorvete de queijo · suspiro</div></div><div class="mi-price">R$ 32</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2561.jpg')"><div><span class="mi-jp">抹</span><div class="mi-name">Matchá Chiffon</div><div class="mi-desc">Bolo de matchá · cachaça · sorvete de mel · três leites</div></div><div class="mi-price">R$ 38</div></div>
+      <div class="mitem" style="background-image:url('img/pratos/_S4A2563.jpg')"><div><span class="mi-jp">米</span><div class="mi-name">Raisu Pudingu</div><div class="mi-desc">Arroz doce · missô · caramelo de shoyu · nozes · sorvete de creme</div></div><div class="mi-price">R$ 36</div></div>
+    </div>
+  </div>
+
+  <div class="panel" id="p-vinhos">
+    <div class="sgrid">
+      <div class="sitem" style="background-image:url('img/pratos/_S4A2679.jpg')"><div class="sname">Boya Chardonnay</div><div class="stype">Branco · Chile</div><div class="sdesc">Garcés Silva · Valle Leyda</div><div class="sprices"><span>Garrafa <strong>R$ 269</strong></span></div></div>
+      <div class="sitem" style="background-image:url('img/pratos/_S4A2680.jpg')"><div class="sname">Infinitus Gewürztraminer</div><div class="stype">Branco · Espanha</div><div class="sdesc">Cosecheros y Criadores · Castilla</div><div class="sprices"><span>Garrafa <strong>R$ 262</strong></span></div></div>
+      <div class="sitem" style="background-image:url('img/pratos/_S4A2681.jpg')"><div class="sname">Lapostolle Apalta</div><div class="stype">Tinto · Chile</div><div class="sdesc">Lapostolle · Apalta</div><div class="sprices"><span>Garrafa <strong>R$ 462</strong></span></div></div>
+      <div class="sitem" style="background-image:url('img/pratos/_S4A2683.jpg')"><div class="sname">Braccale</div><div class="stype">Tinto · Itália</div><div class="sdesc">Castello di Montepo · Toscana</div><div class="sprices"><span>Garrafa <strong>R$ 449</strong></span></div></div>
     </div>
   </div>
 
@@ -208,52 +277,50 @@
   <div class="gtrack" id="gt">
     <!-- 1: fachada -->
     <div class="gitem">
-      <img src="img/DSC00494.JPG" alt="Fachada Mokutan Pinheiros" loading="lazy">
+      <img src="img/DSC00494.JPG" alt="Fachada Mokutan Pinheiros" width="460" height="520" loading="lazy">
       <div class="gitem-lbl">Espaço · 空間</div>
     </div>
     <!-- 2, 3: pratos na brasa -->
     <div class="gitem">
-      <img src="img/pratos/_S4A2516.jpg" alt="Pratos Mokutan" loading="lazy">
+      <img src="img/pratos/_S4A2516.jpg" alt="Pratos Mokutan" width="320" height="520" loading="lazy">
       <div class="gitem-lbl">Brasa · 炭</div>
     </div>
     <div class="gitem">
-      <img src="img/pratos/_S4A2565.jpg" alt="Grelhados na brasa" loading="lazy">
+      <img src="img/pratos/_S4A2565.jpg" alt="Grelhados na brasa" width="500" height="520" loading="lazy">
       <div class="gitem-lbl">Brasa · 炭</div>
     </div>
-    <!-- 4: mural 1 — wide no mobile (16:9) -->
-    <div class="gitem">
-      <img src="img/murais/mural-01.jpg" alt="Arte Mokutan Pinheiros" loading="lazy">
+    <!-- placeholder-4: aguardando img/murais/mural-01.jpg -->
+    <div class="gitem gitem-ph" aria-hidden="true" style="display:none">
       <div class="gitem-lbl">Arte · 壁画</div>
     </div>
     <!-- 5: drinks -->
     <div class="gitem">
-      <img src="img/pratos/_S4A2579.jpg" alt="Drinks Mokutan" loading="lazy">
+      <img src="img/pratos/_S4A2579.jpg" alt="Drinks Mokutan" width="440" height="520" loading="lazy">
       <div class="gitem-lbl">Drinks · 酒</div>
     </div>
     <!-- 6: espaço -->
     <div class="gitem">
-      <img src="img/DSC00490.JPG" alt="Letreiro Mokutan" loading="lazy">
+      <img src="img/DSC00490.JPG" alt="Letreiro Mokutan" width="360" height="520" loading="lazy">
       <div class="gitem-lbl">Espaço · 空間</div>
     </div>
     <!-- 7: prato destaque — wide no mobile (16:9) -->
     <div class="gitem">
-      <img src="img/pratos/_S4A2638.jpg" alt="Pratos Mokutan" loading="lazy">
+      <img src="img/pratos/_S4A2638.jpg" alt="Pratos Mokutan" width="320" height="520" loading="lazy">
       <div class="gitem-lbl">Brasa · 炭</div>
     </div>
-    <!-- 8, 9: murais -->
-    <div class="gitem">
-      <img src="img/murais/mural-02.jpg" alt="Arte Mokutan" loading="lazy">
+    <!-- placeholder-8: aguardando img/murais/mural-02.jpg -->
+    <div class="gitem gitem-ph" aria-hidden="true" style="display:none">
       <div class="gitem-lbl">Arte · 壁画</div>
     </div>
-    <div class="gitem">
-      <img src="img/murais/mural-03.jpg" alt="Arte Mokutan" loading="lazy">
+    <!-- placeholder-9: aguardando img/murais/mural-03.jpg -->
+    <div class="gitem gitem-ph" aria-hidden="true" style="display:none">
       <div class="gitem-lbl">Arte · 壁画</div>
     </div>
   </div>
 </section>
 
 <!-- ════════════════ QUOTE / FOGO ════════════════ -->
-<div class="fogo">
+<section class="fogo" id="fogo">
   <div class="fogo-bg"></div>
   <div class="fogo-ov"></div>
   <div class="fogo-kj" aria-hidden="true">火</div>
@@ -261,7 +328,7 @@
     <p class="fogo-pre">木炭 · Brasa</p>
     <p class="fogo-txt">O fogo que revela a essência —<br>não disfarça, não esconde.<br>Somente o ingrediente, o calor, e o tempo certo.</p>
   </div>
-</div>
+</section>
 
 <!-- ════════════════ RESERVAS ════════════════ -->
 <section class="reservas" id="reservas">
@@ -272,10 +339,16 @@
     <p class="body-text rv d2">Para grupos maiores ou eventos privados, entre em contato diretamente pelo WhatsApp.</p>
     <div class="ht rv d2">
       <p class="ht-lbl">Horários · 営業時間</p>
-      <div class="htr"><span class="day">Terça a Sexta</span><span class="time">19h — 23h</span></div>
-      <div class="htr"><span class="day">Sábado</span><span class="time">12h · 19h — 23h</span></div>
-      <div class="htr"><span class="day">Domingo</span><span class="time">a partir das 12h</span></div>
-      <div class="htr cls"><span class="day">Segunda-feira</span><span class="time">Fechado</span></div>
+      <div class="ht-block">
+        <p class="ht-days">Terça a Sábado</p>
+        <p class="ht-time">19h às 23h</p>
+      </div>
+      <div class="ht-block">
+        <p class="ht-cat">Almoço</p>
+        <p class="ht-days">Sábado e Domingo</p>
+        <p class="ht-time">12h30 às 16h</p>
+      </div>
+      <p class="ht-closed">Segunda-feira · Fechado</p>
     </div>
     <div class="ctct rv d3">
       <div class="citem">
@@ -283,7 +356,7 @@
         <div><div class="clbl">WhatsApp · Reservas</div><div class="cval"><a href="https://wa.me/5511933981491" target="_blank" rel="noopener">(11) 93398-1491</a></div></div>
       </div>
       <div class="citem">
-        <div class="cicon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="cicon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-linecap="round" stroke-width="2.5"/></svg></div>
         <div><div class="clbl">Instagram</div><div class="cval"><a href="https://instagram.com/mokutan_pinheiros" target="_blank" rel="noopener">@mokutan_pinheiros</a></div></div>
       </div>
       <div class="citem">
@@ -342,7 +415,7 @@
 </footer>
 
 <!-- ════════════════ STICKY BAR MOBILE ════════════════ -->
-<div class="mbar" id="mbar" aria-hidden="true">
+<div class="mbar" id="mbar">
   <a href="cardapio.html" class="mbar-btn mbar-menu">
     <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="15" y2="18"/></svg>
     Cardápio

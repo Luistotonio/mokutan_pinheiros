@@ -60,18 +60,21 @@ body {
   text-decoration: none;
   font-family: var(--font-display);
   font-size: .6rem;
-  letter-spacing: .22em;
+  letter-spacing: .24em;
   text-transform: uppercase;
-  padding: 14px 38px;
-  transition: background .25s, color .25s, border-color .25s, transform .4s cubic-bezier(0.34,1.56,0.64,1);
+  padding: 15px 44px;
+  border-radius: 3px;
+  transition: background .35s cubic-bezier(0.25,0.46,0.45,0.94), color .35s cubic-bezier(0.25,0.46,0.45,0.94), border-color .35s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow .35s cubic-bezier(0.25,0.46,0.45,0.94), transform .48s cubic-bezier(0.34,1.56,0.64,1);
 }
 
 .btn-f {
-  background: var(--bronze);
-  color: var(--bg3);
+  background: var(--ember);
+  color: rgba(244,236,217,.95);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
 }
 .btn-f:hover {
   background: var(--elite);
+  box-shadow: 0 6px 22px rgba(140,101,20,.3), inset 0 1px 0 rgba(255,255,255,.08);
   transform: translateY(-3px);
 }
 
@@ -80,8 +83,9 @@ body {
   color: var(--ink);
 }
 .btn-o:hover {
-  border-color: var(--bronze);
-  color: var(--bronze);
+  border-color: var(--ember);
+  color: var(--ember);
+  background: rgba(140,101,20,.05);
   transform: translateY(-2px);
 }
 
