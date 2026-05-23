@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -164,10 +164,10 @@
       <p class="body-text rv d3" id="c-body2">Entre a delicadeza dos preparos crus e a intensidade da grelha, nossa cozinha busca equilíbrio: simplicidade, precisão e produto.</p>
     </div>
     <div class="pills rv d3">
-      <div class="pill" data-pill="brasa" onclick="setPill('brasa',this)"><span class="pill-jp">炭</span>Brasa</div>
-      <div class="pill" data-pill="cozinha" onclick="setPill('cozinha',this)"><span class="pill-jp">開</span>Cozinha Aberta</div>
-      <div class="pill" data-pill="bar" onclick="setPill('bar',this)"><span class="pill-jp">酒</span>Bar</div>
-      <div class="pill" data-pill="frutos" onclick="setPill('frutos',this)"><span class="pill-jp">魚</span>Frutos do Mar</div>
+      <div class="pill" data-pill="brasa"><span class="pill-jp">炭</span>Brasa</div>
+      <div class="pill" data-pill="cozinha"><span class="pill-jp">開</span>Cozinha Aberta</div>
+      <div class="pill" data-pill="bar"><span class="pill-jp">酒</span>Bar</div>
+      <div class="pill" data-pill="frutos"><span class="pill-jp">魚</span>Frutos do Mar</div>
     </div>
   </div>
 </section>
@@ -184,75 +184,75 @@
   </div>
 
   <div class="tabs rv">
-    <div class="tab on" onclick="tab('sumibi',this)">Sumibi</div>
-    <div class="tab" onclick="tab('hire',this)">Hire</div>
-    <div class="tab" onclick="tab('nama',this)">Nama</div>
-    <div class="tab" onclick="tab('kanmi',this)">Kanmi</div>
-    <div class="tab" onclick="tab('drinks',this)">Drinks</div>
-    <div class="tab" onclick="tab('saques',this)">Saquês</div>
-    <div class="tab" onclick="tab('vinhos',this)">Vinhos</div>
+    <div class="tab on" data-tab="sumibi">Sumibi</div>
+    <div class="tab" data-tab="hire">Hire</div>
+    <div class="tab" data-tab="nama">Nama</div>
+    <div class="tab" data-tab="kanmi">Kanmi</div>
+    <div class="tab" data-tab="drinks">Drinks</div>
+    <div class="tab" data-tab="saques">Saquês</div>
+    <div class="tab" data-tab="vinhos">Vinhos</div>
     <span class="tab-ind" id="tab-ind"></span>
   </div>
 
   <div class="panel on" id="p-sumibi">
     <div class="mgrid">
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2555.jpg')"><div><span class="mi-jp">玉</span><div class="mi-name">Suwiito Korn</div><div class="mi-desc">Milho doce · kewpie · parmesão</div></div><div class="mi-price">R$ 50</div></div>
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2654.jpg')"><div><span class="mi-jp">豚</span><div class="mi-name">Nikuman Buta</div><div class="mi-desc">Bao · costela · sunomono · maionese de shissô</div></div><div class="mi-price">R$ 58</div></div>
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2567.jpg')"><div><span class="mi-jp">鶏</span><div class="mi-name">Tebasaki</div><div class="mi-desc">Asinha de frango · tobojan · shoyu · gomadare · aonori</div></div><div class="mi-price">R$ 59</div></div>
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2522.jpg')"><div><span class="mi-jp">茄</span><div class="mi-name">Nassu</div><div class="mi-desc">Berinjela · missô · vinagrete cebola roxa</div></div><div class="mi-price">R$ 41</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2555.jpg"><div><span class="mi-jp">玉</span><div class="mi-name">Suwiito Korn</div><div class="mi-desc">Milho doce · kewpie · parmesão</div></div><div class="mi-price">R$ 50</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2654.jpg"><div><span class="mi-jp">豚</span><div class="mi-name">Nikuman Buta</div><div class="mi-desc">Bao · costela · sunomono · maionese de shissô</div></div><div class="mi-price">R$ 58</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2567.jpg"><div><span class="mi-jp">鶏</span><div class="mi-name">Tebasaki</div><div class="mi-desc">Asinha de frango · tobojan · shoyu · gomadare · aonori</div></div><div class="mi-price">R$ 59</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2522.jpg"><div><span class="mi-jp">茄</span><div class="mi-name">Nassu</div><div class="mi-desc">Berinjela · missô · vinagrete cebola roxa</div></div><div class="mi-price">R$ 41</div></div>
     </div>
   </div>
 
   <div class="panel" id="p-hire">
     <div class="mgrid">
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2535.jpg')"><div><span class="mi-jp">海</span><div class="mi-name">Ebi Gyoza</div><div class="mi-desc">Gyoza de camarão · creme de milho · caldo de missô · layu</div></div><div class="mi-price">R$ 60</div></div>
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2536.jpg')"><div><span class="mi-jp">鴨</span><div class="mi-name">Kamo no Harumaki</div><div class="mi-desc">Rolinho primavera · coxa de pato desfiada · vinho tinto</div></div><div class="mi-price">R$ 50</div></div>
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2537.jpg')"><div><span class="mi-jp">烏</span><div class="mi-name">Ika Nirá</div><div class="mi-desc">Lula · broto de alho · sakê · kewpie · tobajan</div></div><div class="mi-price">R$ 49</div></div>
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2540.jpg')"><div><span class="mi-jp">鮪</span><div class="mi-name">Tuna Wakamê</div><div class="mi-desc">Pastel gyoza · tartare de atum · maionese wasabi · alga wakamê</div></div><div class="mi-price">R$ 58</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2535.jpg"><div><span class="mi-jp">海</span><div class="mi-name">Ebi Gyoza</div><div class="mi-desc">Gyoza de camarão · creme de milho · caldo de missô · layu</div></div><div class="mi-price">R$ 60</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2536.jpg"><div><span class="mi-jp">鴨</span><div class="mi-name">Kamo no Harumaki</div><div class="mi-desc">Rolinho primavera · coxa de pato desfiada · vinho tinto</div></div><div class="mi-price">R$ 50</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2537.jpg"><div><span class="mi-jp">烏</span><div class="mi-name">Ika Nirá</div><div class="mi-desc">Lula · broto de alho · sakê · kewpie · tobajan</div></div><div class="mi-price">R$ 49</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2540.jpg"><div><span class="mi-jp">鮪</span><div class="mi-name">Tuna Wakamê</div><div class="mi-desc">Pastel gyoza · tartare de atum · maionese wasabi · alga wakamê</div></div><div class="mi-price">R$ 58</div></div>
     </div>
   </div>
 
   <div class="panel" id="p-drinks">
     <div class="mgrid">
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2579.jpg')"><div><span class="mi-jp">炭</span><div class="mi-name">Binchotan</div><div class="mi-desc">Bourbon whiskey · Laphroaig · alcatrão · caramelo de shoyu · limão</div></div><div class="mi-price">R$ 50</div></div>
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2580.jpg')"><div><span class="mi-jp">梅</span><div class="mi-name">Guaba</div><div class="mi-desc">Cachaça de goiabada cascão · Umeshu · cordial cítrico</div></div><div class="mi-price">R$ 50</div></div>
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2589.jpg')"><div><span class="mi-jp">鶴</span><div class="mi-name">Tsuru</div><div class="mi-desc">Bourbon whiskey · Umeshu · limão · Aperol · óleo de shissô</div></div><div class="mi-price">R$ 50</div></div>
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2591.jpg')"><div><span class="mi-jp">花</span><div class="mi-name">Hana</div><div class="mi-desc">Roku Gin · chá de jasmim · lichia · licor flor de sabugueiro · limão</div></div><div class="mi-price">R$ 48</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2579.jpg"><div><span class="mi-jp">炭</span><div class="mi-name">Binchotan</div><div class="mi-desc">Bourbon whiskey · Laphroaig · alcatrão · caramelo de shoyu · limão</div></div><div class="mi-price">R$ 50</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2580.jpg"><div><span class="mi-jp">梅</span><div class="mi-name">Guaba</div><div class="mi-desc">Cachaça de goiabada cascão · Umeshu · cordial cítrico</div></div><div class="mi-price">R$ 50</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2589.jpg"><div><span class="mi-jp">鶴</span><div class="mi-name">Tsuru</div><div class="mi-desc">Bourbon whiskey · Umeshu · limão · Aperol · óleo de shissô</div></div><div class="mi-price">R$ 50</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2591.jpg"><div><span class="mi-jp">花</span><div class="mi-name">Hana</div><div class="mi-desc">Roku Gin · chá de jasmim · lichia · licor flor de sabugueiro · limão</div></div><div class="mi-price">R$ 48</div></div>
     </div>
   </div>
 
   <div class="panel" id="p-saques">
     <div class="sgrid">
-      <div class="sitem" style="background-image:url('img/pratos/_S4A2608.jpg')"><div class="sname">Miyako Homare</div><div class="stype">純米 · Junmai</div><div class="sdesc">Leve e delicado, com notas sutis de arroz e leve dulcor. Final limpo e refrescante.</div><div class="sprices"><span>Taça <strong>R$ 48</strong></span><span>2 L <strong>R$ 480</strong></span></div></div>
-      <div class="sitem" style="background-image:url('img/pratos/_S4A2609.jpg')"><div class="sname">Banshu Nishiki</div><div class="stype">純米 · Junmai</div><div class="sdesc">Elegante e equilibrado, com boa estrutura e leve mineralidade. Fresco e gastronômico.</div><div class="sprices"><span>Taça <strong>R$ 53</strong></span><span>1,8 L <strong>R$ 480</strong></span></div></div>
-      <div class="sitem" style="background-image:url('img/pratos/_S4A2610.jpg')"><div class="sname">Shichida Junmai</div><div class="stype">純米 · Junmai</div><div class="sdesc">Gastronômico com corpo presente e profundo umami. Excelente com yakitori.</div><div class="sprices"><span>720 ml <strong>R$ 595</strong></span></div></div>
-      <div class="sitem" style="background-image:url('img/pratos/_S4A2614.jpg')"><div class="sname">Nanbu Bijin <span class="mi-badge">Seleção da Casa</span></div><div class="stype">特別純米 · Tokubetsu Junmai</div><div class="sdesc">Elegante e aromático, com notas sutis de frutas brancas e final refinado.</div><div class="sprices"><span>720 ml <strong>R$ 630</strong></span></div></div>
+      <div class="sitem" data-bg="img/pratos/_S4A2608.jpg"><div class="sname">Miyako Homare</div><div class="stype">純米 · Junmai</div><div class="sdesc">Leve e delicado, com notas sutis de arroz e leve dulcor. Final limpo e refrescante.</div><div class="sprices"><span>Taça <strong>R$ 48</strong></span><span>2 L <strong>R$ 480</strong></span></div></div>
+      <div class="sitem" data-bg="img/pratos/_S4A2609.jpg"><div class="sname">Banshu Nishiki</div><div class="stype">純米 · Junmai</div><div class="sdesc">Elegante e equilibrado, com boa estrutura e leve mineralidade. Fresco e gastronômico.</div><div class="sprices"><span>Taça <strong>R$ 53</strong></span><span>1,8 L <strong>R$ 480</strong></span></div></div>
+      <div class="sitem" data-bg="img/pratos/_S4A2610.jpg"><div class="sname">Shichida Junmai</div><div class="stype">純米 · Junmai</div><div class="sdesc">Gastronômico com corpo presente e profundo umami. Excelente com yakitori.</div><div class="sprices"><span>720 ml <strong>R$ 595</strong></span></div></div>
+      <div class="sitem" data-bg="img/pratos/_S4A2614.jpg"><div class="sname">Nanbu Bijin <span class="mi-badge">Seleção da Casa</span></div><div class="stype">特別純米 · Tokubetsu Junmai</div><div class="sdesc">Elegante e aromático, com notas sutis de frutas brancas e final refinado.</div><div class="sprices"><span>720 ml <strong>R$ 630</strong></span></div></div>
     </div>
   </div>
 
   <div class="panel" id="p-nama">
     <div class="mgrid">
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2554.jpg')"><div><span class="mi-jp">巻</span><div class="mi-name">Futomaki</div><div class="mi-desc">Pepino · tamagoyaki · kanpyo · cenoura</div></div><div class="mi-price">R$ 54</div></div>
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2557.jpg')"><div><span class="mi-jp">鮪</span><div class="mi-name">Tiradito</div><div class="mi-desc">Fatias de atum · molho jalapeño</div></div><div class="mi-price">R$ 60</div></div>
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2519.jpg')"><div><span class="mi-jp">魚</span><div class="mi-name">Ceviche Mokutan</div><div class="mi-desc">Robalo · leite de tigre · cebola roxa · pimenta</div></div><div class="mi-price">R$ 65</div></div>
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2559.jpg')"><div><span class="mi-jp">春</span><div class="mi-name">Harussame</div><div class="mi-desc">Macarrão amido de feijão · tamagoyaki · gergelim</div></div><div class="mi-price">R$ 39</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2554.jpg"><div><span class="mi-jp">巻</span><div class="mi-name">Futomaki</div><div class="mi-desc">Pepino · tamagoyaki · kanpyo · cenoura</div></div><div class="mi-price">R$ 54</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2557.jpg"><div><span class="mi-jp">鮪</span><div class="mi-name">Tiradito</div><div class="mi-desc">Fatias de atum · molho jalapeño</div></div><div class="mi-price">R$ 60</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2519.jpg"><div><span class="mi-jp">魚</span><div class="mi-name">Ceviche Mokutan</div><div class="mi-desc">Robalo · leite de tigre · cebola roxa · pimenta</div></div><div class="mi-price">R$ 65</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2559.jpg"><div><span class="mi-jp">春</span><div class="mi-name">Harussame</div><div class="mi-desc">Macarrão amido de feijão · tamagoyaki · gergelim</div></div><div class="mi-price">R$ 39</div></div>
     </div>
   </div>
 
   <div class="panel" id="p-kanmi">
     <div class="mgrid">
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2560.jpg')"><div><span class="mi-jp">甘</span><div class="mi-name">Romeu e Julieta</div><div class="mi-desc">Goiabada artesanal · sorvete de queijo · suspiro</div></div><div class="mi-price">R$ 32</div></div>
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2561.jpg')"><div><span class="mi-jp">抹</span><div class="mi-name">Matchá Chiffon</div><div class="mi-desc">Bolo de matchá · cachaça · sorvete de mel · três leites</div></div><div class="mi-price">R$ 38</div></div>
-      <div class="mitem" style="background-image:url('img/pratos/_S4A2563.jpg')"><div><span class="mi-jp">米</span><div class="mi-name">Raisu Pudingu</div><div class="mi-desc">Arroz doce · missô · caramelo de shoyu · nozes · sorvete de creme</div></div><div class="mi-price">R$ 36</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2560.jpg"><div><span class="mi-jp">甘</span><div class="mi-name">Romeu e Julieta</div><div class="mi-desc">Goiabada artesanal · sorvete de queijo · suspiro</div></div><div class="mi-price">R$ 32</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2561.jpg"><div><span class="mi-jp">抹</span><div class="mi-name">Matchá Chiffon</div><div class="mi-desc">Bolo de matchá · cachaça · sorvete de mel · três leites</div></div><div class="mi-price">R$ 38</div></div>
+      <div class="mitem" data-bg="img/pratos/_S4A2563.jpg"><div><span class="mi-jp">米</span><div class="mi-name">Raisu Pudingu</div><div class="mi-desc">Arroz doce · missô · caramelo de shoyu · nozes · sorvete de creme</div></div><div class="mi-price">R$ 36</div></div>
     </div>
   </div>
 
   <div class="panel" id="p-vinhos">
     <div class="sgrid">
-      <div class="sitem" style="background-image:url('img/pratos/_S4A2679.jpg')"><div class="sname">Boya Chardonnay</div><div class="stype">Branco · Chile</div><div class="sdesc">Garcés Silva · Valle Leyda</div><div class="sprices"><span>Garrafa <strong>R$ 269</strong></span></div></div>
-      <div class="sitem" style="background-image:url('img/pratos/_S4A2680.jpg')"><div class="sname">Infinitus Gewürztraminer</div><div class="stype">Branco · Espanha</div><div class="sdesc">Cosecheros y Criadores · Castilla</div><div class="sprices"><span>Garrafa <strong>R$ 262</strong></span></div></div>
-      <div class="sitem" style="background-image:url('img/pratos/_S4A2681.jpg')"><div class="sname">Lapostolle Apalta</div><div class="stype">Tinto · Chile</div><div class="sdesc">Lapostolle · Apalta</div><div class="sprices"><span>Garrafa <strong>R$ 462</strong></span></div></div>
-      <div class="sitem" style="background-image:url('img/pratos/_S4A2683.jpg')"><div class="sname">Braccale</div><div class="stype">Tinto · Itália</div><div class="sdesc">Castello di Montepo · Toscana</div><div class="sprices"><span>Garrafa <strong>R$ 449</strong></span></div></div>
+      <div class="sitem" data-bg="img/pratos/_S4A2679.jpg"><div class="sname">Boya Chardonnay</div><div class="stype">Branco · Chile</div><div class="sdesc">Garcés Silva · Valle Leyda</div><div class="sprices"><span>Garrafa <strong>R$ 269</strong></span></div></div>
+      <div class="sitem" data-bg="img/pratos/_S4A2680.jpg"><div class="sname">Infinitus Gewürztraminer</div><div class="stype">Branco · Espanha</div><div class="sdesc">Cosecheros y Criadores · Castilla</div><div class="sprices"><span>Garrafa <strong>R$ 262</strong></span></div></div>
+      <div class="sitem" data-bg="img/pratos/_S4A2681.jpg"><div class="sname">Lapostolle Apalta</div><div class="stype">Tinto · Chile</div><div class="sdesc">Lapostolle · Apalta</div><div class="sprices"><span>Garrafa <strong>R$ 462</strong></span></div></div>
+      <div class="sitem" data-bg="img/pratos/_S4A2683.jpg"><div class="sname">Braccale</div><div class="stype">Tinto · Itália</div><div class="sdesc">Castello di Montepo · Toscana</div><div class="sprices"><span>Garrafa <strong>R$ 449</strong></span></div></div>
     </div>
   </div>
 
@@ -431,3 +431,4 @@
 
 </body>
 </html>
+

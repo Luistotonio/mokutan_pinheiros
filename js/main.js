@@ -6,6 +6,11 @@
 (function () {
   'use strict';
 
+  /* ── BACKGROUND IMAGES FROM DATA-BG (CSP-safe) ── */
+  document.querySelectorAll('[data-bg]').forEach(function (el) {
+    el.style.backgroundImage = "url('" + el.dataset.bg + "')";
+  });
+
   /* ── NAV SCROLL ── */
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
@@ -29,7 +34,6 @@
     link.addEventListener('click', closeMobileMenu);
   });
 
-  /* Fecha menu ao pressionar Escape */
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMobileMenu();
   });
@@ -60,7 +64,7 @@
       body2: 'Entre a delicadeza dos preparos crus e a intensidade da grelha, nossa cozinha busca equilíbrio: simplicidade, precisão e produto.'
     },
     brasa: {
-      img: 'img/grelha.jpg',          /* → adicione a foto da grelha com carvão */
+      img: 'img/grelha.jpg',
       alt: 'Grelha na brasa — Mokutan',
       heading: 'Fogo',
       headingI: 'a alma da cozinha',
@@ -68,7 +72,7 @@
       body2: 'Nenhum tempero substitui o fogo bem conduzido. O carvão faz o trabalho quando quem grelha sabe ouvir o ingrediente.'
     },
     cozinha: {
-      img: 'img/cozinha.jpg',         /* → adicione a foto da cozinha aberta */
+      img: 'img/cozinha.jpg',
       alt: 'Cozinha aberta — Mokutan',
       heading: 'Cozinha',
       headingI: 'aberta e precisa',
@@ -76,7 +80,7 @@
       body2: 'Cozinha aberta não é performance. É compromisso com o produto e com quem come.'
     },
     bar: {
-      img: 'img/bar.jpg',             /* → adicione a foto do bar ou das bebidas */
+      img: 'img/bar.jpg',
       alt: 'Bar — Mokutan',
       heading: 'O Bar',
       headingI: 'drinques com assinatura',
@@ -84,7 +88,7 @@
       body2: 'Do Umeshu ao whisky japonês — a seleção de sakes e destilados foi pensada para dialogar com cada prato.'
     },
     frutos: {
-      img: 'img/frutos.jpg',          /* → adicione foto de peixe/frutos do mar (ex: atum branco) */
+      img: 'img/frutos.jpg',
       alt: 'Frutos do Mar — Mokutan',
       heading: 'Do Mar',
       headingI: 'peixe e frescor',
@@ -93,62 +97,67 @@
     }
   };
 
-  window.setPill = function (id, el) {
-    const data = conceitoPills[id];
-    if (!data) return;
+  const pillsContainer = document.querySelector('.pills');
+  if (pillsContainer) {
+    pillsContainer.addEventListener('click', (e) => {
+      const pillEl = e.target.closest('.pill');
+      if (!pillEl) return;
+      const id = pillEl.dataset.pill;
+      const data = conceitoPills[id];
+      if (!data) return;
 
-    const wasActive = el.classList.contains('active');
+      const wasActive = pillEl.classList.contains('active');
+      document.querySelectorAll('.pill').forEach((p) => p.classList.remove('active'));
+      const target = wasActive ? conceitoPills.default : data;
+      if (!wasActive) pillEl.classList.add('active');
 
-    /* toggle: clicar no ativo volta ao padrão */
-    document.querySelectorAll('.pill').forEach((p) => p.classList.remove('active'));
-    const target = wasActive ? conceitoPills.default : data;
-    if (!wasActive) el.classList.add('active');
+      const img = document.getElementById('c-img-src');
+      img.style.opacity = '0';
+      setTimeout(() => {
+        img.src = target.img;
+        img.alt = target.alt;
+        img.style.opacity = '1';
+      }, 220);
 
-    /* fade imagem */
-    const img = document.getElementById('c-img-src');
-    img.style.opacity = '0';
-    setTimeout(() => {
-      img.src = target.img;
-      img.alt = target.alt;
-      img.style.opacity = '1';
-    }, 220);
-
-    /* fade texto */
-    const swap = document.getElementById('c-swap');
-    swap.classList.add('fading');
-    setTimeout(() => {
-      document.getElementById('c-heading').textContent   = target.heading;
-      document.getElementById('c-heading-i').textContent = target.headingI;
-      document.getElementById('c-body1').textContent     = target.body1;
-      document.getElementById('c-body2').textContent     = target.body2;
-      swap.classList.remove('fading');
-    }, 220);
-  };
+      const swap = document.getElementById('c-swap');
+      swap.classList.add('fading');
+      setTimeout(() => {
+        document.getElementById('c-heading').textContent   = target.heading;
+        document.getElementById('c-heading-i').textContent = target.headingI;
+        document.getElementById('c-body1').textContent     = target.body1;
+        document.getElementById('c-body2').textContent     = target.body2;
+        swap.classList.remove('fading');
+      }, 220);
+    });
+  }
 
   /* ── TABS DO CARDÁPIO ── */
   function moveTabInd(el) {
     const ind = document.getElementById('tab-ind');
     if (!ind) return;
-    /* offsetLeft é relativo ao container scrollável — indicator acompanha corretamente */
     ind.style.left  = el.offsetLeft + 'px';
     ind.style.width = el.offsetWidth + 'px';
   }
 
-  window.tab = function (id, el) {
-    document.querySelectorAll('.panel').forEach((p) => p.classList.remove('on'));
-    document.querySelectorAll('.tab').forEach((t) => t.classList.remove('on'));
-    document.getElementById('p-' + id).classList.add('on');
-    el.classList.add('on');
-    moveTabInd(el);
-    /* garante que a tab clicada fica visível no container scrollável */
-    el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
-  };
+  const tabsContainer = document.querySelector('.tabs');
+  if (tabsContainer) {
+    tabsContainer.addEventListener('click', (e) => {
+      const tabEl = e.target.closest('.tab');
+      if (!tabEl) return;
+      const id = tabEl.dataset.tab;
+      if (!id) return;
+      document.querySelectorAll('.panel').forEach((p) => p.classList.remove('on'));
+      document.querySelectorAll('.tab').forEach((t) => t.classList.remove('on'));
+      document.getElementById('p-' + id).classList.add('on');
+      tabEl.classList.add('on');
+      moveTabInd(tabEl);
+      tabEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+    });
+  }
 
-  /* posiciona indicador na tab ativa ao carregar */
   const firstTab = document.querySelector('.tab.on');
   if (firstTab) moveTabInd(firstTab);
 
-  /* reposiciona ao redimensionar janela */
   window.addEventListener('resize', () => {
     const activeTab = document.querySelector('.tab.on');
     if (activeTab) moveTabInd(activeTab);
