@@ -482,10 +482,64 @@ body {
 }
 
 /* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  html { font-size: 18px; }
+  .site-header { padding: 32px 28px 24px; }
+  .wrap { padding: 0 24px; }
+  .brand { font-size: 1.7rem; letter-spacing: 8px; }
+  .item-name { font-size: 1.1rem; }
+}
+
 @media (max-width: 640px) {
   html { font-size: 17px; }
-  .site-header { padding: 32px 24px 24px; }
-  .wrap { padding: 0 20px; }
-  .page-nav a { padding: 14px 18px; }
+
+  .site-header { padding: 22px 18px 18px; }
+  .header-inner { gap: 14px; }
+  .brand { font-size: 1.5rem; letter-spacing: 6px; }
+  .brand-jp { font-size: 0.62rem; letter-spacing: 2px; }
   .header-meta { display: none; }
+
+  .page-nav a { padding: 13px 16px; font-size: 0.6rem; letter-spacing: 2px; }
+
+  .wrap { padding: 0 16px; }
+
+  .menu-section { margin-top: 40px; }
+  .section-head { margin-bottom: 20px; padding-bottom: 10px; }
+  .section-title { font-size: 0.95rem; letter-spacing: 4px; }
+
+  .sub-group { margin-bottom: 28px; }
+  .sub-head { margin-bottom: 12px; }
+
+  .item { padding: 13px 0; gap: 12px; }
+  .item-name { font-size: 1.05rem; }
+  .item-price { font-size: 0.9rem; min-width: 44px; }
+
+  .drink-item { padding: 13px 0; gap: 12px; }
+  .drink-glass { width: 22px; }
+
+  .sake-item { padding: 15px 0; }
+  .sake-name { font-size: 1rem; }
+  .sake-price { font-size: 0.9rem; }
+
+  .wine-item { padding: 10px 0; gap: 10px; }
+  .wine-name { font-size: 0.95rem; }
+  .wine-price { font-size: 0.85rem; }
+
+  .quote-block { padding: 20px 14px; }
+  .quote-text { font-size: 0.95rem; }
+
+  .site-footer {
+    padding: 20px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 400px) {
+  html { font-size: 16px; }
+  .brand { font-size: 1.35rem; letter-spacing: 5px; }
+  .page-nav a { padding: 12px 13px; font-size: 0.58rem; letter-spacing: 1.5px; }
+  .wrap { padding: 0 13px; }
+  .section-title { letter-spacing: 3px; }
 }
