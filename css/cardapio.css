@@ -11,19 +11,27 @@
   padding: 0;
 }
 
-/* ── VARIÁVEIS DO CARDÁPIO (override do dark theme) ── */
+::selection {
+  background: var(--ember);
+  color: #0e0c09;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-thumb { background: var(--ember); }
+
+/* ── VARIÁVEIS DO CARDÁPIO (dark theme — combina com o site principal) ── */
 :root {
-  --page-bg:  #f4ecd9;
-  --paper:    #faf6ee;
-  --ink:      #1c1a17;
-  --mid:      #2e2a24;
-  --sub:      #4a4540;
-  --bronze:   #7a5c12;
-  --ember:    #8c6514;
-  --smoke:    #5a5550;
-  --rule:     rgba(122,92,18,0.3);
-  --rule-lt:  rgba(122,92,18,0.15);
-  --badge-bg: rgba(122,92,18,0.1);
+  --page-bg:  #0e0c09;
+  --paper:    #141210;
+  --ink:      rgba(244,236,217,.92);
+  --mid:      rgba(244,236,217,.72);
+  --sub:      rgba(244,236,217,.52);
+  --bronze:   #c49a35;
+  --ember:    #9e7220;
+  --smoke:    rgba(244,236,217,.36);
+  --rule:     rgba(244,236,217,.12);
+  --rule-lt:  rgba(244,236,217,.07);
+  --badge-bg: rgba(196,154,53,.12);
 }
 
 html {
