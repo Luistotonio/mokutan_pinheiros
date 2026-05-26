@@ -64,7 +64,7 @@
       body2: 'Entre a delicadeza dos preparos crus e a intensidade da grelha, nossa cozinha busca equilíbrio: simplicidade, precisão e produto.'
     },
     brasa: {
-      img: 'img/grelha.jpg',
+      img: 'img/webp/conceito/grelha.webp',
       alt: 'Grelha na brasa — Mokutan',
       heading: 'Fogo',
       headingI: 'a alma da cozinha',
@@ -72,7 +72,7 @@
       body2: 'Nenhum tempero substitui o fogo bem conduzido. O carvão faz o trabalho quando quem grelha sabe ouvir o ingrediente.'
     },
     cozinha: {
-      img: 'img/cozinha.jpg',
+      img: 'img/webp/conceito/cozinha.webp',
       alt: 'Cozinha aberta — Mokutan',
       heading: 'Cozinha',
       headingI: 'aberta e precisa',
@@ -80,7 +80,7 @@
       body2: 'Cozinha aberta não é performance. É compromisso com o produto e com quem come.'
     },
     bar: {
-      img: 'img/bar.jpg',
+      img: 'img/webp/conceito/bar.webp',
       alt: 'Bar — Mokutan',
       heading: 'O Bar',
       headingI: 'drinques com assinatura',
@@ -88,7 +88,7 @@
       body2: 'Do Umeshu ao whisky japonês — a seleção de sakes e destilados foi pensada para dialogar com cada prato.'
     },
     frutos: {
-      img: 'img/frutos.jpg',
+      img: 'img/webp/conceito/frutos.webp',
       alt: 'Frutos do Mar — Mokutan',
       heading: 'Do Mar',
       headingI: 'peixe e frescor',
