@@ -245,10 +245,12 @@ footer {
   overflow: hidden;
 }
 .c-img img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  object-position: center;
   filter: brightness(.88) saturate(.9);
   transition: opacity .35s cubic-bezier(0.25,0.46,0.45,0.94), transform .9s cubic-bezier(0.25,0.46,0.45,0.94), filter .9s cubic-bezier(0.25,0.46,0.45,0.94);
 }
