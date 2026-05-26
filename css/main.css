@@ -331,6 +331,26 @@ footer {
   font-size: .95rem;
 }
 
+.grupo-attr {
+  font-family: var(--font-japanese);
+  font-size: .6rem;
+  letter-spacing: .22em;
+  color: var(--bronze);
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  line-height: 1.6;
+}
+.grupo-attr strong {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.ga-jp {
+  color: var(--ember);
+}
+
 
 /* ── PREVIEW CARDÁPIO (seção no index) ── */
 .cardapio {
@@ -981,6 +1001,9 @@ footer {
 .c-txt .pill:hover    { border-color: var(--ember); color: rgba(244,236,217,.75); background: rgba(244,236,217,.04); }
 .c-txt .pill.active   { border-color: var(--ember); background: rgba(140,101,20,.14); color: var(--ember); }
 .c-txt .pill-jp       { color: var(--ember); }
+.c-txt .grupo-attr    { color: rgba(244,236,217,.35); border-top-color: rgba(244,236,217,.1); }
+.c-txt .grupo-attr strong { color: rgba(244,236,217,.55); }
+.c-txt .ga-jp         { color: rgba(140,101,20,.75); }
 
 /* ── galeria — fotos sempre destacam no escuro ── */
 .galeria .lbl      { color: rgba(140,101,20,.85); }
