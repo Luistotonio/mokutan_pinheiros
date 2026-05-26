@@ -128,6 +128,7 @@
       setTimeout(() => {
         img.src = target.img;
         img.alt = target.alt;
+        img.style.objectPosition = wasActive ? 'center bottom' : 'center center';
         img.style.opacity = '1';
       }, 220);
 
