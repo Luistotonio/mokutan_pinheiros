@@ -1138,13 +1138,8 @@ footer    { background: #1c1610; border-top-color: rgba(244,236,217,.12); }
   border-bottom: none;
   position: relative;
   overflow: hidden;
-  background-size: 108%;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: background-size .85s cubic-bezier(0.25,0.46,0.45,0.94);
 }
 .cardapio .mitem:nth-child(even) { padding-left: 0; border-left: none; }
-.cardapio .mitem:hover           { background-size: 118%; }
 .cardapio .sitem {
   display: flex;
   flex-direction: column;
@@ -1154,23 +1149,32 @@ footer    { background: #1c1610; border-top-color: rgba(244,236,217,.12); }
   min-height: 0;
   position: relative;
   overflow: hidden;
-  background-color: transparent;
-  background-size: 108%;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: background-size .85s cubic-bezier(0.25,0.46,0.45,0.94);
 }
-.cardapio .sitem:hover { background-color: transparent; background-size: 118%; }
+/* foto como ::after — permite zoom isolado sem afetar o texto */
+.cardapio .mitem::after,
+.cardapio .sitem::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transition: transform .85s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.cardapio .mitem:hover::after,
+.cardapio .sitem:hover::after { transform: scale(1.08); }
+/* gradiente por cima da foto */
 .cardapio .mitem::before,
 .cardapio .sitem::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(14,12,9,0) 0%, rgba(14,12,9,0) 58%, rgba(14,12,9,.78) 76%, rgba(14,12,9,.96) 100%);
-  z-index: 0;
+  z-index: 1;
 }
 .cardapio .mitem > *,
-.cardapio .sitem > * { position: relative; z-index: 1; }
+.cardapio .sitem > * { position: relative; z-index: 2; }
 .cardapio .mitem > div:first-child { padding: 14px 16px 4px; }
 .cardapio .mitem .mi-price         { padding: 4px 16px 16px; }
 .cardapio .sitem .sname   { padding: 14px 16px 2px; margin-bottom: 0; }

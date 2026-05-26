@@ -8,7 +8,7 @@
 
   /* ── BACKGROUND IMAGES FROM DATA-BG (CSP-safe) ── */
   document.querySelectorAll('[data-bg]').forEach(function (el) {
-    el.style.backgroundImage = "url('" + el.dataset.bg + "')";
+    el.style.setProperty('--bg', "url('" + el.dataset.bg + "')");
   });
 
   /* ── NAV SCROLL ── */
