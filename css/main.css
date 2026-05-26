@@ -34,10 +34,10 @@ footer {
   position: absolute;
   inset: 0;
   background: url('../img/DSC00488.JPG') center/cover no-repeat;
-  /* foto exposta — o espaço real do restaurante é o argumento visual */
   filter: brightness(.42) saturate(.75);
   animation: kz 9s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
   transform-origin: center 60%;
+  will-change: transform;
 }
 @keyframes kz {
   from { transform: scale(1.06); }
@@ -335,6 +335,7 @@ footer {
 /* ── PREVIEW CARDÁPIO (seção no index) ── */
 .cardapio {
   background: var(--bg);
+  height: 100vh;
   height: calc(100svh - 80px);
   display: flex;
   flex-direction: column;

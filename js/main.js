@@ -15,7 +15,7 @@
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('on', window.scrollY > 70);
-  });
+  }, { passive: true });
 
   /* ── MOBILE MENU ── */
   const hbg = document.getElementById('hbg');
@@ -147,9 +147,15 @@
       const id = tabEl.dataset.tab;
       if (!id) return;
       document.querySelectorAll('.panel').forEach((p) => p.classList.remove('on'));
-      document.querySelectorAll('.tab').forEach((t) => t.classList.remove('on'));
+      document.querySelectorAll('.tab').forEach((t) => {
+        t.classList.remove('on');
+        t.setAttribute('aria-selected', 'false');
+        t.setAttribute('tabindex', '-1');
+      });
       document.getElementById('p-' + id).classList.add('on');
       tabEl.classList.add('on');
+      tabEl.setAttribute('aria-selected', 'true');
+      tabEl.setAttribute('tabindex', '0');
       moveTabInd(tabEl);
       tabEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
     });

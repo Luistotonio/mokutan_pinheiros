@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
   <!-- SEO -->
   <title>Mokutan — Restaurante Japonês · Pinheiros, São Paulo</title>
@@ -69,7 +69,7 @@
     <li><a href="#conceito">Conceito</a></li>
     <li><a href="cardapio.html" class="nav-cardapio">Cardápio</a></li>
     <li><a href="#galeria">Galeria</a></li>
-    <li><a href="https://reservation.getin.app/865NDakj" target="_blank" rel="noopener" class="nrsv">Reservar</a></li>
+    <li><a href="https://reservation.getin.app/865NDakj" target="_blank" rel="noopener noreferrer" class="nrsv">Reservar</a></li>
   </ul>
   <button class="hbg" id="hbg" aria-label="Abrir menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -81,7 +81,7 @@
   <a href="#conceito">Conceito</a>
   <a href="cardapio.html">Cardápio</a>
   <a href="#galeria">Galeria</a>
-  <a href="https://reservation.getin.app/865NDakj" target="_blank" rel="noopener" class="mmenu-rsv">Reservar</a>
+  <a href="https://reservation.getin.app/865NDakj" target="_blank" rel="noopener noreferrer" class="mmenu-rsv">Reservar</a>
 </div>
 
 <!-- ════════════════ HERO ════════════════ -->
@@ -94,7 +94,7 @@
     <h1 class="hero-title">Mokutan<span class="hero-sub"><span class="hs-jp">居酒屋</span><span class="hs-dot">·</span><span class="hs-en">Izakaya</span></span></h1>
     <p class="hero-desc">O sabor que só a brasa pode criar.</p>
     <div class="hero-acts">
-      <a href="https://reservation.getin.app/865NDakj" target="_blank" rel="noopener" class="btn btn-f">Fazer Reserva</a>
+      <a href="https://reservation.getin.app/865NDakj" target="_blank" rel="noopener noreferrer" class="btn btn-f">Fazer Reserva</a>
       <a href="cardapio.html" class="btn btn-o">Ver Cardápio</a>
     </div>
   </div>
@@ -177,18 +177,18 @@
     <a href="cardapio.html" class="btn btn-o rv">Cardápio completo</a>
   </div>
 
-  <div class="tabs rv">
-    <div class="tab on" data-tab="sumibi">Sumibi</div>
-    <div class="tab" data-tab="hire">Hire</div>
-    <div class="tab" data-tab="nama">Nama</div>
-    <div class="tab" data-tab="kanmi">Kanmi</div>
-    <div class="tab" data-tab="drinks">Drinks</div>
-    <div class="tab" data-tab="saques">Saquês</div>
-    <div class="tab" data-tab="vinhos">Vinhos</div>
-    <span class="tab-ind" id="tab-ind"></span>
+  <div class="tabs rv" role="tablist" aria-label="Categorias do cardápio">
+    <div class="tab on" role="tab" data-tab="sumibi" aria-selected="true" aria-controls="p-sumibi" tabindex="0">Sumibi</div>
+    <div class="tab" role="tab" data-tab="hire" aria-selected="false" aria-controls="p-hire" tabindex="-1">Hire</div>
+    <div class="tab" role="tab" data-tab="nama" aria-selected="false" aria-controls="p-nama" tabindex="-1">Nama</div>
+    <div class="tab" role="tab" data-tab="kanmi" aria-selected="false" aria-controls="p-kanmi" tabindex="-1">Kanmi</div>
+    <div class="tab" role="tab" data-tab="drinks" aria-selected="false" aria-controls="p-drinks" tabindex="-1">Drinks</div>
+    <div class="tab" role="tab" data-tab="saques" aria-selected="false" aria-controls="p-saques" tabindex="-1">Saquês</div>
+    <div class="tab" role="tab" data-tab="vinhos" aria-selected="false" aria-controls="p-vinhos" tabindex="-1">Vinhos</div>
+    <span class="tab-ind" id="tab-ind" aria-hidden="true"></span>
   </div>
 
-  <div class="panel on" id="p-sumibi">
+  <div class="panel on" role="tabpanel" id="p-sumibi">
     <div class="mgrid">
       <div class="mitem" data-bg="img/pratos/_S4A2555.jpg"><div><span class="mi-jp">玉</span><div class="mi-name">Suwiito Korn</div><div class="mi-desc">Milho doce · kewpie · parmesão</div></div><div class="mi-price">R$ 50</div></div>
       <div class="mitem" data-bg="img/pratos/_S4A2654.jpg"><div><span class="mi-jp">豚</span><div class="mi-name">Nikuman Buta</div><div class="mi-desc">Bao · costela · sunomono · maionese de shissô</div></div><div class="mi-price">R$ 58</div></div>
@@ -197,7 +197,7 @@
     </div>
   </div>
 
-  <div class="panel" id="p-hire">
+  <div class="panel" role="tabpanel" id="p-hire">
     <div class="mgrid">
       <div class="mitem" data-bg="img/pratos/_S4A2535.jpg"><div><span class="mi-jp">海</span><div class="mi-name">Ebi Gyoza</div><div class="mi-desc">Gyoza de camarão · creme de milho · caldo de missô · layu</div></div><div class="mi-price">R$ 60</div></div>
       <div class="mitem" data-bg="img/pratos/_S4A2536.jpg"><div><span class="mi-jp">鴨</span><div class="mi-name">Kamo no Harumaki</div><div class="mi-desc">Rolinho primavera · coxa de pato desfiada · vinho tinto</div></div><div class="mi-price">R$ 50</div></div>
@@ -206,7 +206,7 @@
     </div>
   </div>
 
-  <div class="panel" id="p-drinks">
+  <div class="panel" role="tabpanel" id="p-drinks">
     <div class="mgrid">
       <div class="mitem" data-bg="img/pratos/_S4A2579.jpg"><div><span class="mi-jp">炭</span><div class="mi-name">Binchotan</div><div class="mi-desc">Bourbon whiskey · Laphroaig · alcatrão · caramelo de shoyu · limão</div></div><div class="mi-price">R$ 50</div></div>
       <div class="mitem" data-bg="img/pratos/_S4A2580.jpg"><div><span class="mi-jp">梅</span><div class="mi-name">Guaba</div><div class="mi-desc">Cachaça de goiabada cascão · Umeshu · cordial cítrico</div></div><div class="mi-price">R$ 50</div></div>
@@ -215,7 +215,7 @@
     </div>
   </div>
 
-  <div class="panel" id="p-saques">
+  <div class="panel" role="tabpanel" id="p-saques">
     <div class="sgrid">
       <div class="sitem" data-bg="img/pratos/_S4A2608.jpg"><div class="sname">Miyako Homare</div><div class="stype">純米 · Junmai</div><div class="sdesc">Leve e delicado, com notas sutis de arroz e leve dulcor. Final limpo e refrescante.</div><div class="sprices"><span>Taça <strong>R$ 48</strong></span><span>2 L <strong>R$ 480</strong></span></div></div>
       <div class="sitem" data-bg="img/pratos/_S4A2609.jpg"><div class="sname">Banshu Nishiki</div><div class="stype">純米 · Junmai</div><div class="sdesc">Elegante e equilibrado, com boa estrutura e leve mineralidade. Fresco e gastronômico.</div><div class="sprices"><span>Taça <strong>R$ 53</strong></span><span>1,8 L <strong>R$ 480</strong></span></div></div>
@@ -224,7 +224,7 @@
     </div>
   </div>
 
-  <div class="panel" id="p-nama">
+  <div class="panel" role="tabpanel" id="p-nama">
     <div class="mgrid">
       <div class="mitem" data-bg="img/pratos/_S4A2554.jpg"><div><span class="mi-jp">巻</span><div class="mi-name">Futomaki</div><div class="mi-desc">Pepino · tamagoyaki · kanpyo · cenoura</div></div><div class="mi-price">R$ 54</div></div>
       <div class="mitem" data-bg="img/pratos/_S4A2557.jpg"><div><span class="mi-jp">鮪</span><div class="mi-name">Tiradito</div><div class="mi-desc">Fatias de atum · molho jalapeño</div></div><div class="mi-price">R$ 60</div></div>
@@ -233,7 +233,7 @@
     </div>
   </div>
 
-  <div class="panel" id="p-kanmi">
+  <div class="panel" role="tabpanel" id="p-kanmi">
     <div class="mgrid">
       <div class="mitem" data-bg="img/pratos/_S4A2560.jpg"><div><span class="mi-jp">甘</span><div class="mi-name">Romeu e Julieta</div><div class="mi-desc">Goiabada artesanal · sorvete de queijo · suspiro</div></div><div class="mi-price">R$ 32</div></div>
       <div class="mitem" data-bg="img/pratos/_S4A2561.jpg"><div><span class="mi-jp">抹</span><div class="mi-name">Matchá Chiffon</div><div class="mi-desc">Bolo de matchá · cachaça · sorvete de mel · três leites</div></div><div class="mi-price">R$ 38</div></div>
@@ -241,7 +241,7 @@
     </div>
   </div>
 
-  <div class="panel" id="p-vinhos">
+  <div class="panel" role="tabpanel" id="p-vinhos">
     <div class="sgrid">
       <div class="sitem" data-bg="img/pratos/_S4A2679.jpg"><div class="sname">Boya Chardonnay</div><div class="stype">Branco · Chile</div><div class="sdesc">Garcés Silva · Valle Leyda</div><div class="sprices"><span>Garrafa <strong>R$ 269</strong></span></div></div>
       <div class="sitem" data-bg="img/pratos/_S4A2680.jpg"><div class="sname">Infinitus Gewürztraminer</div><div class="stype">Branco · Espanha</div><div class="sdesc">Cosecheros y Criadores · Castilla</div><div class="sprices"><span>Garrafa <strong>R$ 262</strong></span></div></div>
@@ -347,11 +347,11 @@
     <div class="ctct rv d3">
       <div class="citem">
         <div class="cicon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.6a16 16 0 0 0 6.06 6.06l1.76-1.76a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <div><div class="clbl">WhatsApp · Reservas</div><div class="cval"><a href="https://wa.me/5511933981491" target="_blank" rel="noopener">(11) 93398-1491</a></div></div>
+        <div><div class="clbl">WhatsApp · Reservas</div><div class="cval"><a href="https://wa.me/5511933981491" target="_blank" rel="noopener noreferrer">(11) 93398-1491</a></div></div>
       </div>
       <div class="citem">
         <div class="cicon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-linecap="round" stroke-width="2.5"/></svg></div>
-        <div><div class="clbl">Instagram</div><div class="cval"><a href="https://instagram.com/mokutan_pinheiros" target="_blank" rel="noopener">@mokutan_pinheiros</a></div></div>
+        <div><div class="clbl">Instagram</div><div class="cval"><a href="https://instagram.com/mokutan_pinheiros" target="_blank" rel="noopener noreferrer">@mokutan_pinheiros</a></div></div>
       </div>
       <div class="citem">
         <div class="cicon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -365,9 +365,9 @@
       <p class="getin-jp" aria-hidden="true">予約</p>
       <h3 class="getin-head">Reserve sua mesa</h3>
       <p class="getin-txt">Reserve de forma rápida e confirme sua presença pela nossa plataforma de reservas.</p>
-      <a href="https://reservation.getin.app/865NDakj" target="_blank" rel="noopener" class="btn btn-f getin-btn">予約する · Reservar agora</a>
+      <a href="https://reservation.getin.app/865NDakj" target="_blank" rel="noopener noreferrer" class="btn btn-f getin-btn">予約する · Reservar agora</a>
       <div class="getin-or"><span></span><span>ou</span><span></span></div>
-      <a href="https://wa.me/5511933981491" target="_blank" rel="noopener" class="getin-wa">
+      <a href="https://wa.me/5511933981491" target="_blank" rel="noopener noreferrer" class="getin-wa">
         <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.6a16 16 0 0 0 6.06 6.06l1.76-1.76a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         WhatsApp · (11) 93398-1491
       </a>
@@ -395,10 +395,10 @@
     <div>
       <p class="fcol-t">Contato</p>
       <ul class="flinks">
-        <li><a href="https://instagram.com/mokutan_pinheiros" target="_blank" rel="noopener">@mokutan_pinheiros</a></li>
-        <li><a href="https://wa.me/5511933981491" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="https://instagram.com/mokutan_pinheiros" target="_blank" rel="noopener noreferrer">@mokutan_pinheiros</a></li>
+        <li><a href="https://wa.me/5511933981491" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
         <li><a href="mailto:reservas@mokutan.com.br">reservas@mokutan.com.br</a></li>
-        <li><a href="https://maps.google.com/?q=Pinheiros+São+Paulo" target="_blank" rel="noopener">Pinheiros, São Paulo</a></li>
+        <li><a href="https://maps.google.com/?q=Pinheiros+São+Paulo" target="_blank" rel="noopener noreferrer">Pinheiros, São Paulo</a></li>
       </ul>
     </div>
   </div>
@@ -414,7 +414,7 @@
     <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="15" y2="18"/></svg>
     Cardápio
   </a>
-  <a href="https://reservation.getin.app/865NDakj" target="_blank" rel="noopener" class="mbar-btn mbar-rsv">
+  <a href="https://reservation.getin.app/865NDakj" target="_blank" rel="noopener noreferrer" class="mbar-btn mbar-rsv">
     <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
     予約 · Reservar
   </a>
@@ -425,6 +425,7 @@
 
 </body>
 </html>
+
 
 
 
