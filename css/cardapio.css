@@ -24,7 +24,6 @@
   --page-bg:  #0e0c09;
   --paper:    #141210;
   --ink:      rgba(244,236,217,.92);
-  --mid:      rgba(244,236,217,.72);
   --sub:      rgba(244,236,217,.52);
   --bronze:   #c49a35;
   --ember:    #9e7220;
@@ -489,6 +488,56 @@ body {
   color: var(--smoke);
 }
 
+/* ── HEADER RIGHT COLUMN ── */
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+/* ── SUB-HEAD COM MARGEM EXTRA ── */
+.sub-head--mt {
+  margin-top: 24px;
+}
+
+/* ── CTA RESERVA FLUTUANTE ── */
+.rsv-fab {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--ember);
+  color: rgba(244,236,217,.95);
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+  box-shadow: 0 4px 20px rgba(158,114,32,.35);
+}
+.rsv-fab:hover {
+  background: #7a5c12;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(158,114,32,.45);
+}
+.rsv-fab svg {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   html { font-size: 18px; }
@@ -541,6 +590,16 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  .rsv-fab {
+    bottom: 20px;
+    right: 16px;
+    padding: 10px 16px;
+    font-size: 0.55rem;
+    letter-spacing: 2px;
   }
 }
 

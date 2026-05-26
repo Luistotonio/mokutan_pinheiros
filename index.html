@@ -13,7 +13,8 @@
   <meta property="og:title" content="Mokutan — Restaurante Japonês">
   <meta property="og:description" content="O sabor que só a brasa pode criar. Pinheiros, São Paulo.">
   <meta property="og:image" content="img/pratos/_S4A2565.jpg">
-  <meta property="og:type" content="restaurant">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://mokutanpinheiros.vercel.app/">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230e0c09'/><text x='16' y='24' text-anchor='middle' font-size='22' fill='%239e7220' font-family='serif'>木</text></svg>">
@@ -24,7 +25,32 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Mokutan",
+    "description": "Izakaya japonês em Pinheiros. Grelhados na brasa, saquês e drinks autorais.",
+    "url": "https://mokutanpinheiros.vercel.app",
+    "telephone": "+5511933981491",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "servesCuisine": "Japanese",
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "19:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "12:30", "closes": "16:00" }
+    ],
+    "sameAs": ["https://instagram.com/mokutan_pinheiros"]
+  }
+  </script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/base.css">
@@ -113,38 +139,6 @@
     <span class="t-jp">風土</span><span class="t-dot">·</span>
     <span class="t-en">Frutos do Mar</span><span class="t-dot">·</span>
     <span class="t-jp">魚</span><span class="t-dot">·</span>
-    <span class="t-en">Irasshaimase</span><span class="t-dot">·</span>
-    <span class="t-jp">いらっしゃいませ</span><span class="t-dot">·</span>
-    <span class="t-en">Brasa &amp; Fogo</span><span class="t-dot">·</span>
-    <span class="t-jp">火</span><span class="t-dot">·</span>
-    <span class="t-en">Murais</span><span class="t-dot">·</span>
-    <span class="t-jp">壁画</span><span class="t-dot">·</span>
-    <span class="t-en">Izakaya</span><span class="t-dot">·</span>
-    <span class="t-jp">居酒屋</span><span class="t-dot">·</span>
-    <span class="t-en">Bar &amp; Sakes</span><span class="t-dot">·</span>
-    <span class="t-jp">酒</span><span class="t-dot">·</span>
-    <span class="t-en">Pinheiros, SP</span><span class="t-dot">·</span>
-    <span class="t-jp">木炭</span><span class="t-dot">·</span>
-    <span class="t-en">Grupo Huto</span><span class="t-dot">·</span>
-    <span class="t-jp">風土</span><span class="t-dot">·</span>
-    <span class="t-en">Frutos do Mar</span><span class="t-dot">·</span>
-    <span class="t-jp">魚</span><span class="t-dot">·</span>
-    <span class="t-en">Irasshaimase</span><span class="t-dot">·</span>
-    <span class="t-jp">いらっしゃいませ</span><span class="t-dot">·</span>
-    <span class="t-en">Brasa &amp; Fogo</span><span class="t-dot">·</span>
-    <span class="t-jp">火</span><span class="t-dot">·</span>
-    <span class="t-en">Murais</span><span class="t-dot">·</span>
-    <span class="t-jp">壁画</span><span class="t-dot">·</span>
-    <span class="t-en">Izakaya</span><span class="t-dot">·</span>
-    <span class="t-jp">居酒屋</span><span class="t-dot">·</span>
-    <span class="t-en">Bar &amp; Sakes</span><span class="t-dot">·</span>
-    <span class="t-jp">酒</span><span class="t-dot">·</span>
-    <span class="t-en">Pinheiros, SP</span><span class="t-dot">·</span>
-    <span class="t-jp">木炭</span><span class="t-dot">·</span>
-    <span class="t-en">Grupo Huto</span><span class="t-dot">·</span>
-    <span class="t-jp">風土</span><span class="t-dot">·</span>
-    <span class="t-en">Frutos do Mar</span><span class="t-dot">·</span>
-    <span class="t-jp">魚</span><span class="t-dot">·</span>
   </div>
 </div>
 
@@ -152,7 +146,7 @@
 <section class="conceito" id="conceito">
   <div class="c-img rv" id="c-img-wrap">
     <!-- placeholder: adicione a foto em img/[nome].jpg e atualize o src via JS abaixo -->
-    <img src="img/DSC00500.JPG" alt="Salão do Mokutan" id="c-img-src" loading="lazy">
+    <img src="img/DSC00500.JPG" alt="Salão do Mokutan" id="c-img-src" loading="lazy" width="1200" height="800">
     <div class="c-img-ov"></div>
   </div>
   <div class="c-txt">
@@ -164,10 +158,10 @@
       <p class="body-text rv d3" id="c-body2">Entre a delicadeza dos preparos crus e a intensidade da grelha, nossa cozinha busca equilíbrio: simplicidade, precisão e produto.</p>
     </div>
     <div class="pills rv d3">
-      <div class="pill" data-pill="brasa"><span class="pill-jp">炭</span>Brasa</div>
-      <div class="pill" data-pill="cozinha"><span class="pill-jp">開</span>Cozinha Aberta</div>
-      <div class="pill" data-pill="bar"><span class="pill-jp">酒</span>Bar</div>
-      <div class="pill" data-pill="frutos"><span class="pill-jp">魚</span>Frutos do Mar</div>
+      <button class="pill" type="button" data-pill="brasa"><span class="pill-jp">炭</span>Brasa</button>
+      <button class="pill" type="button" data-pill="cozinha"><span class="pill-jp">開</span>Cozinha Aberta</button>
+      <button class="pill" type="button" data-pill="bar"><span class="pill-jp">酒</span>Bar</button>
+      <button class="pill" type="button" data-pill="frutos"><span class="pill-jp">魚</span>Frutos do Mar</button>
     </div>
   </div>
 </section>
@@ -431,4 +425,6 @@
 
 </body>
 </html>
+
+
 

@@ -231,7 +231,7 @@ footer {
 }
 @keyframes ticker-roll {
   from { transform: translateX(0); }
-  to   { transform: translateX(-33.33%); }
+  to   { transform: translateX(-50%); }
 }
 
 /* ── CONCEITO ── */
@@ -306,10 +306,13 @@ footer {
   gap: 8px;
   padding: 7px 15px;
   border: 1px solid var(--rule);
+  background: none;
   font-family: var(--font-japanese);
   font-size: .72rem;
   color: var(--smoke);
   letter-spacing: .08em;
+  appearance: none;
+  -webkit-appearance: none;
   transition: border-color .35s cubic-bezier(0.25,0.46,0.45,0.94), color .35s cubic-bezier(0.25,0.46,0.45,0.94), background .35s cubic-bezier(0.25,0.46,0.45,0.94);
   cursor: pointer;
 }
@@ -444,61 +447,6 @@ footer {
   flex-shrink: 0;
   padding-top: 3px;
 }
-.yaki-note {
-  background: var(--bg3);
-  border-left: 2px solid var(--ember);
-  padding: 18px 22px;
-  margin-bottom: 30px;
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-.yn-kanji {
-  font-family: var(--font-japanese);
-  font-size: 2rem;
-  color: var(--ember);
-  line-height: 1;
-  flex-shrink: 0;
-}
-.yn-text {
-  font-family: var(--font-body);
-  font-style: italic;
-  font-size: .9rem;
-  color: var(--smoke);
-  line-height: 1.65;
-}
-.ygrid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 1px;
-  background: rgba(122,92,18,.1);
-}
-.yitem {
-  background: var(--bg);
-  padding: 20px 22px;
-  transition: background .35s cubic-bezier(0.25,0.46,0.45,0.94);
-}
-.yitem:hover {
-  background: var(--bg3);
-}
-.yname {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--dim);
-  margin-bottom: 4px;
-}
-.ypart {
-  font-family: var(--font-japanese);
-  font-size: .68rem;
-  color: var(--smoke);
-  margin-bottom: 8px;
-}
-.yprice {
-  font-family: var(--font-japanese);
-  font-size: .85rem;
-  color: var(--bronze);
-}
 .sgrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -547,11 +495,6 @@ footer {
 .sprices strong {
   color: var(--bronze);
 }
-.cd-foot {
-  text-align: center;
-  margin-top: 52px;
-}
-
 /* ── GALERIA ── */
 .galeria {
   background: var(--bg2);
@@ -1137,17 +1080,6 @@ footer    { background: #1c1610; border-top-color: rgba(244,236,217,.12); }
 .mi-badge      { color: var(--ember); border-color: var(--ember); }
 .mitem         { border-bottom-color: rgba(244,236,217,.07); }
 .mitem:nth-child(even) { border-left-color: rgba(244,236,217,.07); }
-/* hire note */
-.yaki-note     { background: rgba(244,236,217,.04); border-left-color: var(--ember); }
-.yn-kanji      { color: var(--ember); }
-.yn-text       { color: rgba(244,236,217,.46); }
-/* grade de yakitori */
-.ygrid         { background: rgba(244,236,217,.06); }
-.yitem         { background: var(--char); }
-.yitem:hover   { background: rgba(244,236,217,.05); }
-.yname         { color: rgba(244,236,217,.82); }
-.ypart         { color: rgba(244,236,217,.36); }
-.yprice        { color: rgba(140,101,20,.85); }
 /* grade de saquês */
 .sgrid         { background: rgba(244,236,217,.06); }
 .sitem         { background: var(--char); }
@@ -1157,10 +1089,6 @@ footer    { background: #1c1610; border-top-color: rgba(244,236,217,.12); }
 .sdesc         { color: rgba(244,236,217,.4); }
 .sprices span  { color: rgba(244,236,217,.38); }
 .sprices strong { color: rgba(140,101,20,.85); }
-/* btn-o no rodapé do cardápio */
-.cd-foot .btn-o { border-color: rgba(244,236,217,.28); color: rgba(244,236,217,.65); }
-.cd-foot .btn-o:hover { border-color: rgba(244,236,217,.7); color: rgba(244,236,217,.95); }
-
 /* ── cardápio preview — grade de cards com foto ── */
 .cardapio .mgrid {
   grid-template-columns: repeat(4, 1fr);
@@ -1256,6 +1184,8 @@ footer    { background: #1c1610; border-top-color: rgba(244,236,217,.12); }
   .c-txt        { padding: 56px 28px; }
 
   .cardapio     { padding: 40px 28px; }
+  .tabs         { overflow-x: auto; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
   .cd-hd        { flex-direction: column; align-items: flex-start; gap: 16px; }
   .mgrid        { grid-template-columns: 1fr; }
   .mitem:nth-child(even) { padding-left: 0; border-left: none; }
