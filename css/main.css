@@ -1189,8 +1189,11 @@ footer    { background: #1c1610; border-top-color: rgba(244,236,217,.12); }
   .cd-hd        { flex-direction: column; align-items: flex-start; gap: 16px; }
   .mgrid        { grid-template-columns: 1fr; }
   .mitem:nth-child(even) { padding-left: 0; border-left: none; }
-  .ygrid        { grid-template-columns: 1fr 1fr; }
   .sgrid        { grid-template-columns: 1fr; }
+  /* cardápio preview: 4 colunas → 2 colunas (telas 640–960px, ex: Fold desdobrado) */
+  .cardapio .mgrid { grid-template-columns: repeat(2, 1fr); }
+  .cardapio .sgrid { grid-template-columns: repeat(2, 1fr); }
+  #p-kanmi .mgrid  { grid-template-columns: repeat(2, 1fr); }
 
   /* galeria — mantém scroll horizontal no tablet */
   .galeria      { padding: 72px 0 72px 28px; }
