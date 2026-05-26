@@ -97,6 +97,18 @@
     }
   };
 
+  /* ── CONCEITO — lock swap height to default (tallest) state ── */
+  const cSwap = document.getElementById('c-swap');
+  if (cSwap) {
+    const lockSwapHeight = () => {
+      if (document.querySelector('.pill.active')) return;
+      cSwap.style.minHeight = '';
+      cSwap.style.minHeight = cSwap.offsetHeight + 'px';
+    };
+    window.addEventListener('load', lockSwapHeight);
+    window.addEventListener('resize', lockSwapHeight, { passive: true });
+  }
+
   const pillsContainer = document.querySelector('.pills');
   if (pillsContainer) {
     pillsContainer.addEventListener('click', (e) => {
