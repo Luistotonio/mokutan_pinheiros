@@ -591,9 +591,6 @@ body {
     align-items: flex-start;
     gap: 6px;
   }
-}
-
-@media (max-width: 640px) {
   .rsv-fab {
     bottom: 20px;
     right: 16px;

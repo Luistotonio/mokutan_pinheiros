@@ -12,7 +12,8 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Mokutan — Restaurante Japonês">
   <meta property="og:description" content="O sabor que só a brasa pode criar. Pinheiros, São Paulo.">
-  <meta property="og:image" content="img/pratos/_S4A2565.jpg">
+  <meta property="og:image" content="https://mokutanpinheiros.vercel.app/img/pratos/_S4A2565.jpg">
+  <meta property="og:url" content="https://mokutanpinheiros.vercel.app/">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://mokutanpinheiros.vercel.app/">
 
@@ -36,6 +37,7 @@
     "description": "Izakaya japonês em Pinheiros. Grelhados na brasa, saquês e drinks autorais.",
     "url": "https://mokutanpinheiros.vercel.app",
     "telephone": "+5511933981491",
+    "image": "https://mokutanpinheiros.vercel.app/img/pratos/_S4A2565.jpg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "São Paulo",
@@ -67,17 +69,17 @@
   </a>
   <ul class="nlinks">
     <li><a href="#conceito">Conceito</a></li>
-    <li><a href="cardapio.html" class="nav-cardapio">Cardápio</a></li>
+    <li><a href="cardapio.html">Cardápio</a></li>
     <li><a href="#galeria">Galeria</a></li>
     <li><a href="https://reservation.getin.app/865NDakj" target="_blank" rel="noopener noreferrer" class="nrsv">Reservar</a></li>
   </ul>
-  <button class="hbg" id="hbg" aria-label="Abrir menu" aria-expanded="false">
+  <button class="hbg" id="hbg" aria-label="Abrir menu" aria-expanded="false" aria-controls="mm">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <!-- Mobile menu -->
-<div class="mmenu" id="mm" role="dialog" aria-label="Menu de navegação">
+<div class="mmenu" id="mm" role="dialog" aria-modal="true" aria-label="Menu de navegação">
   <a href="#conceito">Conceito</a>
   <a href="cardapio.html">Cardápio</a>
   <a href="#galeria">Galeria</a>
@@ -284,7 +286,7 @@
       <div class="gitem-lbl">Brasa · 炭</div>
     </div>
     <!-- placeholder-4: aguardando img/murais/mural-01.jpg -->
-    <div class="gitem gitem-ph" aria-hidden="true" style="display:none">
+    <div class="gitem gitem-ph hidden" aria-hidden="true">
       <div class="gitem-lbl">Arte · 壁画</div>
     </div>
     <!-- 5: drinks -->
@@ -303,11 +305,11 @@
       <div class="gitem-lbl">Brasa · 炭</div>
     </div>
     <!-- placeholder-8: aguardando img/murais/mural-02.jpg -->
-    <div class="gitem gitem-ph" aria-hidden="true" style="display:none">
+    <div class="gitem gitem-ph hidden" aria-hidden="true">
       <div class="gitem-lbl">Arte · 壁画</div>
     </div>
     <!-- placeholder-9: aguardando img/murais/mural-03.jpg -->
-    <div class="gitem gitem-ph" aria-hidden="true" style="display:none">
+    <div class="gitem gitem-ph hidden" aria-hidden="true">
       <div class="gitem-lbl">Arte · 壁画</div>
     </div>
   </div>

@@ -161,6 +161,23 @@
     });
   }
 
+  if (tabsContainer) {
+    tabsContainer.addEventListener('keydown', (e) => {
+      const tabs = [...tabsContainer.querySelectorAll('.tab')];
+      const currentIndex = tabs.indexOf(document.activeElement.closest('.tab'));
+      if (currentIndex === -1) return;
+      let nextIndex = -1;
+      if      (e.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+      else if (e.key === 'ArrowLeft')  nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+      else if (e.key === 'Home')       nextIndex = 0;
+      else if (e.key === 'End')        nextIndex = tabs.length - 1;
+      else return;
+      e.preventDefault();
+      tabs[nextIndex].click();
+      tabs[nextIndex].focus();
+    });
+  }
+
   const firstTab = document.querySelector('.tab.on');
   if (firstTab) moveTabInd(firstTab);
 

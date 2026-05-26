@@ -163,3 +163,5 @@ body {
   color: var(--dim);
   font-weight: 600;
 }
+
+.hidden { display: none; }
