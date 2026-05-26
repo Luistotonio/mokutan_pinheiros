@@ -56,7 +56,7 @@
   /* ── CONCEITO — PILL INTERACTION ── */
   const conceitoPills = {
     default: {
-      img: 'img/DSC00500.JPG',
+      img: 'img/webp/ambiente/DSC00500.webp',
       alt: 'Salão do Mokutan',
       heading: 'O Carvão',
       headingI: 'que define tudo',
