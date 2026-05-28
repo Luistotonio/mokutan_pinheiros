@@ -1416,7 +1416,7 @@ footer    { background: #1c1610; border-top-color: rgba(244,236,217,.12); }
   }
   .gtrack:active { cursor: default; }
 
-  /* todos portrait */
+  /* todos portrait — reset do bento desktop */
   .gitem,
   .gitem:nth-child(1),
   .gitem:nth-child(2),
@@ -1430,6 +1430,8 @@ footer    { background: #1c1610; border-top-color: rgba(244,236,217,.12); }
     width: auto !important;
     height: auto !important;
     aspect-ratio: 4/5;
+    grid-column: auto;
+    grid-row: auto;
   }
 
   /* itens 1, 4, 7 → landscape full-width
