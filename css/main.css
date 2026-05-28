@@ -1410,6 +1410,7 @@ footer    { background: #1c1610; border-top-color: rgba(244,236,217,.12); }
   .gtrack {
     display: grid !important;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
     gap: 4px;
     overflow: visible;
     cursor: default;
