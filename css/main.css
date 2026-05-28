@@ -1270,6 +1270,11 @@ footer    { background: #1c1610; border-top-color: rgba(244,236,217,.12); }
   .cardapio .mgrid { grid-template-columns: repeat(2, 1fr); }
   .cardapio .sgrid { grid-template-columns: repeat(2, 1fr); }
   #p-kanmi .mgrid  { grid-template-columns: repeat(2, 1fr); }
+  /* cardápio: scrollável no tablet — altura fixa cria cards minúsculos */
+  .cardapio            { height: auto; }
+  .cardapio .panel.on  { flex: none; overflow: visible; }
+  .cardapio .mgrid,
+  .cardapio .sgrid     { height: auto; overflow: visible; grid-auto-rows: 240px; }
 
   /* galeria — scroll horizontal no tablet */
   .galeria      { padding: 72px 28px; }
@@ -1458,6 +1463,13 @@ footer    { background: #1c1610; border-top-color: rgba(244,236,217,.12); }
   .cardapio .mgrid { grid-template-columns: repeat(2, 1fr); }
   .cardapio .sgrid { grid-template-columns: repeat(2, 1fr); }
   #p-kanmi .mgrid  { grid-template-columns: 1fr; }
+  .cardapio .mgrid,
+  .cardapio .sgrid { grid-auto-rows: 220px; }
+  /* gradiente cobre metade inferior — texto legível em cards pequenos */
+  .cardapio .mitem::before,
+  .cardapio .sitem::before {
+    background: linear-gradient(to bottom, rgba(14,12,9,0) 0%, rgba(14,12,9,0) 30%, rgba(14,12,9,.82) 58%, rgba(14,12,9,.97) 100%);
+  }
 
   /* fogo */
   .fogo { height: auto; min-height: 0; padding: 52px 24px; }
@@ -1470,4 +1482,10 @@ footer    { background: #1c1610; border-top-color: rgba(244,236,217,.12); }
   /* footer */
   footer { padding: 48px 20px calc(24px + 72px + env(safe-area-inset-bottom, 0px)); }
   .ftop  { gap: 32px; }
+}
+
+/* ── 400px — celulares muito estreitos (Z Fold fechado: 360px) ── */
+@media (max-width: 400px) {
+  .cardapio .mgrid,
+  .cardapio .sgrid { grid-template-columns: 1fr; }
 }
