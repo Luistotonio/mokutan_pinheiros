@@ -89,6 +89,17 @@ body {
   transform: translateY(-2px);
 }
 
+/* ── FOCO VISÍVEL (acessibilidade por teclado) ── */
+:where(a, button, .tab, .pill, [tabindex]):focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+/* sem anel quando o foco vem de mouse/toque (navegadores que suportam :focus-visible) */
+:where(a, button, .tab, .pill, [tabindex]):focus:not(:focus-visible) {
+  outline: none;
+}
+
 /* ── REVEAL ANIMATION ── */
 .rv {
   opacity: 0;
@@ -113,6 +124,13 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .rv, .rv.rv-x { transition-duration: 0.01s; }
+}
+
+/* Fallback sem JavaScript: garante que o conteúdo .rv apareça mesmo se o
+   IntersectionObserver não rodar (JS desativado ou com falha de carregamento). */
+@media (scripting: none) {
+  .rv,
+  .rv.rv-x { opacity: 1; transform: none; }
 }
 
 /* ── LABELS / HEADINGS COMPARTILHADOS ── */

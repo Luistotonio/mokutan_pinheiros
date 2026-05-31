@@ -1,8 +1,10 @@
 # Mokutan · 木炭
 
-**Yakitori & Robata · Pinheiros, São Paulo**
+**Izakaya japonês · Pinheiros, São Paulo**
 
-Site institucional do Mokutan — restaurante japonês de yakitori e robata no carvão binchōtan, em Pinheiros, São Paulo.
+Site institucional do Mokutan — izakaya japonês de grelhados no carvão binchōtan, cortes crus, carta de saquês e drinques autorais, em Pinheiros, São Paulo.
+
+🔗 Produção: https://mokutanpinheiros.vercel.app
 
 ---
 
@@ -11,32 +13,32 @@ Site institucional do Mokutan — restaurante japonês de yakitori e robata no c
 ```
 mokutan/
 ├── index.html          ← Página principal
-├── cardapio.html       ← Cardápio completo (Comidas, Drinks, Saquês, Vinhos)
+├── cardapio.html       ← Cardápio completo (Cardápio, Drinks, Saquês, Vinhos)
 │
 ├── css/
 │   ├── base.css        ← Reset, variáveis CSS, utilitários compartilhados
 │   ├── nav.css         ← Navegação fixa (desktop + mobile)
 │   ├── main.css        ← Estilos exclusivos do index.html
-│   └── cardapio.css    ← Estilos exclusivos do cardapio.html (tema light/papel)
+│   └── cardapio.css    ← Estilos exclusivos do cardapio.html (tema papel)
 │
 ├── js/
-│   ├── main.js         ← Scripts do index (nav scroll, reveal, tabs, galeria, form)
+│   ├── main.js         ← Scripts do index (nav, reveal, tabs, galeria, lightbox, modal)
 │   └── cardapio.js     ← Scripts do cardápio (highlight de seção ativa)
 │
-├── img/                ← Todas as imagens do site
-│   └── (DSC*.JPG, favicon.png, og-cover.jpg...)
+├── img/
+│   └── webp/           ← Imagens otimizadas — ambiente/, pratos/, bebidas/
 │
-├── vercel.json         ← Configuração de deploy + security headers
+├── vercel.json         ← Deploy + security headers
 ├── .gitignore
 └── README.md
 ```
 
 ## Páginas
 
-| Página | URL | Descrição |
-|---|---|---|
-| Home | `/` | Hero, Conceito, Binchotan, Preview do Cardápio, Galeria, Reservas |
-| Cardápio | `/cardapio` | Cardápio completo: Comidas, Drinks, Saquês, Vinhos |
+| Página   | URL         | Descrição                                              |
+| -------- | ----------- | ------------------------------------------------------ |
+| Home     | `/`         | Hero, Conceito, Preview do Cardápio, Galeria, Reservas |
+| Cardápio | `/cardapio` | Cardápio completo: Cardápio, Drinks, Saquês, Vinhos    |
 
 ## Tecnologias
 
@@ -53,19 +55,19 @@ mokutan/
 
 ## Paleta de Cores
 
-| Variável | Cor | Uso |
-|---|---|---|
-| `--bg` | `#0e0c09` | Fundo principal (dark) |
-| `--ember` | `#c49a2a` | Dourado/âmbar — acento principal |
-| `--ink` | `#e8dcc8` | Texto claro |
-| `--page-bg` (cardápio) | `#f4ecd9` | Fundo papel (light) |
-| `--bronze` (cardápio) | `#7a5c12` | Acento do cardápio |
+| Variável               | Cor       | Uso                              |
+| ---------------------- | --------- | -------------------------------- |
+| `--bg`                 | `#0e0c09` | Fundo principal (dark)           |
+| `--ember`              | `#c49a2a` | Dourado/âmbar — acento principal |
+| `--ink`                | `#e8dcc8` | Texto claro                      |
+| `--page-bg` (cardápio) | `#f4ecd9` | Fundo papel (light)              |
+| `--bronze` (cardápio)  | `#7a5c12` | Acento do cardápio               |
 
 ## Deploy
 
-O projeto faz deploy automático na Vercel a cada push na branch `main`.
+Deploy automático na Vercel a cada push na branch `master`.
 
-```bash
+```
 git add .
 git commit -m "feat: descrição da mudança"
 git push
@@ -73,18 +75,16 @@ git push
 
 ### Imagens
 
-Colocar todas as imagens na pasta `/img/`. Os arquivos já referenciados no HTML:
+Imagens otimizadas em `/img/webp/`, organizadas por pasta (`ambiente/`, `pratos/`, `bebidas/`).
 
-- `img/DSC00488.JPG` — Hero background
-- `img/DSC01298.JPG` — Quote/Fogo background
-- `img/DSC01354.JPG` — Seção Conceito
-- `img/DSC00490.JPG` — Galeria
-- `img/DSC00500.JPG` — Galeria
-- `img/DSC01337.JPG` — Galeria
-- `img/DSC00516.JPG` — Galeria
-- `img/favicon.png` — Favicon
-- `img/og-cover.jpg` — Preview para redes sociais
+Referências principais:
+
+- `img/webp/ambiente/DSC00488.webp` — Hero (LCP, com preload)
+- `img/webp/ambiente/DSC00500.webp` — Seção Conceito
+- `img/webp/pratos/_S4A2557.webp` — Open Graph / preview social
+
+Favicon: SVG inline (kanji 木) embutido no `<head>`.
 
 ---
 
-© 2025 Mokutan · Pinheiros, São Paulo
+© 2026 Mokutan · Pinheiros, São Paulo

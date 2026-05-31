@@ -22,22 +22,41 @@
   /* ── MOBILE MENU ── */
   const hbg = document.getElementById('hbg');
   const mm  = document.getElementById('mm');
+  let mmLastFocus = null;
 
-  hbg.addEventListener('click', () => {
-    const isOpen = mm.classList.toggle('open');
-    hbg.setAttribute('aria-expanded', isOpen);
-  });
+  function openMobileMenu() {
+    mm.classList.add('open');
+    hbg.setAttribute('aria-expanded', 'true');
+    mmLastFocus = document.activeElement;
+    const first = mm.querySelector('a');
+    if (first) first.focus();
+  }
 
   function closeMobileMenu() {
+    if (!mm.classList.contains('open')) return;
     mm.classList.remove('open');
+    hbg.setAttribute('aria-expanded', 'false');
+    if (mmLastFocus) { mmLastFocus.focus(); mmLastFocus = null; }
   }
+
+  hbg.addEventListener('click', () => {
+    mm.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
+  });
 
   mm.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMobileMenu);
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMobileMenu();
+    if (!mm.classList.contains('open')) return;
+    if (e.key === 'Escape') { closeMobileMenu(); return; }
+    if (e.key === 'Tab') {
+      const f = [...mm.querySelectorAll('a')];
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
   });
 
   /* ── REVEAL ON SCROLL ── */
@@ -178,7 +197,7 @@
 
   if (tabsContainer) {
     tabsContainer.addEventListener('keydown', (e) => {
-      const tabs = [...tabsContainer.querySelectorAll('.tab')];
+      const tabs = [...tabsContainer.querySelectorAll('.tab:not([hidden])')];
       const currentIndex = tabs.indexOf(document.activeElement.closest('.tab'));
       if (currentIndex === -1) return;
       let nextIndex = -1;
@@ -315,6 +334,16 @@
       if (e.key === 'ArrowLeft')  lbGo(lbIdx - 1);
       if (e.key === 'ArrowRight') lbGo(lbIdx + 1);
     });
+
+    /* ── LIGHTBOX SWIPE (mobile) ── */
+    let lbSwipeX = 0;
+    lbModal.addEventListener('touchstart', e => {
+      lbSwipeX = e.touches[0].clientX;
+    }, { passive: true });
+    lbModal.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - lbSwipeX;
+      if (Math.abs(dx) > 50) dx < 0 ? lbGo(lbIdx + 1) : lbGo(lbIdx - 1);
+    }, { passive: true });
   }
 
   /* ── MODAL DE RESERVA ── */
