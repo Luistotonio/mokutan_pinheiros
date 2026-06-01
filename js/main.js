@@ -8,9 +8,9 @@
 
   /* ── BACKGROUND IMAGES FROM DATA-BG (CSP-safe) ── */
   document.querySelectorAll('[data-bg]').forEach(function (el) {
-    el.style.setProperty('--bg', "url('" + new URL(el.dataset.bg, document.baseURI).href + "')");
-    if (el.dataset.bgSize) el.style.setProperty('--bg-size', el.dataset.bgSize);
-    if (el.dataset.bgPos)  el.style.setProperty('--bg-pos',  el.dataset.bgPos);
+    el.style.setProperty('--card-img', "url('" + new URL(el.dataset.bg, document.baseURI).href + "')");
+    if (el.dataset.bgSize) el.style.setProperty('--card-bg-size', el.dataset.bgSize);
+    if (el.dataset.bgPos)  el.style.setProperty('--card-bg-pos',  el.dataset.bgPos);
   });
 
   /* ── NAV SCROLL ── */
@@ -313,7 +313,11 @@
       document.body.style.overflow = '';
     }
 
-    if (gt) gt.addEventListener('mousedown', e => { lbDragX = e.clientX; });
+    if (gt) {
+      gt.addEventListener('mousedown', e => { lbDragX = e.clientX; });
+      // mesmo controle para toque — evita que o tap na galeria seja interpretado como arraste
+      gt.addEventListener('touchstart', e => { lbDragX = e.touches[0].clientX; }, { passive: true });
+    }
 
     lbItems.forEach((item, i) => {
       item.style.cursor = 'zoom-in';

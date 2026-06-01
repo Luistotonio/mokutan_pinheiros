@@ -14,13 +14,13 @@
   --bg:    #f4ecd9;
   --bg2:   #ede4cf;
   --bg3:   #faf6ee;
-  --ember: #8c6514;
-  --elite: #7a5c12;
-  --bronze:#6b4e0e;
+  --ember: #9e7220;
+  --elite: #9e7220;
+  --bronze:#c49a35;
   --smoke: #5a5550;
   --ink:   #1c1a17;
   --dim:   #3a342e;
-  --rule:  rgba(122,92,18,0.2);
+  --rule:  rgba(158,114,32,0.2);
   --char:  #0e0c09;
 
   --font-display:  'Cinzel', serif;
@@ -74,7 +74,7 @@ body {
 }
 .btn-f:hover {
   background: var(--elite);
-  box-shadow: 0 6px 22px rgba(140,101,20,.3), inset 0 1px 0 rgba(255,255,255,.08);
+  box-shadow: 0 6px 22px rgba(158,114,32,.3), inset 0 1px 0 rgba(255,255,255,.08);
   transform: translateY(-3px);
 }
 
@@ -85,7 +85,7 @@ body {
 .btn-o:hover {
   border-color: var(--ember);
   color: var(--ember);
-  background: rgba(140,101,20,.05);
+  background: rgba(158,114,32,.05);
   transform: translateY(-2px);
 }
 

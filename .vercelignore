@@ -1,0 +1,9 @@
+# Pastas pesadas que NÃO devem ir para o deploy (não são usadas no site).
+# As fotos usadas no site estão em img/webp/ — essas continuam indo normalmente.
+
+originais/
+img/novas/
+img/pratos/
+
+# Versão mobile antiga, arquivada (não usada).
+_legado/

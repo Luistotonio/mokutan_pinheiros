@@ -39,7 +39,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/cardapio.css">
+  <link rel="stylesheet" href="css/cardapio.css?v=2">
+
+  <!-- Dados estruturados: Menu (ajuda o Google a entender o cardápio) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    "name": "Cardápio Mokutan",
+    "url": "https://mokutanpinheiros.vercel.app/cardapio.html",
+    "inLanguage": "pt-BR",
+    "hasMenuSection": [
+      { "@type": "MenuSection", "name": "Cardápio" },
+      { "@type": "MenuSection", "name": "Drinks" },
+      { "@type": "MenuSection", "name": "Saquês Japoneses" },
+      { "@type": "MenuSection", "name": "Vinhos" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -47,7 +64,7 @@
 <header class="site-header">
   <div class="header-inner">
     <div>
-      <div class="brand">MOKUTAN</div>
+      <h1 class="brand">MOKUTAN</h1>
       <div class="brand-rule">
         <div class="brand-rule-line"></div>
         <div class="brand-rule-diamond"></div>
@@ -81,7 +98,7 @@
 
 <section class="menu-section" id="cardapio">
   <div class="section-head">
-    <span class="section-title">Cardápio</span>
+    <h2 class="section-title">Cardápio</h2>
   </div>
 
   <div class="sub-group">
@@ -97,16 +114,20 @@
     <div class="item"><div class="item-info"><span class="item-name">Edamame Defumado</span><span class="item-desc">Soja japonesa · óleo defumado</span></div><div class="item-price">52</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Suwiito Korn</span><span class="item-desc">Milho doce · kewpie · parmesão</span></div><div class="item-price">50</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Nikuman Buta <span class="badge">2 un</span></span><span class="item-desc">Bao · costela · sunomono · maionese de shissô</span></div><div class="item-price">58</div></div>
-    <div class="item"><div class="item-info"><span class="item-name">Bara-Niku</span><span class="item-desc">Pancetta · shissô · umêboshi · queijo</span></div><div class="item-price">46</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Bara-Niku <span class="badge">6 un</span></span><span class="item-desc">Pancetta · shissô · umêboshi · queijo</span></div><div class="item-price">46</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Nassu</span><span class="item-desc">Berinjela · missô · vinagrete cebola roxa</span></div><div class="item-price">41</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Tebasaki <span class="badge">6 un</span></span><span class="item-desc">Asinha de frango · tobojan · shoyu · gomadare · aonori</span></div><div class="item-price">59</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Okura</span><span class="item-desc">Quiabo · teriyaki · katsuobushi</span></div><div class="item-price">35</div></div>
-    <div class="item"><div class="item-info"><span class="item-name">Proteína do Dia</span><span class="item-obs">Verificar disponibilidade, tipo e preço com o garçom</span></div><div class="item-price">—</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Buta Kimchi</span><span class="item-desc">Pancetta · missô · kimchi</span></div><div class="item-price">52</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Bincho Missoyaki</span><span class="item-desc">Atum branco japonês · missô</span></div><div class="item-price">70</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Bacon Shimeji <span class="badge">6 un</span></span><span class="item-desc">Bacon · shimeji · teriyaki</span></div><div class="item-price">54</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Gyuuniku Shogayaki</span><span class="item-desc">Carne bovina · gengibre · shoyu · farofa de wasabi</span></div><div class="item-price">72</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Yakimochi <span class="badge">2 un</span></span><span class="item-desc">Porco · curry</span></div><div class="item-price">50</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Yakimochi <span class="badge">2 un</span></span><span class="item-desc">Açúcar · shoyu</span></div><div class="item-price">35</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Onigiri — Porco</span></div><div class="item-price">34</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Onigiri — Umeboshi</span></div><div class="item-price">28</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Onigiri — Missô</span></div><div class="item-price">28</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Onigiri — Unagui</span></div><div class="item-price">60</div></div>
   </div>
 
   <div class="sub-group">
@@ -117,15 +138,29 @@
     <div class="item"><div class="item-info"><span class="item-name">Ika Nirá</span><span class="item-desc">Lula · broto de alho · sakê · kewpie · tobajan</span></div><div class="item-price">49</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Tuna Wakamê <span class="badge">4 un</span></span><span class="item-desc">Pastel gyoza · tartare de atum · maionese wasabi · alga wakamê</span></div><div class="item-price">58</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Kamameshi</span><span class="item-desc">Arroz · legumes · pescado do dia</span></div><div class="item-price item-price-consult">Consulte</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Korokkê de Frango <span class="badge">4 un</span></span><span class="item-desc">Croquete de frango · pimenta aji amarelo · creme bechamel</span></div><div class="item-price">52</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Karaaguê</span><span class="item-desc">Frango empanado · gengibre · toban djan</span></div><div class="item-price">48</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Tamagô Furai</span><span class="item-desc">Ovo galinha milanesa · vinagrete · massagô</span></div><div class="item-price">34</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Buta Gyosa <span class="badge">4 un</span></span><span class="item-desc">Gyosa de porco</span></div><div class="item-price">56</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Shimeji Yōshoku</span><span class="item-desc">Shimeji · creme de leite · farofa de pankô</span></div><div class="item-price">60</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Sandos — Fish</span><span class="item-desc">Peixe</span></div><div class="item-price">52</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Sandos — Ton Katsu</span><span class="item-desc">Porco</span></div><div class="item-price">48</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Sandos — Tamago</span><span class="item-desc">Ovo</span></div><div class="item-price">38</div></div>
   </div>
 
   <div class="sub-group">
     <div class="sub-head"><span class="sub-name">Nama</span><span class="sub-jp2">生 — a pureza do ingrediente em sua forma natural</span></div>
-    <div class="item"><div class="item-info"><span class="item-name">Futomaki <span class="badge">4 un</span></span><span class="item-desc">Pepino · tamagoyaki · kanpyo · cenoura</span></div><div class="item-price">45</div></div>
-    <div class="item"><div class="item-info"><span class="item-name">Futomaki <span class="badge">8 un</span></span><span class="item-desc">Pepino · tamagoyaki · kanpyo · cenoura</span></div><div class="item-price">70</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Moqueca Binchô</span><span class="item-desc">Atum branco japonês · dashi · azeite de dendê · leite de coco</span></div><div class="item-price">88</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Tiradito</span><span class="item-desc">Fatias de atum · molho jalapeño · vinagrete de cebola roxa</span></div><div class="item-price">68</div></div>
-    <div class="item"><div class="item-info"><span class="item-name">Ceviche Mokutan</span><span class="item-desc">Robalo · leite de tigre · cebola roxa · pimenta · dedo de moça · milho peruano · dashi</span></div><div class="item-price">78</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Ceviche Mokutan</span><span class="item-desc">Robalo · leite de tigre · cebola roxa · pimenta dedo de moça · milho peruano · dashi</span></div><div class="item-price">78</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Harussame</span><span class="item-desc">Macarrão amido de feijão · legumes · presunto · tamagoyaki · óleo de gergelim</span></div><div class="item-price">42</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Tataki Peixe do Dia</span><span class="item-desc">Cubos de peixe do dia · vinagrete cebola roxa · ponzu · shissô</span></div><div class="item-price">70</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Sashimi do Dia <span class="badge">18 f</span></span><span class="item-desc">3 tipos de peixes do dia variados</span></div><div class="item-price">162</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Hossomaki — Atum <span class="badge">6 un</span></span></div><div class="item-price">56</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Hossomaki — Pepino <span class="badge">6 un</span></span></div><div class="item-price">38</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Hossomaki — Umê Shissô <span class="badge">6 un</span></span></div><div class="item-price">48</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Futomaki <span class="badge">4 un</span></span><span class="item-desc">Pepino · tamagoyaki · kanpyo · cenoura · benishogá</span></div><div class="item-price">45</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Futomaki <span class="badge">8 un</span></span><span class="item-desc">Pepino · tamagoyaki · kanpyo · cenoura · benishogá</span></div><div class="item-price">70</div></div>
   </div>
 
   <div class="sub-group">
@@ -139,7 +174,7 @@
 <!-- ════════════════ DRINKS ════════════════ -->
 <section class="menu-section" id="drinks">
   <div class="section-head">
-    <span class="section-title">Drinks</span>
+    <h2 class="section-title">Drinks</h2>
     <span class="section-jp">飲み物 · Bebidas</span>
   </div>
 
@@ -175,6 +210,10 @@
       <div class="drink-info"><span class="item-name">Tsuru</span><span class="item-desc">Bourbon whiskey · Umeshu · limão · Aperol · óleo de shissô</span></div>
       <div class="item-price">50</div>
     </div>
+  </div>
+
+  <div class="sub-group">
+    <div class="sub-head"><span class="sub-name">Drinks Autorais Suntory</span></div>
     <div class="drink-item">
       <div class="drink-glass"><svg width="20" height="38" viewBox="0 0 30 60" fill="none" stroke="currentColor"><ellipse cx="15" cy="10" rx="13" ry="1.8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M 2 10 Q 1 18 4 27 Q 8 34 13 36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M 28 10 Q 29 18 26 27 Q 22 34 17 36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="13" y1="36" x2="17" y2="36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="15" y1="36" x2="15" y2="53" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="57" x2="23" y2="57" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="57" x2="11" y2="53" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="23" y1="57" x2="19" y2="53" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="11" y1="53" x2="19" y2="53" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="drink-info"><span class="item-name">Mizunara</span><span class="item-desc">Hibiki · Licor Drambuie · mel de missô · kinako</span></div>
@@ -187,7 +226,7 @@
     </div>
     <div class="drink-item">
       <div class="drink-glass"><svg width="20" height="38" viewBox="0 0 30 60" fill="none" stroke="currentColor"><ellipse cx="15" cy="24" rx="10" ry="1.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M 5 24 Q -2 36 5 46 Q 9 51 15 52 Q 21 51 25 46 Q 32 36 25 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="8" y1="55" x2="22" y2="55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="8" y1="55" x2="12" y2="52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="22" y1="55" x2="18" y2="52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="52" x2="18" y2="52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="drink-info"><span class="item-name">Sabita</span><span class="item-desc">Maccalan 12 DC · genmaicha · amaro · licor amareto · bitter cacau</span></div>
+      <div class="drink-info"><span class="item-name">Sabita</span><span class="item-desc">Macallan Double Cask 12 Years Old · genmaicha · amaro · licor amareto · bitter cacau</span></div>
       <div class="item-price">79</div>
     </div>
     <div class="drink-item">
@@ -200,6 +239,10 @@
       <div class="drink-info"><span class="item-name">Hana</span><span class="item-desc">Roku Gin · chá de jasmim · lichia · licor flor de sabugueiro · limão · bitter laranja</span></div>
       <div class="item-price">55</div>
     </div>
+  </div>
+
+  <div class="sub-group">
+    <div class="sub-head"><span class="sub-name">Drinks Clássicos</span></div>
     <div class="drink-item">
       <div class="drink-glass"><svg width="20" height="38" viewBox="0 0 30 60" fill="none" stroke="currentColor"><ellipse cx="15" cy="16" rx="9" ry="1.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M 6 16 Q 3 22 2 30 Q 4 34 13 36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M 24 16 Q 27 22 28 30 Q 26 34 17 36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="13" y1="36" x2="17" y2="36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="15" y1="36" x2="15" y2="51" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="8" y1="55" x2="22" y2="55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="8" y1="55" x2="12" y2="51" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="22" y1="55" x2="18" y2="51" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="51" x2="18" y2="51" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="drink-info"><span class="item-name">Amarena Sour</span><span class="item-desc">Gin · amarena · limão</span></div>
@@ -245,16 +288,21 @@
       <div class="drink-info"><span class="item-name">Side Car</span><span class="item-desc">Brandy Fundador · Cointreau · limão</span></div>
       <div class="item-price">48</div>
     </div>
+    <div class="item"><div class="item-info"><span class="item-name">Caipirinha</span><span class="item-obs">Consultar sabores disponíveis</span></div><div class="item-price">35</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Demais Clássicos</span><span class="item-obs">Consulte nosso barman</span></div><div class="item-price item-price-consult">—</div></div>
   </div>
 
   <div class="sub-group">
-    <div class="sub-head"><span class="sub-name">Drinks Clássicos</span></div>
-    <div class="item"><div class="item-info"><span class="item-name">Caipirinha</span><span class="item-obs">Consultar sabores disponíveis</span></div><div class="item-price">30</div></div>
-    <div class="item"><div class="item-info"><span class="item-name">Demais Clássicos</span><span class="item-obs">Consulte nosso barman</span></div><div class="item-price">32</div></div>
+    <div class="sub-head"><span class="sub-name">Cervejas</span></div>
+    <div class="item"><div class="item-info"><span class="item-name">Cerpa</span><span class="item-desc">350 ml · lata</span></div><div class="item-price">22</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Heineken Long / Zero</span><span class="item-desc">350 ml · lata</span></div><div class="item-price">18</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Sapporo</span><span class="item-desc">355 ml · lata</span></div><div class="item-price">45</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Stella Artois</span><span class="item-desc">Sem glúten · 350 ml · lata</span></div><div class="item-price">18</div></div>
   </div>
 
   <div class="sub-group">
     <div class="sub-head"><span class="sub-name">Soft Drinks</span></div>
+    <div class="item"><div class="item-info"><span class="item-name">Acqua Panna</span><span class="item-desc">500 ml · garrafa</span></div><div class="item-price">35</div></div>
     <div class="item"><div class="item-info"><span class="item-name">San Pellegrino</span><span class="item-desc">500 ml · garrafa</span></div><div class="item-price">35</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Água Prata</span><span class="item-desc">300 ml · garrafa</span></div><div class="item-price">12</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Sucos Naturais</span><span class="item-desc">300 ml · garrafa</span></div><div class="item-price">16</div></div>
@@ -262,15 +310,16 @@
     <div class="item"><div class="item-info"><span class="item-name">Coca-Cola / Zero</span><span class="item-desc">350 ml · lata</span></div><div class="item-price">12</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Guaraná / Zero</span><span class="item-desc">350 ml · lata</span></div><div class="item-price">12</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Tônica / Tônica Zero</span><span class="item-desc">350 ml · lata</span></div><div class="item-price">12</div></div>
-    <div class="item"><div class="item-info"><span class="item-name">Schweppes Citrus</span><span class="item-desc">350 ml · lata</span></div><div class="item-price">12</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Schweppes Citrus / Zero</span><span class="item-desc">350 ml · lata</span></div><div class="item-price">12</div></div>
     <div class="item"><div class="item-info"><span class="item-name">Café Illy</span><span class="item-desc">Xícara</span></div><div class="item-price">12</div></div>
+    <div class="item"><div class="item-info"><span class="item-name">Café Illy Machiato</span><span class="item-desc">Xícara</span></div><div class="item-price">14</div></div>
   </div>
 </section>
 
 <!-- ════════════════ SAQUÊS ════════════════ -->
 <section class="menu-section" id="saques">
   <div class="section-head">
-    <span class="section-title">Saquês Japoneses</span>
+    <h2 class="section-title">Saquês Japoneses</h2>
     <span class="section-jp">日本酒 · Nihonshu</span>
   </div>
 
@@ -334,7 +383,7 @@
 <!-- ════════════════ VINHOS ════════════════ -->
 <section class="menu-section" id="vinhos">
   <div class="section-head">
-    <span class="section-title">Vinhos</span>
+    <h2 class="section-title">Vinhos</h2>
     <span class="section-jp">木炭 · Vinhos — Mistral</span>
   </div>
 
@@ -407,6 +456,16 @@
   <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
   予約 · Reservar
 </a>
+
+<!-- Modal de reserva -->
+<div id="rsv-modal" class="rsv-modal" role="dialog" aria-modal="true" aria-label="Fazer reserva">
+  <div class="rsv-wrap">
+    <button class="rsv-close" id="rsv-close" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <iframe id="rsv-frame" src="" title="Fazer reserva — Mokutan" loading="lazy" allow="payment"></iframe>
+  </div>
+</div>
 
 
 <!-- JS -->

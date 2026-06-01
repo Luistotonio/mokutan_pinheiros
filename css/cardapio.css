@@ -50,10 +50,30 @@ body {
   background: var(--paper);
   border-bottom: 1.5px solid var(--rule);
   padding: 40px 52px 32px;
+  position: relative;
+  overflow: hidden;
+}
+/* marca d'água 木炭 — profundidade sutil atrás do título */
+.site-header::before {
+  content: '木炭';
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  transform: translateY(-50%);
+  font-family: 'Shippori Mincho', serif;
+  font-size: 170px;
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(196,154,53,0.05);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
 }
 .header-inner {
   max-width: 1360px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -63,6 +83,7 @@ body {
 .brand {
   font-family: 'Cinzel', serif;
   font-size: 2rem;
+  font-weight: 400;
   letter-spacing: 10px;
   color: var(--bronze);
   line-height: 1;
@@ -192,6 +213,7 @@ body {
 .section-title {
   font-family: 'Cinzel', serif;
   font-size: 1.1rem;
+  font-weight: 400;
   letter-spacing: 6px;
   color: var(--bronze);
   text-transform: uppercase;
@@ -236,9 +258,17 @@ body {
   gap: 16px;
   padding: 16px 0;
   border-bottom: 0.5px solid var(--rule-lt);
+  transition: background 0.18s ease;
 }
 .item:last-child {
   border-bottom: none;
+}
+/* feedback de toque (mobile) — o item "acende" levemente ao tocar */
+.item:active,
+.drink-item:active,
+.sake-item:active,
+.wine-item:active {
+  background: rgba(244,236,217,0.045);
 }
 .item-info {
   flex: 1;
@@ -301,6 +331,7 @@ body {
   gap: 16px;
   padding: 16px 0;
   border-bottom: 0.5px solid var(--rule-lt);
+  transition: background 0.18s ease;
 }
 .drink-glass {
   flex-shrink: 0;
@@ -322,6 +353,7 @@ body {
 .sake-item {
   padding: 18px 0;
   border-bottom: 0.5px solid var(--rule-lt);
+  transition: background 0.18s ease;
 }
 .sake-top {
   display: flex;
@@ -376,6 +408,7 @@ body {
   gap: 16px;
   padding: 12px 0;
   border-bottom: 0.5px solid var(--rule-lt);
+  transition: background 0.18s ease;
 }
 .wine-info {
   flex: 1;
@@ -538,6 +571,78 @@ body {
   flex-shrink: 0;
 }
 
+/* ── MODAL DE RESERVA (iframe getin) ── */
+.rsv-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(10,8,6,.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.rsv-modal.open {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+  transition: opacity .3s ease;
+}
+.rsv-wrap {
+  position: relative;
+  width: 500px;
+  max-width: calc(100vw - 32px);
+  height: 700px;
+  max-height: calc(100svh - 48px);
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,.6);
+  transform: translateY(12px);
+  transition: transform .35s cubic-bezier(0.16,1,0.3,1);
+}
+.rsv-modal.open .rsv-wrap {
+  transform: translateY(0);
+}
+#rsv-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+.rsv-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(14,12,9,.65);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rsv-close:hover { background: rgba(14,12,9,.9); }
+@media (max-width: 540px) {
+  .rsv-wrap {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100svh;
+    max-height: 100svh;
+    border-radius: 0;
+    transform: translateY(100%);
+  }
+  .rsv-modal.open .rsv-wrap { transform: translateY(0); }
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   html { font-size: 18px; }
@@ -592,7 +697,7 @@ body {
     gap: 6px;
   }
   .rsv-fab {
-    bottom: 20px;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
     right: 16px;
     padding: 10px 16px;
     font-size: 0.55rem;
