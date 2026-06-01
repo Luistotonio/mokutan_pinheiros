@@ -43,5 +43,6 @@ img/pratos/
 # Arquivos arquivados e referências locais (não vão pro repositório)
 _legado/
 *.pdf
+qr/
 
 .vercel

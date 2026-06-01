@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mokutanpinheiros.vercel.app/sitemap.xml
